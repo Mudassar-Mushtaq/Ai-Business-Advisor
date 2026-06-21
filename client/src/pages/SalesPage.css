@@ -1,0 +1,54 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-top: 1px solid var(--border);
+}
+
+/* Sales filter form (used inline in SalesPage.jsx) */
+.sales-filter-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.sales-filter-form .form-group { margin: 0; }
+.sales-filter-form .form-group:not(.search-field) { min-width: 180px; }
+.sales-filter-form .search-field { flex: 1; min-width: 180px; }
+.sales-filter-form .cs { min-width: 180px; }
+
+@media (max-width: 768px) {
+  .pagination {
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px;
+    text-align: center;
+  }
+  .pagination .btn { width: 100%; justify-content: center; min-height: 44px; }
+
+  .sales-filter-form { gap: 12px; }
+  .sales-filter-form .form-group {
+    width: 100%;
+    min-width: 0;
+  }
+  .sales-filter-form .search-field { min-width: 0; }
+  .sales-filter-form .btn { flex: 1; min-width: 0; min-height: 44px; }
+  .sales-filter-form .form-label { font-size: 0.78rem; }
+
+  /* The filters card itself was padding-tight on desktop, give phones more */
+  .sales-filter-form { padding: 4px 0; }
+}
+
+/* When the table converts to cards, remove the surrounding card border
+   so it doesn't double up — cards have their own border. */
+@media (max-width: 640px) {
+  .card:has(> div > .data-table) {
+    background: transparent;
+    background-image: none;
+    border: 0;
+    box-shadow: none;
+    padding: 0 !important;
+  }
+}

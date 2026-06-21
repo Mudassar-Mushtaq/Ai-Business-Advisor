@@ -1,0 +1,3656 @@
+date,product,quantity,revenue,category
+2016-01-01,Pepsi,21,1680,Beverage
+2016-01-02,Pepsi,13,1040,Beverage
+2016-01-03,Pepsi,12,960,Beverage
+2016-01-04,Pepsi,12,960,Beverage
+2016-01-05,Pepsi,12,960,Beverage
+2016-01-06,Pepsi,16,1280,Beverage
+2016-01-07,Pepsi,12,960,Beverage
+2016-01-08,Pepsi,12,960,Beverage
+2016-01-09,Pepsi,16,1280,Beverage
+2016-01-10,Pepsi,26,2080,Beverage
+2016-01-11,Pepsi,7,560,Beverage
+2016-01-12,Pepsi,13,1040,Beverage
+2016-01-13,Pepsi,9,720,Beverage
+2016-01-14,Pepsi,18,1440,Beverage
+2016-01-15,Pepsi,13,1040,Beverage
+2016-01-16,Pepsi,8,640,Beverage
+2016-01-17,Pepsi,13,1040,Beverage
+2016-01-18,Pepsi,7,560,Beverage
+2016-01-19,Pepsi,17,1360,Beverage
+2016-01-20,Pepsi,13,1040,Beverage
+2016-01-21,Pepsi,12,960,Beverage
+2016-01-22,Pepsi,15,1200,Beverage
+2016-01-23,Pepsi,23,1840,Beverage
+2016-01-24,Pepsi,21,1680,Beverage
+2016-01-25,Pepsi,15,1200,Beverage
+2016-01-26,Pepsi,18,1440,Beverage
+2016-01-27,Pepsi,14,1120,Beverage
+2016-01-28,Pepsi,17,1360,Beverage
+2016-01-29,Pepsi,16,1280,Beverage
+2016-01-30,Pepsi,14,1120,Beverage
+2016-01-31,Pepsi,14,1120,Beverage
+2016-02-01,Pepsi,16,1280,Beverage
+2016-02-02,Pepsi,16,1280,Beverage
+2016-02-03,Pepsi,19,1520,Beverage
+2016-02-04,Pepsi,9,720,Beverage
+2016-02-05,Pepsi,14,1120,Beverage
+2016-02-06,Pepsi,14,1120,Beverage
+2016-02-07,Pepsi,18,1440,Beverage
+2016-02-08,Pepsi,12,960,Beverage
+2016-02-09,Pepsi,14,1120,Beverage
+2016-02-10,Pepsi,16,1280,Beverage
+2016-02-11,Pepsi,14,1120,Beverage
+2016-02-12,Pepsi,15,1200,Beverage
+2016-02-13,Pepsi,10,800,Beverage
+2016-02-14,Pepsi,23,1840,Beverage
+2016-02-15,Pepsi,8,640,Beverage
+2016-02-16,Pepsi,19,1520,Beverage
+2016-02-17,Pepsi,29,2320,Beverage
+2016-02-18,Pepsi,17,1360,Beverage
+2016-02-19,Pepsi,18,1440,Beverage
+2016-02-20,Pepsi,18,1440,Beverage
+2016-02-21,Pepsi,21,1680,Beverage
+2016-02-22,Pepsi,16,1280,Beverage
+2016-02-23,Pepsi,16,1280,Beverage
+2016-02-24,Pepsi,10,800,Beverage
+2016-02-25,Pepsi,12,960,Beverage
+2016-02-26,Pepsi,9,720,Beverage
+2016-02-27,Pepsi,21,1680,Beverage
+2016-02-28,Pepsi,12,960,Beverage
+2016-02-29,Pepsi,14,1120,Beverage
+2016-03-01,Pepsi,16,1280,Beverage
+2016-03-02,Pepsi,17,1360,Beverage
+2016-03-03,Pepsi,20,1600,Beverage
+2016-03-04,Pepsi,17,1360,Beverage
+2016-03-05,Pepsi,17,1360,Beverage
+2016-03-06,Pepsi,22,1760,Beverage
+2016-03-07,Pepsi,17,1360,Beverage
+2016-03-08,Pepsi,9,720,Beverage
+2016-03-09,Pepsi,18,1440,Beverage
+2016-03-10,Pepsi,15,1200,Beverage
+2016-03-11,Pepsi,22,1760,Beverage
+2016-03-12,Pepsi,17,1360,Beverage
+2016-03-13,Pepsi,23,1840,Beverage
+2016-03-14,Pepsi,13,1040,Beverage
+2016-03-15,Pepsi,11,880,Beverage
+2016-03-16,Pepsi,23,1840,Beverage
+2016-03-17,Pepsi,19,1520,Beverage
+2016-03-18,Pepsi,21,1680,Beverage
+2016-03-19,Pepsi,25,2000,Beverage
+2016-03-20,Pepsi,25,2000,Beverage
+2016-03-21,Pepsi,22,1760,Beverage
+2016-03-22,Pepsi,17,1360,Beverage
+2016-03-23,Pepsi,19,1520,Beverage
+2016-03-24,Pepsi,18,1440,Beverage
+2016-03-25,Pepsi,27,2160,Beverage
+2016-03-26,Pepsi,22,1760,Beverage
+2016-03-27,Pepsi,28,2240,Beverage
+2016-03-28,Pepsi,16,1280,Beverage
+2016-03-29,Pepsi,22,1760,Beverage
+2016-03-30,Pepsi,14,1120,Beverage
+2016-03-31,Pepsi,17,1360,Beverage
+2016-04-01,Pepsi,32,2560,Beverage
+2016-04-02,Pepsi,24,1920,Beverage
+2016-04-03,Pepsi,29,2320,Beverage
+2016-04-04,Pepsi,18,1440,Beverage
+2016-04-05,Pepsi,20,1600,Beverage
+2016-04-06,Pepsi,25,2000,Beverage
+2016-04-07,Pepsi,18,1440,Beverage
+2016-04-08,Pepsi,23,1840,Beverage
+2016-04-09,Pepsi,22,1760,Beverage
+2016-04-10,Pepsi,36,2880,Beverage
+2016-04-11,Pepsi,18,1440,Beverage
+2016-04-12,Pepsi,30,2400,Beverage
+2016-04-13,Pepsi,24,1920,Beverage
+2016-04-14,Pepsi,22,1760,Beverage
+2016-04-15,Pepsi,23,1840,Beverage
+2016-04-16,Pepsi,22,1760,Beverage
+2016-04-17,Pepsi,18,1440,Beverage
+2016-04-18,Pepsi,23,1840,Beverage
+2016-04-19,Pepsi,23,1840,Beverage
+2016-04-20,Pepsi,18,1440,Beverage
+2016-04-21,Pepsi,20,1600,Beverage
+2016-04-22,Pepsi,22,1760,Beverage
+2016-04-23,Pepsi,23,1840,Beverage
+2016-04-24,Pepsi,26,2080,Beverage
+2016-04-25,Pepsi,15,1200,Beverage
+2016-04-26,Pepsi,20,1600,Beverage
+2016-04-27,Pepsi,19,1520,Beverage
+2016-04-28,Pepsi,21,1680,Beverage
+2016-04-29,Pepsi,30,2400,Beverage
+2016-04-30,Pepsi,30,2400,Beverage
+2016-05-01,Pepsi,30,2400,Beverage
+2016-05-02,Pepsi,18,1440,Beverage
+2016-05-03,Pepsi,29,2320,Beverage
+2016-05-04,Pepsi,24,1920,Beverage
+2016-05-05,Pepsi,17,1360,Beverage
+2016-05-06,Pepsi,23,1840,Beverage
+2016-05-07,Pepsi,23,1840,Beverage
+2016-05-08,Pepsi,26,2080,Beverage
+2016-05-09,Pepsi,18,1440,Beverage
+2016-05-10,Pepsi,29,2320,Beverage
+2016-05-11,Pepsi,21,1680,Beverage
+2016-05-12,Pepsi,19,1520,Beverage
+2016-05-13,Pepsi,26,2080,Beverage
+2016-05-14,Pepsi,30,2400,Beverage
+2016-05-15,Pepsi,39,3120,Beverage
+2016-05-16,Pepsi,13,1040,Beverage
+2016-05-17,Pepsi,25,2000,Beverage
+2016-05-18,Pepsi,33,2640,Beverage
+2016-05-19,Pepsi,26,2080,Beverage
+2016-05-20,Pepsi,28,2240,Beverage
+2016-05-21,Pepsi,35,2800,Beverage
+2016-05-22,Pepsi,32,2560,Beverage
+2016-05-23,Pepsi,22,1760,Beverage
+2016-05-24,Pepsi,26,2080,Beverage
+2016-05-25,Pepsi,29,2320,Beverage
+2016-05-26,Pepsi,17,1360,Beverage
+2016-05-27,Pepsi,26,2080,Beverage
+2016-05-28,Pepsi,33,2640,Beverage
+2016-05-29,Pepsi,29,2320,Beverage
+2016-05-30,Pepsi,18,1440,Beverage
+2016-05-31,Pepsi,18,1440,Beverage
+2016-06-01,Pepsi,24,1920,Beverage
+2016-06-02,Pepsi,25,2000,Beverage
+2016-06-03,Pepsi,38,3040,Beverage
+2016-06-04,Pepsi,28,2240,Beverage
+2016-06-05,Pepsi,35,2800,Beverage
+2016-06-06,Pepsi,23,1840,Beverage
+2016-06-07,Pepsi,22,1760,Beverage
+2016-06-08,Pepsi,22,1760,Beverage
+2016-06-09,Pepsi,24,1920,Beverage
+2016-06-10,Pepsi,34,2720,Beverage
+2016-06-11,Pepsi,31,2480,Beverage
+2016-06-12,Pepsi,22,1760,Beverage
+2016-06-13,Pepsi,22,1760,Beverage
+2016-06-14,Pepsi,25,2000,Beverage
+2016-06-15,Pepsi,22,1760,Beverage
+2016-06-16,Pepsi,30,2400,Beverage
+2016-06-17,Pepsi,22,1760,Beverage
+2016-06-18,Pepsi,27,2160,Beverage
+2016-06-19,Pepsi,28,2240,Beverage
+2016-06-20,Pepsi,15,1200,Beverage
+2016-06-21,Pepsi,25,2000,Beverage
+2016-06-22,Pepsi,25,2000,Beverage
+2016-06-23,Pepsi,23,1840,Beverage
+2016-06-24,Pepsi,31,2480,Beverage
+2016-06-25,Pepsi,31,2480,Beverage
+2016-06-26,Pepsi,32,2560,Beverage
+2016-06-27,Pepsi,26,2080,Beverage
+2016-06-28,Pepsi,28,2240,Beverage
+2016-06-29,Pepsi,25,2000,Beverage
+2016-06-30,Pepsi,25,2000,Beverage
+2016-07-01,Pepsi,42,3360,Beverage
+2016-07-02,Pepsi,32,2560,Beverage
+2016-07-03,Pepsi,35,2800,Beverage
+2016-07-04,Pepsi,18,1440,Beverage
+2016-07-05,Pepsi,31,2480,Beverage
+2016-07-06,Pepsi,22,1760,Beverage
+2016-07-07,Pepsi,33,2640,Beverage
+2016-07-08,Pepsi,34,2720,Beverage
+2016-07-09,Pepsi,35,2800,Beverage
+2016-07-10,Pepsi,28,2240,Beverage
+2016-07-11,Pepsi,18,1440,Beverage
+2016-07-12,Pepsi,27,2160,Beverage
+2016-07-13,Pepsi,30,2400,Beverage
+2016-07-14,Pepsi,22,1760,Beverage
+2016-07-15,Pepsi,33,2640,Beverage
+2016-07-16,Pepsi,34,2720,Beverage
+2016-07-17,Pepsi,37,2960,Beverage
+2016-07-18,Pepsi,24,1920,Beverage
+2016-07-19,Pepsi,25,2000,Beverage
+2016-07-20,Pepsi,22,1760,Beverage
+2016-07-21,Pepsi,34,2720,Beverage
+2016-07-22,Pepsi,26,2080,Beverage
+2016-07-23,Pepsi,34,2720,Beverage
+2016-07-24,Pepsi,25,2000,Beverage
+2016-07-25,Pepsi,21,1680,Beverage
+2016-07-26,Pepsi,24,1920,Beverage
+2016-07-27,Pepsi,28,2240,Beverage
+2016-07-28,Pepsi,30,2400,Beverage
+2016-07-29,Pepsi,30,2400,Beverage
+2016-07-30,Pepsi,38,3040,Beverage
+2016-07-31,Pepsi,31,2480,Beverage
+2016-08-01,Pepsi,21,1680,Beverage
+2016-08-02,Pepsi,22,1760,Beverage
+2016-08-03,Pepsi,28,2240,Beverage
+2016-08-04,Pepsi,34,2720,Beverage
+2016-08-05,Pepsi,24,1920,Beverage
+2016-08-06,Pepsi,20,1600,Beverage
+2016-08-07,Pepsi,31,2480,Beverage
+2016-08-08,Pepsi,11,880,Beverage
+2016-08-09,Pepsi,26,2080,Beverage
+2016-08-10,Pepsi,21,1680,Beverage
+2016-08-11,Pepsi,23,1840,Beverage
+2016-08-12,Pepsi,16,1280,Beverage
+2016-08-13,Pepsi,27,2160,Beverage
+2016-08-14,Pepsi,36,2880,Beverage
+2016-08-15,Pepsi,24,1920,Beverage
+2016-08-16,Pepsi,15,1200,Beverage
+2016-08-17,Pepsi,25,2000,Beverage
+2016-08-18,Pepsi,26,2080,Beverage
+2016-08-19,Pepsi,29,2320,Beverage
+2016-08-20,Pepsi,30,2400,Beverage
+2016-08-21,Pepsi,22,1760,Beverage
+2016-08-22,Pepsi,15,1200,Beverage
+2016-08-23,Pepsi,24,1920,Beverage
+2016-08-24,Pepsi,32,2560,Beverage
+2016-08-25,Pepsi,17,1360,Beverage
+2016-08-26,Pepsi,25,2000,Beverage
+2016-08-27,Pepsi,24,1920,Beverage
+2016-08-28,Pepsi,34,2720,Beverage
+2016-08-29,Pepsi,14,1120,Beverage
+2016-08-30,Pepsi,14,1120,Beverage
+2016-08-31,Pepsi,17,1360,Beverage
+2016-09-01,Pepsi,18,1440,Beverage
+2016-09-02,Pepsi,20,1600,Beverage
+2016-09-03,Pepsi,31,2480,Beverage
+2016-09-04,Pepsi,25,2000,Beverage
+2016-09-05,Pepsi,32,2560,Beverage
+2016-09-06,Pepsi,28,2240,Beverage
+2016-09-07,Pepsi,18,1440,Beverage
+2016-09-08,Pepsi,28,2240,Beverage
+2016-09-09,Pepsi,26,2080,Beverage
+2016-09-10,Pepsi,25,2000,Beverage
+2016-09-11,Pepsi,24,1920,Beverage
+2016-09-12,Pepsi,24,1920,Beverage
+2016-09-13,Pepsi,24,1920,Beverage
+2016-09-14,Pepsi,19,1520,Beverage
+2016-09-15,Pepsi,20,1600,Beverage
+2016-09-16,Pepsi,19,1520,Beverage
+2016-09-17,Pepsi,19,1520,Beverage
+2016-09-18,Pepsi,27,2160,Beverage
+2016-09-19,Pepsi,19,1520,Beverage
+2016-09-20,Pepsi,23,1840,Beverage
+2016-09-21,Pepsi,25,2000,Beverage
+2016-09-22,Pepsi,25,2000,Beverage
+2016-09-23,Pepsi,24,1920,Beverage
+2016-09-24,Pepsi,26,2080,Beverage
+2016-09-25,Pepsi,27,2160,Beverage
+2016-09-26,Pepsi,17,1360,Beverage
+2016-09-27,Pepsi,18,1440,Beverage
+2016-09-28,Pepsi,27,2160,Beverage
+2016-09-29,Pepsi,28,2240,Beverage
+2016-09-30,Pepsi,23,1840,Beverage
+2016-10-01,Pepsi,25,2000,Beverage
+2016-10-02,Pepsi,26,2080,Beverage
+2016-10-03,Pepsi,20,1600,Beverage
+2016-10-04,Pepsi,28,2240,Beverage
+2016-10-05,Pepsi,17,1360,Beverage
+2016-10-06,Pepsi,22,1760,Beverage
+2016-10-07,Pepsi,19,1520,Beverage
+2016-10-08,Pepsi,24,1920,Beverage
+2016-10-09,Pepsi,29,2320,Beverage
+2016-10-10,Pepsi,18,1440,Beverage
+2016-10-11,Pepsi,18,1440,Beverage
+2016-10-12,Pepsi,16,1280,Beverage
+2016-10-13,Pepsi,16,1280,Beverage
+2016-10-14,Pepsi,32,2560,Beverage
+2016-10-15,Pepsi,32,2560,Beverage
+2016-10-16,Pepsi,26,2080,Beverage
+2016-10-17,Pepsi,20,1600,Beverage
+2016-10-18,Pepsi,21,1680,Beverage
+2016-10-19,Pepsi,20,1600,Beverage
+2016-10-20,Pepsi,30,2400,Beverage
+2016-10-21,Pepsi,25,2000,Beverage
+2016-10-22,Pepsi,26,2080,Beverage
+2016-10-23,Pepsi,21,1680,Beverage
+2016-10-24,Pepsi,16,1280,Beverage
+2016-10-25,Pepsi,13,1040,Beverage
+2016-10-26,Pepsi,16,1280,Beverage
+2016-10-27,Pepsi,25,2000,Beverage
+2016-10-28,Pepsi,18,1440,Beverage
+2016-10-29,Pepsi,23,1840,Beverage
+2016-10-30,Pepsi,33,2640,Beverage
+2016-10-31,Pepsi,24,1920,Beverage
+2016-11-01,Pepsi,22,1760,Beverage
+2016-11-02,Pepsi,23,1840,Beverage
+2016-11-03,Pepsi,23,1840,Beverage
+2016-11-04,Pepsi,22,1760,Beverage
+2016-11-05,Pepsi,29,2320,Beverage
+2016-11-06,Pepsi,18,1440,Beverage
+2016-11-07,Pepsi,17,1360,Beverage
+2016-11-08,Pepsi,19,1520,Beverage
+2016-11-09,Pepsi,22,1760,Beverage
+2016-11-10,Pepsi,18,1440,Beverage
+2016-11-11,Pepsi,26,2080,Beverage
+2016-11-12,Pepsi,26,2080,Beverage
+2016-11-13,Pepsi,36,2880,Beverage
+2016-11-14,Pepsi,17,1360,Beverage
+2016-11-15,Pepsi,22,1760,Beverage
+2016-11-16,Pepsi,20,1600,Beverage
+2016-11-17,Pepsi,19,1520,Beverage
+2016-11-18,Pepsi,21,1680,Beverage
+2016-11-19,Pepsi,36,2880,Beverage
+2016-11-20,Pepsi,22,1760,Beverage
+2016-11-21,Pepsi,14,1120,Beverage
+2016-11-22,Pepsi,18,1440,Beverage
+2016-11-23,Pepsi,20,1600,Beverage
+2016-11-24,Pepsi,18,1440,Beverage
+2016-11-25,Pepsi,26,2080,Beverage
+2016-11-26,Pepsi,20,1600,Beverage
+2016-11-27,Pepsi,20,1600,Beverage
+2016-11-28,Pepsi,22,1760,Beverage
+2016-11-29,Pepsi,27,2160,Beverage
+2016-11-30,Pepsi,19,1520,Beverage
+2016-12-01,Pepsi,13,1040,Beverage
+2016-12-02,Pepsi,11,880,Beverage
+2016-12-03,Pepsi,19,1520,Beverage
+2016-12-04,Pepsi,24,1920,Beverage
+2016-12-05,Pepsi,13,1040,Beverage
+2016-12-06,Pepsi,10,800,Beverage
+2016-12-07,Pepsi,17,1360,Beverage
+2016-12-08,Pepsi,15,1200,Beverage
+2016-12-09,Pepsi,7,560,Beverage
+2016-12-10,Pepsi,12,960,Beverage
+2016-12-11,Pepsi,20,1600,Beverage
+2016-12-12,Pepsi,12,960,Beverage
+2016-12-13,Pepsi,23,1840,Beverage
+2016-12-14,Pepsi,12,960,Beverage
+2016-12-15,Pepsi,10,800,Beverage
+2016-12-16,Pepsi,15,1200,Beverage
+2016-12-17,Pepsi,19,1520,Beverage
+2016-12-18,Pepsi,22,1760,Beverage
+2016-12-19,Pepsi,17,1360,Beverage
+2016-12-20,Pepsi,18,1440,Beverage
+2016-12-21,Pepsi,12,960,Beverage
+2016-12-22,Pepsi,20,1600,Beverage
+2016-12-23,Pepsi,21,1680,Beverage
+2016-12-24,Pepsi,13,1040,Beverage
+2016-12-25,Pepsi,20,1600,Beverage
+2016-12-26,Pepsi,16,1280,Beverage
+2016-12-27,Pepsi,10,800,Beverage
+2016-12-28,Pepsi,16,1280,Beverage
+2016-12-29,Pepsi,21,1680,Beverage
+2016-12-30,Pepsi,24,1920,Beverage
+2016-12-31,Pepsi,14,1120,Beverage
+2017-01-01,Pepsi,19,1520,Beverage
+2017-01-02,Pepsi,15,1200,Beverage
+2017-01-03,Pepsi,10,800,Beverage
+2017-01-04,Pepsi,16,1280,Beverage
+2017-01-05,Pepsi,14,1120,Beverage
+2017-01-06,Pepsi,24,1920,Beverage
+2017-01-07,Pepsi,14,1120,Beverage
+2017-01-08,Pepsi,20,1600,Beverage
+2017-01-09,Pepsi,18,1440,Beverage
+2017-01-10,Pepsi,11,880,Beverage
+2017-01-11,Pepsi,14,1120,Beverage
+2017-01-12,Pepsi,17,1360,Beverage
+2017-01-13,Pepsi,7,560,Beverage
+2017-01-14,Pepsi,16,1280,Beverage
+2017-01-15,Pepsi,29,2320,Beverage
+2017-01-16,Pepsi,15,1200,Beverage
+2017-01-17,Pepsi,14,1120,Beverage
+2017-01-18,Pepsi,10,800,Beverage
+2017-01-19,Pepsi,16,1280,Beverage
+2017-01-20,Pepsi,22,1760,Beverage
+2017-01-21,Pepsi,13,1040,Beverage
+2017-01-22,Pepsi,21,1680,Beverage
+2017-01-23,Pepsi,9,720,Beverage
+2017-01-24,Pepsi,18,1440,Beverage
+2017-01-25,Pepsi,14,1120,Beverage
+2017-01-26,Pepsi,13,1040,Beverage
+2017-01-27,Pepsi,10,800,Beverage
+2017-01-28,Pepsi,16,1280,Beverage
+2017-01-29,Pepsi,24,1920,Beverage
+2017-01-30,Pepsi,9,720,Beverage
+2017-01-31,Pepsi,17,1360,Beverage
+2017-02-01,Pepsi,15,1200,Beverage
+2017-02-02,Pepsi,17,1360,Beverage
+2017-02-03,Pepsi,24,1920,Beverage
+2017-02-04,Pepsi,25,2000,Beverage
+2017-02-05,Pepsi,25,2000,Beverage
+2017-02-06,Pepsi,16,1280,Beverage
+2017-02-07,Pepsi,12,960,Beverage
+2017-02-08,Pepsi,20,1600,Beverage
+2017-02-09,Pepsi,16,1280,Beverage
+2017-02-10,Pepsi,16,1280,Beverage
+2017-02-11,Pepsi,18,1440,Beverage
+2017-02-12,Pepsi,19,1520,Beverage
+2017-02-13,Pepsi,11,880,Beverage
+2017-02-14,Pepsi,15,1200,Beverage
+2017-02-15,Pepsi,22,1760,Beverage
+2017-02-16,Pepsi,11,880,Beverage
+2017-02-17,Pepsi,17,1360,Beverage
+2017-02-18,Pepsi,22,1760,Beverage
+2017-02-19,Pepsi,18,1440,Beverage
+2017-02-20,Pepsi,5,400,Beverage
+2017-02-21,Pepsi,14,1120,Beverage
+2017-02-22,Pepsi,12,960,Beverage
+2017-02-23,Pepsi,26,2080,Beverage
+2017-02-24,Pepsi,15,1200,Beverage
+2017-02-25,Pepsi,16,1280,Beverage
+2017-02-26,Pepsi,28,2240,Beverage
+2017-02-27,Pepsi,12,960,Beverage
+2017-02-28,Pepsi,20,1600,Beverage
+2017-03-01,Pepsi,16,1280,Beverage
+2017-03-02,Pepsi,23,1840,Beverage
+2017-03-03,Pepsi,22,1760,Beverage
+2017-03-04,Pepsi,13,1040,Beverage
+2017-03-05,Pepsi,25,2000,Beverage
+2017-03-06,Pepsi,11,880,Beverage
+2017-03-07,Pepsi,14,1120,Beverage
+2017-03-08,Pepsi,17,1360,Beverage
+2017-03-09,Pepsi,16,1280,Beverage
+2017-03-10,Pepsi,18,1440,Beverage
+2017-03-11,Pepsi,15,1200,Beverage
+2017-03-12,Pepsi,21,1680,Beverage
+2017-03-13,Pepsi,14,1120,Beverage
+2017-03-14,Pepsi,24,1920,Beverage
+2017-03-15,Pepsi,22,1760,Beverage
+2017-03-16,Pepsi,23,1840,Beverage
+2017-03-17,Pepsi,17,1360,Beverage
+2017-03-18,Pepsi,20,1600,Beverage
+2017-03-19,Pepsi,25,2000,Beverage
+2017-03-20,Pepsi,14,1120,Beverage
+2017-03-21,Pepsi,13,1040,Beverage
+2017-03-22,Pepsi,23,1840,Beverage
+2017-03-23,Pepsi,18,1440,Beverage
+2017-03-24,Pepsi,19,1520,Beverage
+2017-03-25,Pepsi,20,1600,Beverage
+2017-03-26,Pepsi,17,1360,Beverage
+2017-03-27,Pepsi,21,1680,Beverage
+2017-03-28,Pepsi,13,1040,Beverage
+2017-03-29,Pepsi,12,960,Beverage
+2017-03-30,Pepsi,22,1760,Beverage
+2017-03-31,Pepsi,13,1040,Beverage
+2017-04-01,Pepsi,26,2080,Beverage
+2017-04-02,Pepsi,21,1680,Beverage
+2017-04-03,Pepsi,17,1360,Beverage
+2017-04-04,Pepsi,22,1760,Beverage
+2017-04-05,Pepsi,21,1680,Beverage
+2017-04-06,Pepsi,25,2000,Beverage
+2017-04-07,Pepsi,25,2000,Beverage
+2017-04-08,Pepsi,23,1840,Beverage
+2017-04-09,Pepsi,20,1600,Beverage
+2017-04-10,Pepsi,19,1520,Beverage
+2017-04-11,Pepsi,21,1680,Beverage
+2017-04-12,Pepsi,17,1360,Beverage
+2017-04-13,Pepsi,25,2000,Beverage
+2017-04-14,Pepsi,15,1200,Beverage
+2017-04-15,Pepsi,20,1600,Beverage
+2017-04-16,Pepsi,32,2560,Beverage
+2017-04-17,Pepsi,13,1040,Beverage
+2017-04-18,Pepsi,21,1680,Beverage
+2017-04-19,Pepsi,19,1520,Beverage
+2017-04-20,Pepsi,26,2080,Beverage
+2017-04-21,Pepsi,27,2160,Beverage
+2017-04-22,Pepsi,19,1520,Beverage
+2017-04-23,Pepsi,22,1760,Beverage
+2017-04-24,Pepsi,17,1360,Beverage
+2017-04-25,Pepsi,26,2080,Beverage
+2017-04-26,Pepsi,22,1760,Beverage
+2017-04-27,Pepsi,26,2080,Beverage
+2017-04-28,Pepsi,25,2000,Beverage
+2017-04-29,Pepsi,32,2560,Beverage
+2017-04-30,Pepsi,33,2640,Beverage
+2017-05-01,Pepsi,15,1200,Beverage
+2017-05-02,Pepsi,21,1680,Beverage
+2017-05-03,Pepsi,29,2320,Beverage
+2017-05-04,Pepsi,19,1520,Beverage
+2017-05-05,Pepsi,28,2240,Beverage
+2017-05-06,Pepsi,34,2720,Beverage
+2017-05-07,Pepsi,31,2480,Beverage
+2017-05-08,Pepsi,24,1920,Beverage
+2017-05-09,Pepsi,32,2560,Beverage
+2017-05-10,Pepsi,17,1360,Beverage
+2017-05-11,Pepsi,18,1440,Beverage
+2017-05-12,Pepsi,26,2080,Beverage
+2017-05-13,Pepsi,25,2000,Beverage
+2017-05-14,Pepsi,32,2560,Beverage
+2017-05-15,Pepsi,17,1360,Beverage
+2017-05-16,Pepsi,24,1920,Beverage
+2017-05-17,Pepsi,16,1280,Beverage
+2017-05-18,Pepsi,32,2560,Beverage
+2017-05-19,Pepsi,35,2800,Beverage
+2017-05-20,Pepsi,34,2720,Beverage
+2017-05-21,Pepsi,25,2000,Beverage
+2017-05-22,Pepsi,20,1600,Beverage
+2017-05-23,Pepsi,15,1200,Beverage
+2017-05-24,Pepsi,30,2400,Beverage
+2017-05-25,Pepsi,22,1760,Beverage
+2017-05-26,Pepsi,24,1920,Beverage
+2017-05-27,Pepsi,35,2800,Beverage
+2017-05-28,Pepsi,33,2640,Beverage
+2017-05-29,Pepsi,23,1840,Beverage
+2017-05-30,Pepsi,17,1360,Beverage
+2017-05-31,Pepsi,20,1600,Beverage
+2017-06-01,Pepsi,29,2320,Beverage
+2017-06-02,Pepsi,25,2000,Beverage
+2017-06-03,Pepsi,36,2880,Beverage
+2017-06-04,Pepsi,27,2160,Beverage
+2017-06-05,Pepsi,22,1760,Beverage
+2017-06-06,Pepsi,22,1760,Beverage
+2017-06-07,Pepsi,29,2320,Beverage
+2017-06-08,Pepsi,26,2080,Beverage
+2017-06-09,Pepsi,16,1280,Beverage
+2017-06-10,Pepsi,41,3280,Beverage
+2017-06-11,Pepsi,28,2240,Beverage
+2017-06-12,Pepsi,23,1840,Beverage
+2017-06-13,Pepsi,26,2080,Beverage
+2017-06-14,Pepsi,32,2560,Beverage
+2017-06-15,Pepsi,30,2400,Beverage
+2017-06-16,Pepsi,26,2080,Beverage
+2017-06-17,Pepsi,31,2480,Beverage
+2017-06-18,Pepsi,38,3040,Beverage
+2017-06-19,Pepsi,30,2400,Beverage
+2017-06-20,Pepsi,22,1760,Beverage
+2017-06-21,Pepsi,26,2080,Beverage
+2017-06-22,Pepsi,24,1920,Beverage
+2017-06-23,Pepsi,26,2080,Beverage
+2017-06-24,Pepsi,30,2400,Beverage
+2017-06-25,Pepsi,26,2080,Beverage
+2017-06-26,Pepsi,21,1680,Beverage
+2017-06-27,Pepsi,32,2560,Beverage
+2017-06-28,Pepsi,50,4000,Beverage
+2017-06-29,Pepsi,28,2240,Beverage
+2017-06-30,Pepsi,28,2240,Beverage
+2017-07-01,Pepsi,31,2480,Beverage
+2017-07-02,Pepsi,38,3040,Beverage
+2017-07-03,Pepsi,18,1440,Beverage
+2017-07-04,Pepsi,23,1840,Beverage
+2017-07-05,Pepsi,23,1840,Beverage
+2017-07-06,Pepsi,31,2480,Beverage
+2017-07-07,Pepsi,32,2560,Beverage
+2017-07-08,Pepsi,27,2160,Beverage
+2017-07-09,Pepsi,32,2560,Beverage
+2017-07-10,Pepsi,16,1280,Beverage
+2017-07-11,Pepsi,23,1840,Beverage
+2017-07-12,Pepsi,29,2320,Beverage
+2017-07-13,Pepsi,22,1760,Beverage
+2017-07-14,Pepsi,38,3040,Beverage
+2017-07-15,Pepsi,40,3200,Beverage
+2017-07-16,Pepsi,36,2880,Beverage
+2017-07-17,Pepsi,20,1600,Beverage
+2017-07-18,Pepsi,26,2080,Beverage
+2017-07-19,Pepsi,24,1920,Beverage
+2017-07-20,Pepsi,37,2960,Beverage
+2017-07-21,Pepsi,27,2160,Beverage
+2017-07-22,Pepsi,35,2800,Beverage
+2017-07-23,Pepsi,32,2560,Beverage
+2017-07-24,Pepsi,27,2160,Beverage
+2017-07-25,Pepsi,20,1600,Beverage
+2017-07-26,Pepsi,28,2240,Beverage
+2017-07-27,Pepsi,35,2800,Beverage
+2017-07-28,Pepsi,25,2000,Beverage
+2017-07-29,Pepsi,30,2400,Beverage
+2017-07-30,Pepsi,26,2080,Beverage
+2017-07-31,Pepsi,22,1760,Beverage
+2017-08-01,Pepsi,18,1440,Beverage
+2017-08-02,Pepsi,19,1520,Beverage
+2017-08-03,Pepsi,25,2000,Beverage
+2017-08-04,Pepsi,26,2080,Beverage
+2017-08-05,Pepsi,35,2800,Beverage
+2017-08-06,Pepsi,29,2320,Beverage
+2017-08-07,Pepsi,20,1600,Beverage
+2017-08-08,Pepsi,28,2240,Beverage
+2017-08-09,Pepsi,28,2240,Beverage
+2017-08-10,Pepsi,31,2480,Beverage
+2017-08-11,Pepsi,25,2000,Beverage
+2017-08-12,Pepsi,32,2560,Beverage
+2017-08-13,Pepsi,32,2560,Beverage
+2017-08-14,Pepsi,26,2080,Beverage
+2017-08-15,Pepsi,18,1440,Beverage
+2017-08-16,Pepsi,24,1920,Beverage
+2017-08-17,Pepsi,21,1680,Beverage
+2017-08-18,Pepsi,35,2800,Beverage
+2017-08-19,Pepsi,29,2320,Beverage
+2017-08-20,Pepsi,27,2160,Beverage
+2017-08-21,Pepsi,19,1520,Beverage
+2017-08-22,Pepsi,28,2240,Beverage
+2017-08-23,Pepsi,26,2080,Beverage
+2017-08-24,Pepsi,15,1200,Beverage
+2017-08-25,Pepsi,30,2400,Beverage
+2017-08-26,Pepsi,38,3040,Beverage
+2017-08-27,Pepsi,26,2080,Beverage
+2017-08-28,Pepsi,15,1200,Beverage
+2017-08-29,Pepsi,21,1680,Beverage
+2017-08-30,Pepsi,22,1760,Beverage
+2017-08-31,Pepsi,26,2080,Beverage
+2017-09-01,Pepsi,38,3040,Beverage
+2017-09-02,Pepsi,26,2080,Beverage
+2017-09-03,Pepsi,23,1840,Beverage
+2017-09-04,Pepsi,12,960,Beverage
+2017-09-05,Pepsi,26,2080,Beverage
+2017-09-06,Pepsi,24,1920,Beverage
+2017-09-07,Pepsi,29,2320,Beverage
+2017-09-08,Pepsi,28,2240,Beverage
+2017-09-09,Pepsi,28,2240,Beverage
+2017-09-10,Pepsi,30,2400,Beverage
+2017-09-11,Pepsi,16,1280,Beverage
+2017-09-12,Pepsi,20,1600,Beverage
+2017-09-13,Pepsi,13,1040,Beverage
+2017-09-14,Pepsi,26,2080,Beverage
+2017-09-15,Pepsi,28,2240,Beverage
+2017-09-16,Pepsi,27,2160,Beverage
+2017-09-17,Pepsi,30,2400,Beverage
+2017-09-18,Pepsi,22,1760,Beverage
+2017-09-19,Pepsi,21,1680,Beverage
+2017-09-20,Pepsi,20,1600,Beverage
+2017-09-21,Pepsi,20,1600,Beverage
+2017-09-22,Pepsi,28,2240,Beverage
+2017-09-23,Pepsi,37,2960,Beverage
+2017-09-24,Pepsi,24,1920,Beverage
+2017-09-25,Pepsi,14,1120,Beverage
+2017-09-26,Pepsi,18,1440,Beverage
+2017-09-27,Pepsi,27,2160,Beverage
+2017-09-28,Pepsi,23,1840,Beverage
+2017-09-29,Pepsi,28,2240,Beverage
+2017-09-30,Pepsi,30,2400,Beverage
+2017-10-01,Pepsi,21,1680,Beverage
+2017-10-02,Pepsi,12,960,Beverage
+2017-10-03,Pepsi,18,1440,Beverage
+2017-10-04,Pepsi,15,1200,Beverage
+2017-10-05,Pepsi,20,1600,Beverage
+2017-10-06,Pepsi,19,1520,Beverage
+2017-10-07,Pepsi,22,1760,Beverage
+2017-10-08,Pepsi,19,1520,Beverage
+2017-10-09,Pepsi,9,720,Beverage
+2017-10-10,Pepsi,23,1840,Beverage
+2017-10-11,Pepsi,14,1120,Beverage
+2017-10-12,Pepsi,24,1920,Beverage
+2017-10-13,Pepsi,23,1840,Beverage
+2017-10-14,Pepsi,26,2080,Beverage
+2017-10-15,Pepsi,28,2240,Beverage
+2017-10-16,Pepsi,19,1520,Beverage
+2017-10-17,Pepsi,17,1360,Beverage
+2017-10-18,Pepsi,15,1200,Beverage
+2017-10-19,Pepsi,26,2080,Beverage
+2017-10-20,Pepsi,22,1760,Beverage
+2017-10-21,Pepsi,26,2080,Beverage
+2017-10-22,Pepsi,32,2560,Beverage
+2017-10-23,Pepsi,20,1600,Beverage
+2017-10-24,Pepsi,23,1840,Beverage
+2017-10-25,Pepsi,22,1760,Beverage
+2017-10-26,Pepsi,28,2240,Beverage
+2017-10-27,Pepsi,20,1600,Beverage
+2017-10-28,Pepsi,22,1760,Beverage
+2017-10-29,Pepsi,29,2320,Beverage
+2017-10-30,Pepsi,22,1760,Beverage
+2017-10-31,Pepsi,24,1920,Beverage
+2017-11-01,Pepsi,16,1280,Beverage
+2017-11-02,Pepsi,21,1680,Beverage
+2017-11-03,Pepsi,18,1440,Beverage
+2017-11-04,Pepsi,34,2720,Beverage
+2017-11-05,Pepsi,23,1840,Beverage
+2017-11-06,Pepsi,17,1360,Beverage
+2017-11-07,Pepsi,23,1840,Beverage
+2017-11-08,Pepsi,14,1120,Beverage
+2017-11-09,Pepsi,21,1680,Beverage
+2017-11-10,Pepsi,19,1520,Beverage
+2017-11-11,Pepsi,24,1920,Beverage
+2017-11-12,Pepsi,27,2160,Beverage
+2017-11-13,Pepsi,22,1760,Beverage
+2017-11-14,Pepsi,16,1280,Beverage
+2017-11-15,Pepsi,19,1520,Beverage
+2017-11-16,Pepsi,22,1760,Beverage
+2017-11-17,Pepsi,25,2000,Beverage
+2017-11-18,Pepsi,31,2480,Beverage
+2017-11-19,Pepsi,32,2560,Beverage
+2017-11-20,Pepsi,21,1680,Beverage
+2017-11-21,Pepsi,29,2320,Beverage
+2017-11-22,Pepsi,27,2160,Beverage
+2017-11-23,Pepsi,25,2000,Beverage
+2017-11-24,Pepsi,22,1760,Beverage
+2017-11-25,Pepsi,29,2320,Beverage
+2017-11-26,Pepsi,24,1920,Beverage
+2017-11-27,Pepsi,10,800,Beverage
+2017-11-28,Pepsi,14,1120,Beverage
+2017-11-29,Pepsi,28,2240,Beverage
+2017-11-30,Pepsi,15,1200,Beverage
+2017-12-01,Pepsi,19,1520,Beverage
+2017-12-02,Pepsi,16,1280,Beverage
+2017-12-03,Pepsi,31,2480,Beverage
+2017-12-04,Pepsi,7,560,Beverage
+2017-12-05,Pepsi,20,1600,Beverage
+2017-12-06,Pepsi,17,1360,Beverage
+2017-12-07,Pepsi,18,1440,Beverage
+2017-12-08,Pepsi,17,1360,Beverage
+2017-12-09,Pepsi,27,2160,Beverage
+2017-12-10,Pepsi,20,1600,Beverage
+2017-12-11,Pepsi,20,1600,Beverage
+2017-12-12,Pepsi,13,1040,Beverage
+2017-12-13,Pepsi,17,1360,Beverage
+2017-12-14,Pepsi,14,1120,Beverage
+2017-12-15,Pepsi,16,1280,Beverage
+2017-12-16,Pepsi,15,1200,Beverage
+2017-12-17,Pepsi,22,1760,Beverage
+2017-12-18,Pepsi,19,1520,Beverage
+2017-12-19,Pepsi,7,560,Beverage
+2017-12-20,Pepsi,16,1280,Beverage
+2017-12-21,Pepsi,12,960,Beverage
+2017-12-22,Pepsi,6,480,Beverage
+2017-12-23,Pepsi,18,1440,Beverage
+2017-12-24,Pepsi,19,1520,Beverage
+2017-12-25,Pepsi,13,1040,Beverage
+2017-12-26,Pepsi,16,1280,Beverage
+2017-12-27,Pepsi,14,1120,Beverage
+2017-12-28,Pepsi,19,1520,Beverage
+2017-12-29,Pepsi,15,1200,Beverage
+2017-12-30,Pepsi,27,2160,Beverage
+2017-12-31,Pepsi,23,1840,Beverage
+2016-01-01,Lays Chips,32,1600,Snacks
+2016-01-02,Lays Chips,43,2150,Snacks
+2016-01-03,Lays Chips,47,2350,Snacks
+2016-01-04,Lays Chips,22,1100,Snacks
+2016-01-05,Lays Chips,34,1700,Snacks
+2016-01-06,Lays Chips,38,1900,Snacks
+2016-01-07,Lays Chips,45,2250,Snacks
+2016-01-08,Lays Chips,34,1700,Snacks
+2016-01-09,Lays Chips,52,2600,Snacks
+2016-01-10,Lays Chips,44,2200,Snacks
+2016-01-11,Lays Chips,33,1650,Snacks
+2016-01-12,Lays Chips,52,2600,Snacks
+2016-01-13,Lays Chips,36,1800,Snacks
+2016-01-14,Lays Chips,45,2250,Snacks
+2016-01-15,Lays Chips,48,2400,Snacks
+2016-01-16,Lays Chips,35,1750,Snacks
+2016-01-17,Lays Chips,54,2700,Snacks
+2016-01-18,Lays Chips,30,1500,Snacks
+2016-01-19,Lays Chips,23,1150,Snacks
+2016-01-20,Lays Chips,41,2050,Snacks
+2016-01-21,Lays Chips,48,2400,Snacks
+2016-01-22,Lays Chips,48,2400,Snacks
+2016-01-23,Lays Chips,48,2400,Snacks
+2016-01-24,Lays Chips,48,2400,Snacks
+2016-01-25,Lays Chips,38,1900,Snacks
+2016-01-26,Lays Chips,38,1900,Snacks
+2016-01-27,Lays Chips,31,1550,Snacks
+2016-01-28,Lays Chips,35,1750,Snacks
+2016-01-29,Lays Chips,40,2000,Snacks
+2016-01-30,Lays Chips,42,2100,Snacks
+2016-01-31,Lays Chips,44,2200,Snacks
+2016-02-01,Lays Chips,53,2650,Snacks
+2016-02-02,Lays Chips,34,1700,Snacks
+2016-02-03,Lays Chips,52,2600,Snacks
+2016-02-04,Lays Chips,45,2250,Snacks
+2016-02-05,Lays Chips,49,2450,Snacks
+2016-02-06,Lays Chips,48,2400,Snacks
+2016-02-07,Lays Chips,55,2750,Snacks
+2016-02-08,Lays Chips,30,1500,Snacks
+2016-02-09,Lays Chips,45,2250,Snacks
+2016-02-10,Lays Chips,41,2050,Snacks
+2016-02-11,Lays Chips,52,2600,Snacks
+2016-02-12,Lays Chips,46,2300,Snacks
+2016-02-13,Lays Chips,44,2200,Snacks
+2016-02-14,Lays Chips,44,2200,Snacks
+2016-02-15,Lays Chips,33,1650,Snacks
+2016-02-16,Lays Chips,39,1950,Snacks
+2016-02-17,Lays Chips,45,2250,Snacks
+2016-02-18,Lays Chips,56,2800,Snacks
+2016-02-19,Lays Chips,46,2300,Snacks
+2016-02-20,Lays Chips,43,2150,Snacks
+2016-02-21,Lays Chips,49,2450,Snacks
+2016-02-22,Lays Chips,41,2050,Snacks
+2016-02-23,Lays Chips,44,2200,Snacks
+2016-02-24,Lays Chips,28,1400,Snacks
+2016-02-25,Lays Chips,48,2400,Snacks
+2016-02-26,Lays Chips,41,2050,Snacks
+2016-02-27,Lays Chips,43,2150,Snacks
+2016-02-28,Lays Chips,41,2050,Snacks
+2016-02-29,Lays Chips,35,1750,Snacks
+2016-03-01,Lays Chips,57,2850,Snacks
+2016-03-02,Lays Chips,45,2250,Snacks
+2016-03-03,Lays Chips,58,2900,Snacks
+2016-03-04,Lays Chips,61,3050,Snacks
+2016-03-05,Lays Chips,71,3550,Snacks
+2016-03-06,Lays Chips,66,3300,Snacks
+2016-03-07,Lays Chips,44,2200,Snacks
+2016-03-08,Lays Chips,35,1750,Snacks
+2016-03-09,Lays Chips,54,2700,Snacks
+2016-03-10,Lays Chips,42,2100,Snacks
+2016-03-11,Lays Chips,44,2200,Snacks
+2016-03-12,Lays Chips,61,3050,Snacks
+2016-03-13,Lays Chips,59,2950,Snacks
+2016-03-14,Lays Chips,43,2150,Snacks
+2016-03-15,Lays Chips,44,2200,Snacks
+2016-03-16,Lays Chips,46,2300,Snacks
+2016-03-17,Lays Chips,54,2700,Snacks
+2016-03-18,Lays Chips,62,3100,Snacks
+2016-03-19,Lays Chips,53,2650,Snacks
+2016-03-20,Lays Chips,63,3150,Snacks
+2016-03-21,Lays Chips,39,1950,Snacks
+2016-03-22,Lays Chips,52,2600,Snacks
+2016-03-23,Lays Chips,49,2450,Snacks
+2016-03-24,Lays Chips,54,2700,Snacks
+2016-03-25,Lays Chips,61,3050,Snacks
+2016-03-26,Lays Chips,53,2650,Snacks
+2016-03-27,Lays Chips,66,3300,Snacks
+2016-03-28,Lays Chips,39,1950,Snacks
+2016-03-29,Lays Chips,47,2350,Snacks
+2016-03-30,Lays Chips,49,2450,Snacks
+2016-03-31,Lays Chips,57,2850,Snacks
+2016-04-01,Lays Chips,73,3650,Snacks
+2016-04-02,Lays Chips,58,2900,Snacks
+2016-04-03,Lays Chips,85,4250,Snacks
+2016-04-04,Lays Chips,48,2400,Snacks
+2016-04-05,Lays Chips,52,2600,Snacks
+2016-04-06,Lays Chips,67,3350,Snacks
+2016-04-07,Lays Chips,54,2700,Snacks
+2016-04-08,Lays Chips,71,3550,Snacks
+2016-04-09,Lays Chips,68,3400,Snacks
+2016-04-10,Lays Chips,74,3700,Snacks
+2016-04-11,Lays Chips,36,1800,Snacks
+2016-04-12,Lays Chips,55,2750,Snacks
+2016-04-13,Lays Chips,56,2800,Snacks
+2016-04-14,Lays Chips,71,3550,Snacks
+2016-04-15,Lays Chips,60,3000,Snacks
+2016-04-16,Lays Chips,66,3300,Snacks
+2016-04-17,Lays Chips,60,3000,Snacks
+2016-04-18,Lays Chips,45,2250,Snacks
+2016-04-19,Lays Chips,50,2500,Snacks
+2016-04-20,Lays Chips,57,2850,Snacks
+2016-04-21,Lays Chips,60,3000,Snacks
+2016-04-22,Lays Chips,65,3250,Snacks
+2016-04-23,Lays Chips,71,3550,Snacks
+2016-04-24,Lays Chips,56,2800,Snacks
+2016-04-25,Lays Chips,36,1800,Snacks
+2016-04-26,Lays Chips,59,2950,Snacks
+2016-04-27,Lays Chips,62,3100,Snacks
+2016-04-28,Lays Chips,59,2950,Snacks
+2016-04-29,Lays Chips,52,2600,Snacks
+2016-04-30,Lays Chips,65,3250,Snacks
+2016-05-01,Lays Chips,87,4350,Snacks
+2016-05-02,Lays Chips,54,2700,Snacks
+2016-05-03,Lays Chips,67,3350,Snacks
+2016-05-04,Lays Chips,57,2850,Snacks
+2016-05-05,Lays Chips,50,2500,Snacks
+2016-05-06,Lays Chips,85,4250,Snacks
+2016-05-07,Lays Chips,82,4100,Snacks
+2016-05-08,Lays Chips,64,3200,Snacks
+2016-05-09,Lays Chips,49,2450,Snacks
+2016-05-10,Lays Chips,58,2900,Snacks
+2016-05-11,Lays Chips,71,3550,Snacks
+2016-05-12,Lays Chips,68,3400,Snacks
+2016-05-13,Lays Chips,61,3050,Snacks
+2016-05-14,Lays Chips,74,3700,Snacks
+2016-05-15,Lays Chips,65,3250,Snacks
+2016-05-16,Lays Chips,50,2500,Snacks
+2016-05-17,Lays Chips,61,3050,Snacks
+2016-05-18,Lays Chips,51,2550,Snacks
+2016-05-19,Lays Chips,69,3450,Snacks
+2016-05-20,Lays Chips,78,3900,Snacks
+2016-05-21,Lays Chips,65,3250,Snacks
+2016-05-22,Lays Chips,76,3800,Snacks
+2016-05-23,Lays Chips,50,2500,Snacks
+2016-05-24,Lays Chips,62,3100,Snacks
+2016-05-25,Lays Chips,54,2700,Snacks
+2016-05-26,Lays Chips,65,3250,Snacks
+2016-05-27,Lays Chips,60,3000,Snacks
+2016-05-28,Lays Chips,81,4050,Snacks
+2016-05-29,Lays Chips,79,3950,Snacks
+2016-05-30,Lays Chips,48,2400,Snacks
+2016-05-31,Lays Chips,62,3100,Snacks
+2016-06-01,Lays Chips,68,3400,Snacks
+2016-06-02,Lays Chips,60,3000,Snacks
+2016-06-03,Lays Chips,77,3850,Snacks
+2016-06-04,Lays Chips,103,5150,Snacks
+2016-06-05,Lays Chips,66,3300,Snacks
+2016-06-06,Lays Chips,52,2600,Snacks
+2016-06-07,Lays Chips,63,3150,Snacks
+2016-06-08,Lays Chips,61,3050,Snacks
+2016-06-09,Lays Chips,62,3100,Snacks
+2016-06-10,Lays Chips,51,2550,Snacks
+2016-06-11,Lays Chips,84,4200,Snacks
+2016-06-12,Lays Chips,77,3850,Snacks
+2016-06-13,Lays Chips,51,2550,Snacks
+2016-06-14,Lays Chips,70,3500,Snacks
+2016-06-15,Lays Chips,56,2800,Snacks
+2016-06-16,Lays Chips,61,3050,Snacks
+2016-06-17,Lays Chips,71,3550,Snacks
+2016-06-18,Lays Chips,97,4850,Snacks
+2016-06-19,Lays Chips,96,4800,Snacks
+2016-06-20,Lays Chips,54,2700,Snacks
+2016-06-21,Lays Chips,62,3100,Snacks
+2016-06-22,Lays Chips,69,3450,Snacks
+2016-06-23,Lays Chips,80,4000,Snacks
+2016-06-24,Lays Chips,66,3300,Snacks
+2016-06-25,Lays Chips,82,4100,Snacks
+2016-06-26,Lays Chips,70,3500,Snacks
+2016-06-27,Lays Chips,57,2850,Snacks
+2016-06-28,Lays Chips,60,3000,Snacks
+2016-06-29,Lays Chips,65,3250,Snacks
+2016-06-30,Lays Chips,71,3550,Snacks
+2016-07-01,Lays Chips,85,4250,Snacks
+2016-07-02,Lays Chips,95,4750,Snacks
+2016-07-03,Lays Chips,90,4500,Snacks
+2016-07-04,Lays Chips,63,3150,Snacks
+2016-07-05,Lays Chips,74,3700,Snacks
+2016-07-06,Lays Chips,75,3750,Snacks
+2016-07-07,Lays Chips,82,4100,Snacks
+2016-07-08,Lays Chips,90,4500,Snacks
+2016-07-09,Lays Chips,74,3700,Snacks
+2016-07-10,Lays Chips,89,4450,Snacks
+2016-07-11,Lays Chips,61,3050,Snacks
+2016-07-12,Lays Chips,75,3750,Snacks
+2016-07-13,Lays Chips,61,3050,Snacks
+2016-07-14,Lays Chips,79,3950,Snacks
+2016-07-15,Lays Chips,66,3300,Snacks
+2016-07-16,Lays Chips,84,4200,Snacks
+2016-07-17,Lays Chips,104,5200,Snacks
+2016-07-18,Lays Chips,74,3700,Snacks
+2016-07-19,Lays Chips,59,2950,Snacks
+2016-07-20,Lays Chips,63,3150,Snacks
+2016-07-21,Lays Chips,74,3700,Snacks
+2016-07-22,Lays Chips,75,3750,Snacks
+2016-07-23,Lays Chips,79,3950,Snacks
+2016-07-24,Lays Chips,80,4000,Snacks
+2016-07-25,Lays Chips,62,3100,Snacks
+2016-07-26,Lays Chips,66,3300,Snacks
+2016-07-27,Lays Chips,70,3500,Snacks
+2016-07-28,Lays Chips,71,3550,Snacks
+2016-07-29,Lays Chips,84,4200,Snacks
+2016-07-30,Lays Chips,89,4450,Snacks
+2016-07-31,Lays Chips,94,4700,Snacks
+2016-08-01,Lays Chips,60,3000,Snacks
+2016-08-02,Lays Chips,53,2650,Snacks
+2016-08-03,Lays Chips,58,2900,Snacks
+2016-08-04,Lays Chips,56,2800,Snacks
+2016-08-05,Lays Chips,61,3050,Snacks
+2016-08-06,Lays Chips,65,3250,Snacks
+2016-08-07,Lays Chips,84,4200,Snacks
+2016-08-08,Lays Chips,48,2400,Snacks
+2016-08-09,Lays Chips,65,3250,Snacks
+2016-08-10,Lays Chips,55,2750,Snacks
+2016-08-11,Lays Chips,64,3200,Snacks
+2016-08-12,Lays Chips,76,3800,Snacks
+2016-08-13,Lays Chips,65,3250,Snacks
+2016-08-14,Lays Chips,100,5000,Snacks
+2016-08-15,Lays Chips,55,2750,Snacks
+2016-08-16,Lays Chips,52,2600,Snacks
+2016-08-17,Lays Chips,57,2850,Snacks
+2016-08-18,Lays Chips,67,3350,Snacks
+2016-08-19,Lays Chips,60,3000,Snacks
+2016-08-20,Lays Chips,66,3300,Snacks
+2016-08-21,Lays Chips,88,4400,Snacks
+2016-08-22,Lays Chips,47,2350,Snacks
+2016-08-23,Lays Chips,58,2900,Snacks
+2016-08-24,Lays Chips,71,3550,Snacks
+2016-08-25,Lays Chips,60,3000,Snacks
+2016-08-26,Lays Chips,82,4100,Snacks
+2016-08-27,Lays Chips,81,4050,Snacks
+2016-08-28,Lays Chips,89,4450,Snacks
+2016-08-29,Lays Chips,60,3000,Snacks
+2016-08-30,Lays Chips,50,2500,Snacks
+2016-08-31,Lays Chips,63,3150,Snacks
+2016-09-01,Lays Chips,53,2650,Snacks
+2016-09-02,Lays Chips,74,3700,Snacks
+2016-09-03,Lays Chips,84,4200,Snacks
+2016-09-04,Lays Chips,77,3850,Snacks
+2016-09-05,Lays Chips,47,2350,Snacks
+2016-09-06,Lays Chips,55,2750,Snacks
+2016-09-07,Lays Chips,59,2950,Snacks
+2016-09-08,Lays Chips,56,2800,Snacks
+2016-09-09,Lays Chips,51,2550,Snacks
+2016-09-10,Lays Chips,59,2950,Snacks
+2016-09-11,Lays Chips,62,3100,Snacks
+2016-09-12,Lays Chips,46,2300,Snacks
+2016-09-13,Lays Chips,51,2550,Snacks
+2016-09-14,Lays Chips,67,3350,Snacks
+2016-09-15,Lays Chips,52,2600,Snacks
+2016-09-16,Lays Chips,47,2350,Snacks
+2016-09-17,Lays Chips,66,3300,Snacks
+2016-09-18,Lays Chips,71,3550,Snacks
+2016-09-19,Lays Chips,52,2600,Snacks
+2016-09-20,Lays Chips,52,2600,Snacks
+2016-09-21,Lays Chips,64,3200,Snacks
+2016-09-22,Lays Chips,56,2800,Snacks
+2016-09-23,Lays Chips,60,3000,Snacks
+2016-09-24,Lays Chips,76,3800,Snacks
+2016-09-25,Lays Chips,91,4550,Snacks
+2016-09-26,Lays Chips,51,2550,Snacks
+2016-09-27,Lays Chips,45,2250,Snacks
+2016-09-28,Lays Chips,57,2850,Snacks
+2016-09-29,Lays Chips,59,2950,Snacks
+2016-09-30,Lays Chips,67,3350,Snacks
+2016-10-01,Lays Chips,69,3450,Snacks
+2016-10-02,Lays Chips,64,3200,Snacks
+2016-10-03,Lays Chips,39,1950,Snacks
+2016-10-04,Lays Chips,51,2550,Snacks
+2016-10-05,Lays Chips,56,2800,Snacks
+2016-10-06,Lays Chips,61,3050,Snacks
+2016-10-07,Lays Chips,56,2800,Snacks
+2016-10-08,Lays Chips,70,3500,Snacks
+2016-10-09,Lays Chips,66,3300,Snacks
+2016-10-10,Lays Chips,51,2550,Snacks
+2016-10-11,Lays Chips,54,2700,Snacks
+2016-10-12,Lays Chips,51,2550,Snacks
+2016-10-13,Lays Chips,67,3350,Snacks
+2016-10-14,Lays Chips,80,4000,Snacks
+2016-10-15,Lays Chips,62,3100,Snacks
+2016-10-16,Lays Chips,66,3300,Snacks
+2016-10-17,Lays Chips,46,2300,Snacks
+2016-10-18,Lays Chips,50,2500,Snacks
+2016-10-19,Lays Chips,59,2950,Snacks
+2016-10-20,Lays Chips,62,3100,Snacks
+2016-10-21,Lays Chips,51,2550,Snacks
+2016-10-22,Lays Chips,70,3500,Snacks
+2016-10-23,Lays Chips,69,3450,Snacks
+2016-10-24,Lays Chips,49,2450,Snacks
+2016-10-25,Lays Chips,58,2900,Snacks
+2016-10-26,Lays Chips,49,2450,Snacks
+2016-10-27,Lays Chips,52,2600,Snacks
+2016-10-28,Lays Chips,67,3350,Snacks
+2016-10-29,Lays Chips,59,2950,Snacks
+2016-10-30,Lays Chips,58,2900,Snacks
+2016-10-31,Lays Chips,44,2200,Snacks
+2016-11-01,Lays Chips,50,2500,Snacks
+2016-11-02,Lays Chips,67,3350,Snacks
+2016-11-03,Lays Chips,55,2750,Snacks
+2016-11-04,Lays Chips,79,3950,Snacks
+2016-11-05,Lays Chips,57,2850,Snacks
+2016-11-06,Lays Chips,66,3300,Snacks
+2016-11-07,Lays Chips,43,2150,Snacks
+2016-11-08,Lays Chips,54,2700,Snacks
+2016-11-09,Lays Chips,68,3400,Snacks
+2016-11-10,Lays Chips,76,3800,Snacks
+2016-11-11,Lays Chips,69,3450,Snacks
+2016-11-12,Lays Chips,64,3200,Snacks
+2016-11-13,Lays Chips,76,3800,Snacks
+2016-11-14,Lays Chips,49,2450,Snacks
+2016-11-15,Lays Chips,57,2850,Snacks
+2016-11-16,Lays Chips,50,2500,Snacks
+2016-11-17,Lays Chips,53,2650,Snacks
+2016-11-18,Lays Chips,61,3050,Snacks
+2016-11-19,Lays Chips,72,3600,Snacks
+2016-11-20,Lays Chips,79,3950,Snacks
+2016-11-21,Lays Chips,47,2350,Snacks
+2016-11-22,Lays Chips,49,2450,Snacks
+2016-11-23,Lays Chips,50,2500,Snacks
+2016-11-24,Lays Chips,49,2450,Snacks
+2016-11-25,Lays Chips,58,2900,Snacks
+2016-11-26,Lays Chips,62,3100,Snacks
+2016-11-27,Lays Chips,78,3900,Snacks
+2016-11-28,Lays Chips,50,2500,Snacks
+2016-11-29,Lays Chips,49,2450,Snacks
+2016-11-30,Lays Chips,52,2600,Snacks
+2016-12-01,Lays Chips,43,2150,Snacks
+2016-12-02,Lays Chips,44,2200,Snacks
+2016-12-03,Lays Chips,40,2000,Snacks
+2016-12-04,Lays Chips,51,2550,Snacks
+2016-12-05,Lays Chips,29,1450,Snacks
+2016-12-06,Lays Chips,45,2250,Snacks
+2016-12-07,Lays Chips,39,1950,Snacks
+2016-12-08,Lays Chips,35,1750,Snacks
+2016-12-09,Lays Chips,41,2050,Snacks
+2016-12-10,Lays Chips,47,2350,Snacks
+2016-12-11,Lays Chips,53,2650,Snacks
+2016-12-12,Lays Chips,36,1800,Snacks
+2016-12-13,Lays Chips,45,2250,Snacks
+2016-12-14,Lays Chips,41,2050,Snacks
+2016-12-15,Lays Chips,52,2600,Snacks
+2016-12-16,Lays Chips,42,2100,Snacks
+2016-12-17,Lays Chips,55,2750,Snacks
+2016-12-18,Lays Chips,40,2000,Snacks
+2016-12-19,Lays Chips,33,1650,Snacks
+2016-12-20,Lays Chips,47,2350,Snacks
+2016-12-21,Lays Chips,46,2300,Snacks
+2016-12-22,Lays Chips,35,1750,Snacks
+2016-12-23,Lays Chips,64,3200,Snacks
+2016-12-24,Lays Chips,47,2350,Snacks
+2016-12-25,Lays Chips,39,1950,Snacks
+2016-12-26,Lays Chips,30,1500,Snacks
+2016-12-27,Lays Chips,41,2050,Snacks
+2016-12-28,Lays Chips,38,1900,Snacks
+2016-12-29,Lays Chips,56,2800,Snacks
+2016-12-30,Lays Chips,37,1850,Snacks
+2016-12-31,Lays Chips,47,2350,Snacks
+2017-01-01,Lays Chips,40,2000,Snacks
+2017-01-02,Lays Chips,26,1300,Snacks
+2017-01-03,Lays Chips,33,1650,Snacks
+2017-01-04,Lays Chips,41,2050,Snacks
+2017-01-05,Lays Chips,39,1950,Snacks
+2017-01-06,Lays Chips,43,2150,Snacks
+2017-01-07,Lays Chips,46,2300,Snacks
+2017-01-08,Lays Chips,58,2900,Snacks
+2017-01-09,Lays Chips,31,1550,Snacks
+2017-01-10,Lays Chips,36,1800,Snacks
+2017-01-11,Lays Chips,42,2100,Snacks
+2017-01-12,Lays Chips,39,1950,Snacks
+2017-01-13,Lays Chips,34,1700,Snacks
+2017-01-14,Lays Chips,29,1450,Snacks
+2017-01-15,Lays Chips,47,2350,Snacks
+2017-01-16,Lays Chips,21,1050,Snacks
+2017-01-17,Lays Chips,37,1850,Snacks
+2017-01-18,Lays Chips,41,2050,Snacks
+2017-01-19,Lays Chips,51,2550,Snacks
+2017-01-20,Lays Chips,48,2400,Snacks
+2017-01-21,Lays Chips,42,2100,Snacks
+2017-01-22,Lays Chips,49,2450,Snacks
+2017-01-23,Lays Chips,25,1250,Snacks
+2017-01-24,Lays Chips,44,2200,Snacks
+2017-01-25,Lays Chips,38,1900,Snacks
+2017-01-26,Lays Chips,30,1500,Snacks
+2017-01-27,Lays Chips,32,1600,Snacks
+2017-01-28,Lays Chips,48,2400,Snacks
+2017-01-29,Lays Chips,47,2350,Snacks
+2017-01-30,Lays Chips,28,1400,Snacks
+2017-01-31,Lays Chips,37,1850,Snacks
+2017-02-01,Lays Chips,34,1700,Snacks
+2017-02-02,Lays Chips,47,2350,Snacks
+2017-02-03,Lays Chips,45,2250,Snacks
+2017-02-04,Lays Chips,42,2100,Snacks
+2017-02-05,Lays Chips,38,1900,Snacks
+2017-02-06,Lays Chips,38,1900,Snacks
+2017-02-07,Lays Chips,33,1650,Snacks
+2017-02-08,Lays Chips,37,1850,Snacks
+2017-02-09,Lays Chips,39,1950,Snacks
+2017-02-10,Lays Chips,38,1900,Snacks
+2017-02-11,Lays Chips,52,2600,Snacks
+2017-02-12,Lays Chips,47,2350,Snacks
+2017-02-13,Lays Chips,45,2250,Snacks
+2017-02-14,Lays Chips,46,2300,Snacks
+2017-02-15,Lays Chips,38,1900,Snacks
+2017-02-16,Lays Chips,46,2300,Snacks
+2017-02-17,Lays Chips,59,2950,Snacks
+2017-02-18,Lays Chips,47,2350,Snacks
+2017-02-19,Lays Chips,55,2750,Snacks
+2017-02-20,Lays Chips,32,1600,Snacks
+2017-02-21,Lays Chips,26,1300,Snacks
+2017-02-22,Lays Chips,45,2250,Snacks
+2017-02-23,Lays Chips,50,2500,Snacks
+2017-02-24,Lays Chips,49,2450,Snacks
+2017-02-25,Lays Chips,46,2300,Snacks
+2017-02-26,Lays Chips,41,2050,Snacks
+2017-02-27,Lays Chips,44,2200,Snacks
+2017-02-28,Lays Chips,37,1850,Snacks
+2017-03-01,Lays Chips,48,2400,Snacks
+2017-03-02,Lays Chips,54,2700,Snacks
+2017-03-03,Lays Chips,47,2350,Snacks
+2017-03-04,Lays Chips,70,3500,Snacks
+2017-03-05,Lays Chips,57,2850,Snacks
+2017-03-06,Lays Chips,36,1800,Snacks
+2017-03-07,Lays Chips,57,2850,Snacks
+2017-03-08,Lays Chips,51,2550,Snacks
+2017-03-09,Lays Chips,43,2150,Snacks
+2017-03-10,Lays Chips,53,2650,Snacks
+2017-03-11,Lays Chips,54,2700,Snacks
+2017-03-12,Lays Chips,63,3150,Snacks
+2017-03-13,Lays Chips,52,2600,Snacks
+2017-03-14,Lays Chips,56,2800,Snacks
+2017-03-15,Lays Chips,59,2950,Snacks
+2017-03-16,Lays Chips,52,2600,Snacks
+2017-03-17,Lays Chips,52,2600,Snacks
+2017-03-18,Lays Chips,55,2750,Snacks
+2017-03-19,Lays Chips,65,3250,Snacks
+2017-03-20,Lays Chips,34,1700,Snacks
+2017-03-21,Lays Chips,47,2350,Snacks
+2017-03-22,Lays Chips,33,1650,Snacks
+2017-03-23,Lays Chips,51,2550,Snacks
+2017-03-24,Lays Chips,62,3100,Snacks
+2017-03-25,Lays Chips,55,2750,Snacks
+2017-03-26,Lays Chips,55,2750,Snacks
+2017-03-27,Lays Chips,40,2000,Snacks
+2017-03-28,Lays Chips,45,2250,Snacks
+2017-03-29,Lays Chips,45,2250,Snacks
+2017-03-30,Lays Chips,44,2200,Snacks
+2017-03-31,Lays Chips,57,2850,Snacks
+2017-04-01,Lays Chips,61,3050,Snacks
+2017-04-02,Lays Chips,66,3300,Snacks
+2017-04-03,Lays Chips,43,2150,Snacks
+2017-04-04,Lays Chips,53,2650,Snacks
+2017-04-05,Lays Chips,76,3800,Snacks
+2017-04-06,Lays Chips,62,3100,Snacks
+2017-04-07,Lays Chips,62,3100,Snacks
+2017-04-08,Lays Chips,77,3850,Snacks
+2017-04-09,Lays Chips,86,4300,Snacks
+2017-04-10,Lays Chips,52,2600,Snacks
+2017-04-11,Lays Chips,68,3400,Snacks
+2017-04-12,Lays Chips,59,2950,Snacks
+2017-04-13,Lays Chips,71,3550,Snacks
+2017-04-14,Lays Chips,78,3900,Snacks
+2017-04-15,Lays Chips,79,3950,Snacks
+2017-04-16,Lays Chips,60,3000,Snacks
+2017-04-17,Lays Chips,58,2900,Snacks
+2017-04-18,Lays Chips,51,2550,Snacks
+2017-04-19,Lays Chips,64,3200,Snacks
+2017-04-20,Lays Chips,48,2400,Snacks
+2017-04-21,Lays Chips,61,3050,Snacks
+2017-04-22,Lays Chips,71,3550,Snacks
+2017-04-23,Lays Chips,88,4400,Snacks
+2017-04-24,Lays Chips,54,2700,Snacks
+2017-04-25,Lays Chips,61,3050,Snacks
+2017-04-26,Lays Chips,59,2950,Snacks
+2017-04-27,Lays Chips,58,2900,Snacks
+2017-04-28,Lays Chips,61,3050,Snacks
+2017-04-29,Lays Chips,84,4200,Snacks
+2017-04-30,Lays Chips,80,4000,Snacks
+2017-05-01,Lays Chips,60,3000,Snacks
+2017-05-02,Lays Chips,66,3300,Snacks
+2017-05-03,Lays Chips,51,2550,Snacks
+2017-05-04,Lays Chips,63,3150,Snacks
+2017-05-05,Lays Chips,79,3950,Snacks
+2017-05-06,Lays Chips,76,3800,Snacks
+2017-05-07,Lays Chips,67,3350,Snacks
+2017-05-08,Lays Chips,64,3200,Snacks
+2017-05-09,Lays Chips,73,3650,Snacks
+2017-05-10,Lays Chips,55,2750,Snacks
+2017-05-11,Lays Chips,83,4150,Snacks
+2017-05-12,Lays Chips,82,4100,Snacks
+2017-05-13,Lays Chips,85,4250,Snacks
+2017-05-14,Lays Chips,85,4250,Snacks
+2017-05-15,Lays Chips,54,2700,Snacks
+2017-05-16,Lays Chips,61,3050,Snacks
+2017-05-17,Lays Chips,68,3400,Snacks
+2017-05-18,Lays Chips,76,3800,Snacks
+2017-05-19,Lays Chips,72,3600,Snacks
+2017-05-20,Lays Chips,89,4450,Snacks
+2017-05-21,Lays Chips,91,4550,Snacks
+2017-05-22,Lays Chips,48,2400,Snacks
+2017-05-23,Lays Chips,62,3100,Snacks
+2017-05-24,Lays Chips,73,3650,Snacks
+2017-05-25,Lays Chips,66,3300,Snacks
+2017-05-26,Lays Chips,66,3300,Snacks
+2017-05-27,Lays Chips,82,4100,Snacks
+2017-05-28,Lays Chips,48,2400,Snacks
+2017-05-29,Lays Chips,39,1950,Snacks
+2017-05-30,Lays Chips,57,2850,Snacks
+2017-05-31,Lays Chips,60,3000,Snacks
+2017-06-01,Lays Chips,83,4150,Snacks
+2017-06-02,Lays Chips,85,4250,Snacks
+2017-06-03,Lays Chips,106,5300,Snacks
+2017-06-04,Lays Chips,103,5150,Snacks
+2017-06-05,Lays Chips,54,2700,Snacks
+2017-06-06,Lays Chips,67,3350,Snacks
+2017-06-07,Lays Chips,67,3350,Snacks
+2017-06-08,Lays Chips,68,3400,Snacks
+2017-06-09,Lays Chips,75,3750,Snacks
+2017-06-10,Lays Chips,85,4250,Snacks
+2017-06-11,Lays Chips,87,4350,Snacks
+2017-06-12,Lays Chips,66,3300,Snacks
+2017-06-13,Lays Chips,79,3950,Snacks
+2017-06-14,Lays Chips,63,3150,Snacks
+2017-06-15,Lays Chips,77,3850,Snacks
+2017-06-16,Lays Chips,76,3800,Snacks
+2017-06-17,Lays Chips,82,4100,Snacks
+2017-06-18,Lays Chips,77,3850,Snacks
+2017-06-19,Lays Chips,54,2700,Snacks
+2017-06-20,Lays Chips,66,3300,Snacks
+2017-06-21,Lays Chips,56,2800,Snacks
+2017-06-22,Lays Chips,64,3200,Snacks
+2017-06-23,Lays Chips,75,3750,Snacks
+2017-06-24,Lays Chips,88,4400,Snacks
+2017-06-25,Lays Chips,101,5050,Snacks
+2017-06-26,Lays Chips,48,2400,Snacks
+2017-06-27,Lays Chips,53,2650,Snacks
+2017-06-28,Lays Chips,63,3150,Snacks
+2017-06-29,Lays Chips,64,3200,Snacks
+2017-06-30,Lays Chips,82,4100,Snacks
+2017-07-01,Lays Chips,83,4150,Snacks
+2017-07-02,Lays Chips,98,4900,Snacks
+2017-07-03,Lays Chips,52,2600,Snacks
+2017-07-04,Lays Chips,66,3300,Snacks
+2017-07-05,Lays Chips,67,3350,Snacks
+2017-07-06,Lays Chips,67,3350,Snacks
+2017-07-07,Lays Chips,80,4000,Snacks
+2017-07-08,Lays Chips,94,4700,Snacks
+2017-07-09,Lays Chips,97,4850,Snacks
+2017-07-10,Lays Chips,49,2450,Snacks
+2017-07-11,Lays Chips,65,3250,Snacks
+2017-07-12,Lays Chips,76,3800,Snacks
+2017-07-13,Lays Chips,63,3150,Snacks
+2017-07-14,Lays Chips,84,4200,Snacks
+2017-07-15,Lays Chips,86,4300,Snacks
+2017-07-16,Lays Chips,115,5750,Snacks
+2017-07-17,Lays Chips,64,3200,Snacks
+2017-07-18,Lays Chips,76,3800,Snacks
+2017-07-19,Lays Chips,81,4050,Snacks
+2017-07-20,Lays Chips,76,3800,Snacks
+2017-07-21,Lays Chips,81,4050,Snacks
+2017-07-22,Lays Chips,94,4700,Snacks
+2017-07-23,Lays Chips,89,4450,Snacks
+2017-07-24,Lays Chips,53,2650,Snacks
+2017-07-25,Lays Chips,70,3500,Snacks
+2017-07-26,Lays Chips,67,3350,Snacks
+2017-07-27,Lays Chips,73,3650,Snacks
+2017-07-28,Lays Chips,73,3650,Snacks
+2017-07-29,Lays Chips,86,4300,Snacks
+2017-07-30,Lays Chips,86,4300,Snacks
+2017-07-31,Lays Chips,59,2950,Snacks
+2017-08-01,Lays Chips,58,2900,Snacks
+2017-08-02,Lays Chips,59,2950,Snacks
+2017-08-03,Lays Chips,72,3600,Snacks
+2017-08-04,Lays Chips,77,3850,Snacks
+2017-08-05,Lays Chips,65,3250,Snacks
+2017-08-06,Lays Chips,89,4450,Snacks
+2017-08-07,Lays Chips,54,2700,Snacks
+2017-08-08,Lays Chips,81,4050,Snacks
+2017-08-09,Lays Chips,58,2900,Snacks
+2017-08-10,Lays Chips,72,3600,Snacks
+2017-08-11,Lays Chips,74,3700,Snacks
+2017-08-12,Lays Chips,67,3350,Snacks
+2017-08-13,Lays Chips,78,3900,Snacks
+2017-08-14,Lays Chips,50,2500,Snacks
+2017-08-15,Lays Chips,59,2950,Snacks
+2017-08-16,Lays Chips,48,2400,Snacks
+2017-08-17,Lays Chips,64,3200,Snacks
+2017-08-18,Lays Chips,70,3500,Snacks
+2017-08-19,Lays Chips,78,3900,Snacks
+2017-08-20,Lays Chips,90,4500,Snacks
+2017-08-21,Lays Chips,46,2300,Snacks
+2017-08-22,Lays Chips,62,3100,Snacks
+2017-08-23,Lays Chips,65,3250,Snacks
+2017-08-24,Lays Chips,69,3450,Snacks
+2017-08-25,Lays Chips,91,4550,Snacks
+2017-08-26,Lays Chips,70,3500,Snacks
+2017-08-27,Lays Chips,94,4700,Snacks
+2017-08-28,Lays Chips,55,2750,Snacks
+2017-08-29,Lays Chips,42,2100,Snacks
+2017-08-30,Lays Chips,77,3850,Snacks
+2017-08-31,Lays Chips,55,2750,Snacks
+2017-09-01,Lays Chips,67,3350,Snacks
+2017-09-02,Lays Chips,78,3900,Snacks
+2017-09-03,Lays Chips,87,4350,Snacks
+2017-09-04,Lays Chips,51,2550,Snacks
+2017-09-05,Lays Chips,54,2700,Snacks
+2017-09-06,Lays Chips,69,3450,Snacks
+2017-09-07,Lays Chips,59,2950,Snacks
+2017-09-08,Lays Chips,65,3250,Snacks
+2017-09-09,Lays Chips,71,3550,Snacks
+2017-09-10,Lays Chips,64,3200,Snacks
+2017-09-11,Lays Chips,44,2200,Snacks
+2017-09-12,Lays Chips,58,2900,Snacks
+2017-09-13,Lays Chips,57,2850,Snacks
+2017-09-14,Lays Chips,71,3550,Snacks
+2017-09-15,Lays Chips,60,3000,Snacks
+2017-09-16,Lays Chips,75,3750,Snacks
+2017-09-17,Lays Chips,58,2900,Snacks
+2017-09-18,Lays Chips,47,2350,Snacks
+2017-09-19,Lays Chips,66,3300,Snacks
+2017-09-20,Lays Chips,61,3050,Snacks
+2017-09-21,Lays Chips,66,3300,Snacks
+2017-09-22,Lays Chips,70,3500,Snacks
+2017-09-23,Lays Chips,85,4250,Snacks
+2017-09-24,Lays Chips,73,3650,Snacks
+2017-09-25,Lays Chips,49,2450,Snacks
+2017-09-26,Lays Chips,61,3050,Snacks
+2017-09-27,Lays Chips,57,2850,Snacks
+2017-09-28,Lays Chips,55,2750,Snacks
+2017-09-29,Lays Chips,66,3300,Snacks
+2017-09-30,Lays Chips,79,3950,Snacks
+2017-10-01,Lays Chips,60,3000,Snacks
+2017-10-02,Lays Chips,56,2800,Snacks
+2017-10-03,Lays Chips,55,2750,Snacks
+2017-10-04,Lays Chips,55,2750,Snacks
+2017-10-05,Lays Chips,59,2950,Snacks
+2017-10-06,Lays Chips,54,2700,Snacks
+2017-10-07,Lays Chips,61,3050,Snacks
+2017-10-08,Lays Chips,60,3000,Snacks
+2017-10-09,Lays Chips,46,2300,Snacks
+2017-10-10,Lays Chips,52,2600,Snacks
+2017-10-11,Lays Chips,55,2750,Snacks
+2017-10-12,Lays Chips,48,2400,Snacks
+2017-10-13,Lays Chips,53,2650,Snacks
+2017-10-14,Lays Chips,64,3200,Snacks
+2017-10-15,Lays Chips,64,3200,Snacks
+2017-10-16,Lays Chips,44,2200,Snacks
+2017-10-17,Lays Chips,47,2350,Snacks
+2017-10-18,Lays Chips,70,3500,Snacks
+2017-10-19,Lays Chips,45,2250,Snacks
+2017-10-20,Lays Chips,51,2550,Snacks
+2017-10-21,Lays Chips,70,3500,Snacks
+2017-10-22,Lays Chips,61,3050,Snacks
+2017-10-23,Lays Chips,45,2250,Snacks
+2017-10-24,Lays Chips,56,2800,Snacks
+2017-10-25,Lays Chips,66,3300,Snacks
+2017-10-26,Lays Chips,44,2200,Snacks
+2017-10-27,Lays Chips,66,3300,Snacks
+2017-10-28,Lays Chips,61,3050,Snacks
+2017-10-29,Lays Chips,77,3850,Snacks
+2017-10-30,Lays Chips,53,2650,Snacks
+2017-10-31,Lays Chips,50,2500,Snacks
+2017-11-01,Lays Chips,63,3150,Snacks
+2017-11-02,Lays Chips,67,3350,Snacks
+2017-11-03,Lays Chips,75,3750,Snacks
+2017-11-04,Lays Chips,68,3400,Snacks
+2017-11-05,Lays Chips,74,3700,Snacks
+2017-11-06,Lays Chips,69,3450,Snacks
+2017-11-07,Lays Chips,68,3400,Snacks
+2017-11-08,Lays Chips,58,2900,Snacks
+2017-11-09,Lays Chips,62,3100,Snacks
+2017-11-10,Lays Chips,58,2900,Snacks
+2017-11-11,Lays Chips,69,3450,Snacks
+2017-11-12,Lays Chips,76,3800,Snacks
+2017-11-13,Lays Chips,61,3050,Snacks
+2017-11-14,Lays Chips,57,2850,Snacks
+2017-11-15,Lays Chips,55,2750,Snacks
+2017-11-16,Lays Chips,53,2650,Snacks
+2017-11-17,Lays Chips,75,3750,Snacks
+2017-11-18,Lays Chips,78,3900,Snacks
+2017-11-19,Lays Chips,73,3650,Snacks
+2017-11-20,Lays Chips,54,2700,Snacks
+2017-11-21,Lays Chips,55,2750,Snacks
+2017-11-22,Lays Chips,51,2550,Snacks
+2017-11-23,Lays Chips,73,3650,Snacks
+2017-11-24,Lays Chips,68,3400,Snacks
+2017-11-25,Lays Chips,63,3150,Snacks
+2017-11-26,Lays Chips,78,3900,Snacks
+2017-11-27,Lays Chips,58,2900,Snacks
+2017-11-28,Lays Chips,57,2850,Snacks
+2017-11-29,Lays Chips,66,3300,Snacks
+2017-11-30,Lays Chips,80,4000,Snacks
+2017-12-01,Lays Chips,56,2800,Snacks
+2017-12-02,Lays Chips,64,3200,Snacks
+2017-12-03,Lays Chips,59,2950,Snacks
+2017-12-04,Lays Chips,33,1650,Snacks
+2017-12-05,Lays Chips,45,2250,Snacks
+2017-12-06,Lays Chips,50,2500,Snacks
+2017-12-07,Lays Chips,47,2350,Snacks
+2017-12-08,Lays Chips,44,2200,Snacks
+2017-12-09,Lays Chips,50,2500,Snacks
+2017-12-10,Lays Chips,50,2500,Snacks
+2017-12-11,Lays Chips,43,2150,Snacks
+2017-12-12,Lays Chips,37,1850,Snacks
+2017-12-13,Lays Chips,50,2500,Snacks
+2017-12-14,Lays Chips,42,2100,Snacks
+2017-12-15,Lays Chips,52,2600,Snacks
+2017-12-16,Lays Chips,48,2400,Snacks
+2017-12-17,Lays Chips,55,2750,Snacks
+2017-12-18,Lays Chips,37,1850,Snacks
+2017-12-19,Lays Chips,41,2050,Snacks
+2017-12-20,Lays Chips,35,1750,Snacks
+2017-12-21,Lays Chips,39,1950,Snacks
+2017-12-22,Lays Chips,41,2050,Snacks
+2017-12-23,Lays Chips,52,2600,Snacks
+2017-12-24,Lays Chips,47,2350,Snacks
+2017-12-25,Lays Chips,37,1850,Snacks
+2017-12-26,Lays Chips,43,2150,Snacks
+2017-12-27,Lays Chips,55,2750,Snacks
+2017-12-28,Lays Chips,50,2500,Snacks
+2017-12-29,Lays Chips,50,2500,Snacks
+2017-12-30,Lays Chips,56,2800,Snacks
+2017-12-31,Lays Chips,67,3350,Snacks
+2016-01-01,Coca Cola,23,2070,Beverage
+2016-01-02,Coca Cola,22,1980,Beverage
+2016-01-03,Coca Cola,31,2790,Beverage
+2016-01-04,Coca Cola,23,2070,Beverage
+2016-01-05,Coca Cola,18,1620,Beverage
+2016-01-06,Coca Cola,20,1800,Beverage
+2016-01-07,Coca Cola,24,2160,Beverage
+2016-01-08,Coca Cola,40,3600,Beverage
+2016-01-09,Coca Cola,31,2790,Beverage
+2016-01-10,Coca Cola,35,3150,Beverage
+2016-01-11,Coca Cola,15,1350,Beverage
+2016-01-12,Coca Cola,34,3060,Beverage
+2016-01-13,Coca Cola,24,2160,Beverage
+2016-01-14,Coca Cola,27,2430,Beverage
+2016-01-15,Coca Cola,27,2430,Beverage
+2016-01-16,Coca Cola,27,2430,Beverage
+2016-01-17,Coca Cola,31,2790,Beverage
+2016-01-18,Coca Cola,22,1980,Beverage
+2016-01-19,Coca Cola,21,1890,Beverage
+2016-01-20,Coca Cola,20,1800,Beverage
+2016-01-21,Coca Cola,22,1980,Beverage
+2016-01-22,Coca Cola,29,2610,Beverage
+2016-01-23,Coca Cola,32,2880,Beverage
+2016-01-24,Coca Cola,31,2790,Beverage
+2016-01-25,Coca Cola,21,1890,Beverage
+2016-01-26,Coca Cola,18,1620,Beverage
+2016-01-27,Coca Cola,21,1890,Beverage
+2016-01-28,Coca Cola,22,1980,Beverage
+2016-01-29,Coca Cola,26,2340,Beverage
+2016-01-30,Coca Cola,27,2430,Beverage
+2016-01-31,Coca Cola,31,2790,Beverage
+2016-02-01,Coca Cola,14,1260,Beverage
+2016-02-02,Coca Cola,28,2520,Beverage
+2016-02-03,Coca Cola,26,2340,Beverage
+2016-02-04,Coca Cola,27,2430,Beverage
+2016-02-05,Coca Cola,32,2880,Beverage
+2016-02-06,Coca Cola,34,3060,Beverage
+2016-02-07,Coca Cola,33,2970,Beverage
+2016-02-08,Coca Cola,22,1980,Beverage
+2016-02-09,Coca Cola,35,3150,Beverage
+2016-02-10,Coca Cola,33,2970,Beverage
+2016-02-11,Coca Cola,27,2430,Beverage
+2016-02-12,Coca Cola,24,2160,Beverage
+2016-02-13,Coca Cola,33,2970,Beverage
+2016-02-14,Coca Cola,30,2700,Beverage
+2016-02-15,Coca Cola,18,1620,Beverage
+2016-02-16,Coca Cola,30,2700,Beverage
+2016-02-17,Coca Cola,22,1980,Beverage
+2016-02-18,Coca Cola,25,2250,Beverage
+2016-02-19,Coca Cola,27,2430,Beverage
+2016-02-20,Coca Cola,27,2430,Beverage
+2016-02-21,Coca Cola,37,3330,Beverage
+2016-02-22,Coca Cola,27,2430,Beverage
+2016-02-23,Coca Cola,28,2520,Beverage
+2016-02-24,Coca Cola,32,2880,Beverage
+2016-02-25,Coca Cola,20,1800,Beverage
+2016-02-26,Coca Cola,27,2430,Beverage
+2016-02-27,Coca Cola,21,1890,Beverage
+2016-02-28,Coca Cola,32,2880,Beverage
+2016-02-29,Coca Cola,20,1800,Beverage
+2016-03-01,Coca Cola,32,2880,Beverage
+2016-03-02,Coca Cola,22,1980,Beverage
+2016-03-03,Coca Cola,40,3600,Beverage
+2016-03-04,Coca Cola,36,3240,Beverage
+2016-03-05,Coca Cola,43,3870,Beverage
+2016-03-06,Coca Cola,35,3150,Beverage
+2016-03-07,Coca Cola,26,2340,Beverage
+2016-03-08,Coca Cola,34,3060,Beverage
+2016-03-09,Coca Cola,38,3420,Beverage
+2016-03-10,Coca Cola,46,4140,Beverage
+2016-03-11,Coca Cola,26,2340,Beverage
+2016-03-12,Coca Cola,38,3420,Beverage
+2016-03-13,Coca Cola,34,3060,Beverage
+2016-03-14,Coca Cola,18,1620,Beverage
+2016-03-15,Coca Cola,24,2160,Beverage
+2016-03-16,Coca Cola,28,2520,Beverage
+2016-03-17,Coca Cola,24,2160,Beverage
+2016-03-18,Coca Cola,37,3330,Beverage
+2016-03-19,Coca Cola,44,3960,Beverage
+2016-03-20,Coca Cola,39,3510,Beverage
+2016-03-21,Coca Cola,21,1890,Beverage
+2016-03-22,Coca Cola,25,2250,Beverage
+2016-03-23,Coca Cola,36,3240,Beverage
+2016-03-24,Coca Cola,30,2700,Beverage
+2016-03-25,Coca Cola,44,3960,Beverage
+2016-03-26,Coca Cola,37,3330,Beverage
+2016-03-27,Coca Cola,37,3330,Beverage
+2016-03-28,Coca Cola,27,2430,Beverage
+2016-03-29,Coca Cola,30,2700,Beverage
+2016-03-30,Coca Cola,21,1890,Beverage
+2016-03-31,Coca Cola,29,2610,Beverage
+2016-04-01,Coca Cola,40,3600,Beverage
+2016-04-02,Coca Cola,28,2520,Beverage
+2016-04-03,Coca Cola,43,3870,Beverage
+2016-04-04,Coca Cola,36,3240,Beverage
+2016-04-05,Coca Cola,32,2880,Beverage
+2016-04-06,Coca Cola,35,3150,Beverage
+2016-04-07,Coca Cola,40,3600,Beverage
+2016-04-08,Coca Cola,50,4500,Beverage
+2016-04-09,Coca Cola,36,3240,Beverage
+2016-04-10,Coca Cola,67,6030,Beverage
+2016-04-11,Coca Cola,33,2970,Beverage
+2016-04-12,Coca Cola,29,2610,Beverage
+2016-04-13,Coca Cola,28,2520,Beverage
+2016-04-14,Coca Cola,38,3420,Beverage
+2016-04-15,Coca Cola,34,3060,Beverage
+2016-04-16,Coca Cola,48,4320,Beverage
+2016-04-17,Coca Cola,39,3510,Beverage
+2016-04-18,Coca Cola,26,2340,Beverage
+2016-04-19,Coca Cola,23,2070,Beverage
+2016-04-20,Coca Cola,43,3870,Beverage
+2016-04-21,Coca Cola,43,3870,Beverage
+2016-04-22,Coca Cola,35,3150,Beverage
+2016-04-23,Coca Cola,44,3960,Beverage
+2016-04-24,Coca Cola,43,3870,Beverage
+2016-04-25,Coca Cola,34,3060,Beverage
+2016-04-26,Coca Cola,32,2880,Beverage
+2016-04-27,Coca Cola,31,2790,Beverage
+2016-04-28,Coca Cola,34,3060,Beverage
+2016-04-29,Coca Cola,32,2880,Beverage
+2016-04-30,Coca Cola,37,3330,Beverage
+2016-05-01,Coca Cola,53,4770,Beverage
+2016-05-02,Coca Cola,30,2700,Beverage
+2016-05-03,Coca Cola,35,3150,Beverage
+2016-05-04,Coca Cola,37,3330,Beverage
+2016-05-05,Coca Cola,59,5310,Beverage
+2016-05-06,Coca Cola,50,4500,Beverage
+2016-05-07,Coca Cola,54,4860,Beverage
+2016-05-08,Coca Cola,49,4410,Beverage
+2016-05-09,Coca Cola,40,3600,Beverage
+2016-05-10,Coca Cola,35,3150,Beverage
+2016-05-11,Coca Cola,39,3510,Beverage
+2016-05-12,Coca Cola,39,3510,Beverage
+2016-05-13,Coca Cola,44,3960,Beverage
+2016-05-14,Coca Cola,32,2880,Beverage
+2016-05-15,Coca Cola,46,4140,Beverage
+2016-05-16,Coca Cola,36,3240,Beverage
+2016-05-17,Coca Cola,34,3060,Beverage
+2016-05-18,Coca Cola,43,3870,Beverage
+2016-05-19,Coca Cola,44,3960,Beverage
+2016-05-20,Coca Cola,46,4140,Beverage
+2016-05-21,Coca Cola,51,4590,Beverage
+2016-05-22,Coca Cola,43,3870,Beverage
+2016-05-23,Coca Cola,36,3240,Beverage
+2016-05-24,Coca Cola,34,3060,Beverage
+2016-05-25,Coca Cola,39,3510,Beverage
+2016-05-26,Coca Cola,52,4680,Beverage
+2016-05-27,Coca Cola,34,3060,Beverage
+2016-05-28,Coca Cola,55,4950,Beverage
+2016-05-29,Coca Cola,33,2970,Beverage
+2016-05-30,Coca Cola,36,3240,Beverage
+2016-05-31,Coca Cola,39,3510,Beverage
+2016-06-01,Coca Cola,40,3600,Beverage
+2016-06-02,Coca Cola,48,4320,Beverage
+2016-06-03,Coca Cola,40,3600,Beverage
+2016-06-04,Coca Cola,57,5130,Beverage
+2016-06-05,Coca Cola,48,4320,Beverage
+2016-06-06,Coca Cola,19,1710,Beverage
+2016-06-07,Coca Cola,43,3870,Beverage
+2016-06-08,Coca Cola,36,3240,Beverage
+2016-06-09,Coca Cola,32,2880,Beverage
+2016-06-10,Coca Cola,50,4500,Beverage
+2016-06-11,Coca Cola,36,3240,Beverage
+2016-06-12,Coca Cola,59,5310,Beverage
+2016-06-13,Coca Cola,38,3420,Beverage
+2016-06-14,Coca Cola,43,3870,Beverage
+2016-06-15,Coca Cola,52,4680,Beverage
+2016-06-16,Coca Cola,37,3330,Beverage
+2016-06-17,Coca Cola,50,4500,Beverage
+2016-06-18,Coca Cola,47,4230,Beverage
+2016-06-19,Coca Cola,46,4140,Beverage
+2016-06-20,Coca Cola,35,3150,Beverage
+2016-06-21,Coca Cola,40,3600,Beverage
+2016-06-22,Coca Cola,34,3060,Beverage
+2016-06-23,Coca Cola,46,4140,Beverage
+2016-06-24,Coca Cola,43,3870,Beverage
+2016-06-25,Coca Cola,42,3780,Beverage
+2016-06-26,Coca Cola,57,5130,Beverage
+2016-06-27,Coca Cola,24,2160,Beverage
+2016-06-28,Coca Cola,40,3600,Beverage
+2016-06-29,Coca Cola,38,3420,Beverage
+2016-06-30,Coca Cola,56,5040,Beverage
+2016-07-01,Coca Cola,51,4590,Beverage
+2016-07-02,Coca Cola,35,3150,Beverage
+2016-07-03,Coca Cola,54,4860,Beverage
+2016-07-04,Coca Cola,35,3150,Beverage
+2016-07-05,Coca Cola,53,4770,Beverage
+2016-07-06,Coca Cola,40,3600,Beverage
+2016-07-07,Coca Cola,41,3690,Beverage
+2016-07-08,Coca Cola,31,2790,Beverage
+2016-07-09,Coca Cola,55,4950,Beverage
+2016-07-10,Coca Cola,54,4860,Beverage
+2016-07-11,Coca Cola,41,3690,Beverage
+2016-07-12,Coca Cola,41,3690,Beverage
+2016-07-13,Coca Cola,39,3510,Beverage
+2016-07-14,Coca Cola,57,5130,Beverage
+2016-07-15,Coca Cola,47,4230,Beverage
+2016-07-16,Coca Cola,50,4500,Beverage
+2016-07-17,Coca Cola,60,5400,Beverage
+2016-07-18,Coca Cola,44,3960,Beverage
+2016-07-19,Coca Cola,43,3870,Beverage
+2016-07-20,Coca Cola,46,4140,Beverage
+2016-07-21,Coca Cola,45,4050,Beverage
+2016-07-22,Coca Cola,51,4590,Beverage
+2016-07-23,Coca Cola,49,4410,Beverage
+2016-07-24,Coca Cola,70,6300,Beverage
+2016-07-25,Coca Cola,39,3510,Beverage
+2016-07-26,Coca Cola,35,3150,Beverage
+2016-07-27,Coca Cola,37,3330,Beverage
+2016-07-28,Coca Cola,55,4950,Beverage
+2016-07-29,Coca Cola,45,4050,Beverage
+2016-07-30,Coca Cola,50,4500,Beverage
+2016-07-31,Coca Cola,50,4500,Beverage
+2016-08-01,Coca Cola,17,1530,Beverage
+2016-08-02,Coca Cola,35,3150,Beverage
+2016-08-03,Coca Cola,36,3240,Beverage
+2016-08-04,Coca Cola,35,3150,Beverage
+2016-08-05,Coca Cola,36,3240,Beverage
+2016-08-06,Coca Cola,46,4140,Beverage
+2016-08-07,Coca Cola,38,3420,Beverage
+2016-08-08,Coca Cola,36,3240,Beverage
+2016-08-09,Coca Cola,50,4500,Beverage
+2016-08-10,Coca Cola,26,2340,Beverage
+2016-08-11,Coca Cola,37,3330,Beverage
+2016-08-12,Coca Cola,48,4320,Beverage
+2016-08-13,Coca Cola,52,4680,Beverage
+2016-08-14,Coca Cola,46,4140,Beverage
+2016-08-15,Coca Cola,31,2790,Beverage
+2016-08-16,Coca Cola,35,3150,Beverage
+2016-08-17,Coca Cola,36,3240,Beverage
+2016-08-18,Coca Cola,36,3240,Beverage
+2016-08-19,Coca Cola,41,3690,Beverage
+2016-08-20,Coca Cola,48,4320,Beverage
+2016-08-21,Coca Cola,38,3420,Beverage
+2016-08-22,Coca Cola,30,2700,Beverage
+2016-08-23,Coca Cola,36,3240,Beverage
+2016-08-24,Coca Cola,46,4140,Beverage
+2016-08-25,Coca Cola,43,3870,Beverage
+2016-08-26,Coca Cola,47,4230,Beverage
+2016-08-27,Coca Cola,40,3600,Beverage
+2016-08-28,Coca Cola,43,3870,Beverage
+2016-08-29,Coca Cola,41,3690,Beverage
+2016-08-30,Coca Cola,25,2250,Beverage
+2016-08-31,Coca Cola,43,3870,Beverage
+2016-09-01,Coca Cola,31,2790,Beverage
+2016-09-02,Coca Cola,39,3510,Beverage
+2016-09-03,Coca Cola,48,4320,Beverage
+2016-09-04,Coca Cola,49,4410,Beverage
+2016-09-05,Coca Cola,30,2700,Beverage
+2016-09-06,Coca Cola,35,3150,Beverage
+2016-09-07,Coca Cola,33,2970,Beverage
+2016-09-08,Coca Cola,37,3330,Beverage
+2016-09-09,Coca Cola,49,4410,Beverage
+2016-09-10,Coca Cola,41,3690,Beverage
+2016-09-11,Coca Cola,42,3780,Beverage
+2016-09-12,Coca Cola,34,3060,Beverage
+2016-09-13,Coca Cola,31,2790,Beverage
+2016-09-14,Coca Cola,41,3690,Beverage
+2016-09-15,Coca Cola,39,3510,Beverage
+2016-09-16,Coca Cola,58,5220,Beverage
+2016-09-17,Coca Cola,36,3240,Beverage
+2016-09-18,Coca Cola,45,4050,Beverage
+2016-09-19,Coca Cola,29,2610,Beverage
+2016-09-20,Coca Cola,42,3780,Beverage
+2016-09-21,Coca Cola,34,3060,Beverage
+2016-09-22,Coca Cola,41,3690,Beverage
+2016-09-23,Coca Cola,36,3240,Beverage
+2016-09-24,Coca Cola,44,3960,Beverage
+2016-09-25,Coca Cola,41,3690,Beverage
+2016-09-26,Coca Cola,38,3420,Beverage
+2016-09-27,Coca Cola,31,2790,Beverage
+2016-09-28,Coca Cola,30,2700,Beverage
+2016-09-29,Coca Cola,36,3240,Beverage
+2016-09-30,Coca Cola,43,3870,Beverage
+2016-10-01,Coca Cola,38,3420,Beverage
+2016-10-02,Coca Cola,48,4320,Beverage
+2016-10-03,Coca Cola,30,2700,Beverage
+2016-10-04,Coca Cola,24,2160,Beverage
+2016-10-05,Coca Cola,21,1890,Beverage
+2016-10-06,Coca Cola,42,3780,Beverage
+2016-10-07,Coca Cola,39,3510,Beverage
+2016-10-08,Coca Cola,35,3150,Beverage
+2016-10-09,Coca Cola,40,3600,Beverage
+2016-10-10,Coca Cola,30,2700,Beverage
+2016-10-11,Coca Cola,32,2880,Beverage
+2016-10-12,Coca Cola,39,3510,Beverage
+2016-10-13,Coca Cola,31,2790,Beverage
+2016-10-14,Coca Cola,30,2700,Beverage
+2016-10-15,Coca Cola,42,3780,Beverage
+2016-10-16,Coca Cola,48,4320,Beverage
+2016-10-17,Coca Cola,30,2700,Beverage
+2016-10-18,Coca Cola,27,2430,Beverage
+2016-10-19,Coca Cola,31,2790,Beverage
+2016-10-20,Coca Cola,35,3150,Beverage
+2016-10-21,Coca Cola,28,2520,Beverage
+2016-10-22,Coca Cola,41,3690,Beverage
+2016-10-23,Coca Cola,43,3870,Beverage
+2016-10-24,Coca Cola,26,2340,Beverage
+2016-10-25,Coca Cola,32,2880,Beverage
+2016-10-26,Coca Cola,30,2700,Beverage
+2016-10-27,Coca Cola,29,2610,Beverage
+2016-10-28,Coca Cola,37,3330,Beverage
+2016-10-29,Coca Cola,42,3780,Beverage
+2016-10-30,Coca Cola,44,3960,Beverage
+2016-10-31,Coca Cola,32,2880,Beverage
+2016-11-01,Coca Cola,40,3600,Beverage
+2016-11-02,Coca Cola,29,2610,Beverage
+2016-11-03,Coca Cola,41,3690,Beverage
+2016-11-04,Coca Cola,45,4050,Beverage
+2016-11-05,Coca Cola,35,3150,Beverage
+2016-11-06,Coca Cola,44,3960,Beverage
+2016-11-07,Coca Cola,22,1980,Beverage
+2016-11-08,Coca Cola,31,2790,Beverage
+2016-11-09,Coca Cola,36,3240,Beverage
+2016-11-10,Coca Cola,37,3330,Beverage
+2016-11-11,Coca Cola,39,3510,Beverage
+2016-11-12,Coca Cola,43,3870,Beverage
+2016-11-13,Coca Cola,56,5040,Beverage
+2016-11-14,Coca Cola,26,2340,Beverage
+2016-11-15,Coca Cola,39,3510,Beverage
+2016-11-16,Coca Cola,29,2610,Beverage
+2016-11-17,Coca Cola,36,3240,Beverage
+2016-11-18,Coca Cola,38,3420,Beverage
+2016-11-19,Coca Cola,44,3960,Beverage
+2016-11-20,Coca Cola,53,4770,Beverage
+2016-11-21,Coca Cola,27,2430,Beverage
+2016-11-22,Coca Cola,46,4140,Beverage
+2016-11-23,Coca Cola,40,3600,Beverage
+2016-11-24,Coca Cola,37,3330,Beverage
+2016-11-25,Coca Cola,40,3600,Beverage
+2016-11-26,Coca Cola,50,4500,Beverage
+2016-11-27,Coca Cola,38,3420,Beverage
+2016-11-28,Coca Cola,21,1890,Beverage
+2016-11-29,Coca Cola,44,3960,Beverage
+2016-11-30,Coca Cola,28,2520,Beverage
+2016-12-01,Coca Cola,20,1800,Beverage
+2016-12-02,Coca Cola,28,2520,Beverage
+2016-12-03,Coca Cola,25,2250,Beverage
+2016-12-04,Coca Cola,36,3240,Beverage
+2016-12-05,Coca Cola,19,1710,Beverage
+2016-12-06,Coca Cola,28,2520,Beverage
+2016-12-07,Coca Cola,28,2520,Beverage
+2016-12-08,Coca Cola,23,2070,Beverage
+2016-12-09,Coca Cola,38,3420,Beverage
+2016-12-10,Coca Cola,37,3330,Beverage
+2016-12-11,Coca Cola,33,2970,Beverage
+2016-12-12,Coca Cola,18,1620,Beverage
+2016-12-13,Coca Cola,31,2790,Beverage
+2016-12-14,Coca Cola,21,1890,Beverage
+2016-12-15,Coca Cola,22,1980,Beverage
+2016-12-16,Coca Cola,25,2250,Beverage
+2016-12-17,Coca Cola,23,2070,Beverage
+2016-12-18,Coca Cola,25,2250,Beverage
+2016-12-19,Coca Cola,21,1890,Beverage
+2016-12-20,Coca Cola,24,2160,Beverage
+2016-12-21,Coca Cola,26,2340,Beverage
+2016-12-22,Coca Cola,24,2160,Beverage
+2016-12-23,Coca Cola,26,2340,Beverage
+2016-12-24,Coca Cola,37,3330,Beverage
+2016-12-25,Coca Cola,38,3420,Beverage
+2016-12-26,Coca Cola,23,2070,Beverage
+2016-12-27,Coca Cola,29,2610,Beverage
+2016-12-28,Coca Cola,22,1980,Beverage
+2016-12-29,Coca Cola,26,2340,Beverage
+2016-12-30,Coca Cola,26,2340,Beverage
+2016-12-31,Coca Cola,29,2610,Beverage
+2017-01-01,Coca Cola,36,3240,Beverage
+2017-01-02,Coca Cola,23,2070,Beverage
+2017-01-03,Coca Cola,20,1800,Beverage
+2017-01-04,Coca Cola,23,2070,Beverage
+2017-01-05,Coca Cola,25,2250,Beverage
+2017-01-06,Coca Cola,23,2070,Beverage
+2017-01-07,Coca Cola,26,2340,Beverage
+2017-01-08,Coca Cola,32,2880,Beverage
+2017-01-09,Coca Cola,23,2070,Beverage
+2017-01-10,Coca Cola,17,1530,Beverage
+2017-01-11,Coca Cola,15,1350,Beverage
+2017-01-12,Coca Cola,37,3330,Beverage
+2017-01-13,Coca Cola,31,2790,Beverage
+2017-01-14,Coca Cola,30,2700,Beverage
+2017-01-15,Coca Cola,22,1980,Beverage
+2017-01-16,Coca Cola,19,1710,Beverage
+2017-01-17,Coca Cola,20,1800,Beverage
+2017-01-18,Coca Cola,34,3060,Beverage
+2017-01-19,Coca Cola,22,1980,Beverage
+2017-01-20,Coca Cola,26,2340,Beverage
+2017-01-21,Coca Cola,33,2970,Beverage
+2017-01-22,Coca Cola,33,2970,Beverage
+2017-01-23,Coca Cola,17,1530,Beverage
+2017-01-24,Coca Cola,19,1710,Beverage
+2017-01-25,Coca Cola,25,2250,Beverage
+2017-01-26,Coca Cola,17,1530,Beverage
+2017-01-27,Coca Cola,28,2520,Beverage
+2017-01-28,Coca Cola,30,2700,Beverage
+2017-01-29,Coca Cola,27,2430,Beverage
+2017-01-30,Coca Cola,27,2430,Beverage
+2017-01-31,Coca Cola,28,2520,Beverage
+2017-02-01,Coca Cola,25,2250,Beverage
+2017-02-02,Coca Cola,20,1800,Beverage
+2017-02-03,Coca Cola,31,2790,Beverage
+2017-02-04,Coca Cola,19,1710,Beverage
+2017-02-05,Coca Cola,38,3420,Beverage
+2017-02-06,Coca Cola,23,2070,Beverage
+2017-02-07,Coca Cola,27,2430,Beverage
+2017-02-08,Coca Cola,20,1800,Beverage
+2017-02-09,Coca Cola,30,2700,Beverage
+2017-02-10,Coca Cola,37,3330,Beverage
+2017-02-11,Coca Cola,23,2070,Beverage
+2017-02-12,Coca Cola,31,2790,Beverage
+2017-02-13,Coca Cola,28,2520,Beverage
+2017-02-14,Coca Cola,19,1710,Beverage
+2017-02-15,Coca Cola,22,1980,Beverage
+2017-02-16,Coca Cola,33,2970,Beverage
+2017-02-17,Coca Cola,29,2610,Beverage
+2017-02-18,Coca Cola,39,3510,Beverage
+2017-02-19,Coca Cola,34,3060,Beverage
+2017-02-20,Coca Cola,24,2160,Beverage
+2017-02-21,Coca Cola,29,2610,Beverage
+2017-02-22,Coca Cola,25,2250,Beverage
+2017-02-23,Coca Cola,19,1710,Beverage
+2017-02-24,Coca Cola,35,3150,Beverage
+2017-02-25,Coca Cola,29,2610,Beverage
+2017-02-26,Coca Cola,32,2880,Beverage
+2017-02-27,Coca Cola,25,2250,Beverage
+2017-02-28,Coca Cola,31,2790,Beverage
+2017-03-01,Coca Cola,40,3600,Beverage
+2017-03-02,Coca Cola,34,3060,Beverage
+2017-03-03,Coca Cola,32,2880,Beverage
+2017-03-04,Coca Cola,32,2880,Beverage
+2017-03-05,Coca Cola,41,3690,Beverage
+2017-03-06,Coca Cola,19,1710,Beverage
+2017-03-07,Coca Cola,30,2700,Beverage
+2017-03-08,Coca Cola,35,3150,Beverage
+2017-03-09,Coca Cola,27,2430,Beverage
+2017-03-10,Coca Cola,36,3240,Beverage
+2017-03-11,Coca Cola,35,3150,Beverage
+2017-03-12,Coca Cola,34,3060,Beverage
+2017-03-13,Coca Cola,28,2520,Beverage
+2017-03-14,Coca Cola,34,3060,Beverage
+2017-03-15,Coca Cola,37,3330,Beverage
+2017-03-16,Coca Cola,33,2970,Beverage
+2017-03-17,Coca Cola,28,2520,Beverage
+2017-03-18,Coca Cola,36,3240,Beverage
+2017-03-19,Coca Cola,48,4320,Beverage
+2017-03-20,Coca Cola,22,1980,Beverage
+2017-03-21,Coca Cola,32,2880,Beverage
+2017-03-22,Coca Cola,20,1800,Beverage
+2017-03-23,Coca Cola,33,2970,Beverage
+2017-03-24,Coca Cola,39,3510,Beverage
+2017-03-25,Coca Cola,41,3690,Beverage
+2017-03-26,Coca Cola,44,3960,Beverage
+2017-03-27,Coca Cola,32,2880,Beverage
+2017-03-28,Coca Cola,29,2610,Beverage
+2017-03-29,Coca Cola,28,2520,Beverage
+2017-03-30,Coca Cola,28,2520,Beverage
+2017-03-31,Coca Cola,36,3240,Beverage
+2017-04-01,Coca Cola,40,3600,Beverage
+2017-04-02,Coca Cola,43,3870,Beverage
+2017-04-03,Coca Cola,33,2970,Beverage
+2017-04-04,Coca Cola,32,2880,Beverage
+2017-04-05,Coca Cola,42,3780,Beverage
+2017-04-06,Coca Cola,40,3600,Beverage
+2017-04-07,Coca Cola,45,4050,Beverage
+2017-04-08,Coca Cola,32,2880,Beverage
+2017-04-09,Coca Cola,42,3780,Beverage
+2017-04-10,Coca Cola,31,2790,Beverage
+2017-04-11,Coca Cola,34,3060,Beverage
+2017-04-12,Coca Cola,43,3870,Beverage
+2017-04-13,Coca Cola,39,3510,Beverage
+2017-04-14,Coca Cola,43,3870,Beverage
+2017-04-15,Coca Cola,49,4410,Beverage
+2017-04-16,Coca Cola,49,4410,Beverage
+2017-04-17,Coca Cola,40,3600,Beverage
+2017-04-18,Coca Cola,27,2430,Beverage
+2017-04-19,Coca Cola,38,3420,Beverage
+2017-04-20,Coca Cola,41,3690,Beverage
+2017-04-21,Coca Cola,37,3330,Beverage
+2017-04-22,Coca Cola,44,3960,Beverage
+2017-04-23,Coca Cola,43,3870,Beverage
+2017-04-24,Coca Cola,39,3510,Beverage
+2017-04-25,Coca Cola,52,4680,Beverage
+2017-04-26,Coca Cola,39,3510,Beverage
+2017-04-27,Coca Cola,41,3690,Beverage
+2017-04-28,Coca Cola,39,3510,Beverage
+2017-04-29,Coca Cola,44,3960,Beverage
+2017-04-30,Coca Cola,46,4140,Beverage
+2017-05-01,Coca Cola,25,2250,Beverage
+2017-05-02,Coca Cola,45,4050,Beverage
+2017-05-03,Coca Cola,49,4410,Beverage
+2017-05-04,Coca Cola,43,3870,Beverage
+2017-05-05,Coca Cola,51,4590,Beverage
+2017-05-06,Coca Cola,44,3960,Beverage
+2017-05-07,Coca Cola,66,5940,Beverage
+2017-05-08,Coca Cola,36,3240,Beverage
+2017-05-09,Coca Cola,31,2790,Beverage
+2017-05-10,Coca Cola,44,3960,Beverage
+2017-05-11,Coca Cola,34,3060,Beverage
+2017-05-12,Coca Cola,39,3510,Beverage
+2017-05-13,Coca Cola,59,5310,Beverage
+2017-05-14,Coca Cola,47,4230,Beverage
+2017-05-15,Coca Cola,33,2970,Beverage
+2017-05-16,Coca Cola,38,3420,Beverage
+2017-05-17,Coca Cola,41,3690,Beverage
+2017-05-18,Coca Cola,38,3420,Beverage
+2017-05-19,Coca Cola,48,4320,Beverage
+2017-05-20,Coca Cola,54,4860,Beverage
+2017-05-21,Coca Cola,49,4410,Beverage
+2017-05-22,Coca Cola,33,2970,Beverage
+2017-05-23,Coca Cola,41,3690,Beverage
+2017-05-24,Coca Cola,40,3600,Beverage
+2017-05-25,Coca Cola,37,3330,Beverage
+2017-05-26,Coca Cola,65,5850,Beverage
+2017-05-27,Coca Cola,59,5310,Beverage
+2017-05-28,Coca Cola,62,5580,Beverage
+2017-05-29,Coca Cola,37,3330,Beverage
+2017-05-30,Coca Cola,44,3960,Beverage
+2017-05-31,Coca Cola,55,4950,Beverage
+2017-06-01,Coca Cola,57,5130,Beverage
+2017-06-02,Coca Cola,54,4860,Beverage
+2017-06-03,Coca Cola,37,3330,Beverage
+2017-06-04,Coca Cola,54,4860,Beverage
+2017-06-05,Coca Cola,48,4320,Beverage
+2017-06-06,Coca Cola,41,3690,Beverage
+2017-06-07,Coca Cola,42,3780,Beverage
+2017-06-08,Coca Cola,53,4770,Beverage
+2017-06-09,Coca Cola,49,4410,Beverage
+2017-06-10,Coca Cola,44,3960,Beverage
+2017-06-11,Coca Cola,46,4140,Beverage
+2017-06-12,Coca Cola,44,3960,Beverage
+2017-06-13,Coca Cola,34,3060,Beverage
+2017-06-14,Coca Cola,48,4320,Beverage
+2017-06-15,Coca Cola,49,4410,Beverage
+2017-06-16,Coca Cola,50,4500,Beverage
+2017-06-17,Coca Cola,67,6030,Beverage
+2017-06-18,Coca Cola,57,5130,Beverage
+2017-06-19,Coca Cola,30,2700,Beverage
+2017-06-20,Coca Cola,44,3960,Beverage
+2017-06-21,Coca Cola,47,4230,Beverage
+2017-06-22,Coca Cola,31,2790,Beverage
+2017-06-23,Coca Cola,45,4050,Beverage
+2017-06-24,Coca Cola,51,4590,Beverage
+2017-06-25,Coca Cola,52,4680,Beverage
+2017-06-26,Coca Cola,23,2070,Beverage
+2017-06-27,Coca Cola,39,3510,Beverage
+2017-06-28,Coca Cola,40,3600,Beverage
+2017-06-29,Coca Cola,35,3150,Beverage
+2017-06-30,Coca Cola,45,4050,Beverage
+2017-07-01,Coca Cola,41,3690,Beverage
+2017-07-02,Coca Cola,58,5220,Beverage
+2017-07-03,Coca Cola,36,3240,Beverage
+2017-07-04,Coca Cola,47,4230,Beverage
+2017-07-05,Coca Cola,41,3690,Beverage
+2017-07-06,Coca Cola,43,3870,Beverage
+2017-07-07,Coca Cola,49,4410,Beverage
+2017-07-08,Coca Cola,57,5130,Beverage
+2017-07-09,Coca Cola,59,5310,Beverage
+2017-07-10,Coca Cola,43,3870,Beverage
+2017-07-11,Coca Cola,33,2970,Beverage
+2017-07-12,Coca Cola,48,4320,Beverage
+2017-07-13,Coca Cola,54,4860,Beverage
+2017-07-14,Coca Cola,65,5850,Beverage
+2017-07-15,Coca Cola,47,4230,Beverage
+2017-07-16,Coca Cola,69,6210,Beverage
+2017-07-17,Coca Cola,46,4140,Beverage
+2017-07-18,Coca Cola,43,3870,Beverage
+2017-07-19,Coca Cola,40,3600,Beverage
+2017-07-20,Coca Cola,41,3690,Beverage
+2017-07-21,Coca Cola,59,5310,Beverage
+2017-07-22,Coca Cola,43,3870,Beverage
+2017-07-23,Coca Cola,68,6120,Beverage
+2017-07-24,Coca Cola,46,4140,Beverage
+2017-07-25,Coca Cola,39,3510,Beverage
+2017-07-26,Coca Cola,37,3330,Beverage
+2017-07-27,Coca Cola,41,3690,Beverage
+2017-07-28,Coca Cola,60,5400,Beverage
+2017-07-29,Coca Cola,55,4950,Beverage
+2017-07-30,Coca Cola,56,5040,Beverage
+2017-07-31,Coca Cola,37,3330,Beverage
+2017-08-01,Coca Cola,43,3870,Beverage
+2017-08-02,Coca Cola,31,2790,Beverage
+2017-08-03,Coca Cola,37,3330,Beverage
+2017-08-04,Coca Cola,29,2610,Beverage
+2017-08-05,Coca Cola,68,6120,Beverage
+2017-08-06,Coca Cola,46,4140,Beverage
+2017-08-07,Coca Cola,36,3240,Beverage
+2017-08-08,Coca Cola,35,3150,Beverage
+2017-08-09,Coca Cola,26,2340,Beverage
+2017-08-10,Coca Cola,42,3780,Beverage
+2017-08-11,Coca Cola,41,3690,Beverage
+2017-08-12,Coca Cola,42,3780,Beverage
+2017-08-13,Coca Cola,61,5490,Beverage
+2017-08-14,Coca Cola,33,2970,Beverage
+2017-08-15,Coca Cola,38,3420,Beverage
+2017-08-16,Coca Cola,32,2880,Beverage
+2017-08-17,Coca Cola,29,2610,Beverage
+2017-08-18,Coca Cola,39,3510,Beverage
+2017-08-19,Coca Cola,47,4230,Beverage
+2017-08-20,Coca Cola,59,5310,Beverage
+2017-08-21,Coca Cola,50,4500,Beverage
+2017-08-22,Coca Cola,45,4050,Beverage
+2017-08-23,Coca Cola,48,4320,Beverage
+2017-08-24,Coca Cola,45,4050,Beverage
+2017-08-25,Coca Cola,46,4140,Beverage
+2017-08-26,Coca Cola,51,4590,Beverage
+2017-08-27,Coca Cola,52,4680,Beverage
+2017-08-28,Coca Cola,21,1890,Beverage
+2017-08-29,Coca Cola,40,3600,Beverage
+2017-08-30,Coca Cola,29,2610,Beverage
+2017-08-31,Coca Cola,37,3330,Beverage
+2017-09-01,Coca Cola,41,3690,Beverage
+2017-09-02,Coca Cola,47,4230,Beverage
+2017-09-03,Coca Cola,41,3690,Beverage
+2017-09-04,Coca Cola,40,3600,Beverage
+2017-09-05,Coca Cola,43,3870,Beverage
+2017-09-06,Coca Cola,51,4590,Beverage
+2017-09-07,Coca Cola,44,3960,Beverage
+2017-09-08,Coca Cola,46,4140,Beverage
+2017-09-09,Coca Cola,36,3240,Beverage
+2017-09-10,Coca Cola,36,3240,Beverage
+2017-09-11,Coca Cola,29,2610,Beverage
+2017-09-12,Coca Cola,30,2700,Beverage
+2017-09-13,Coca Cola,34,3060,Beverage
+2017-09-14,Coca Cola,41,3690,Beverage
+2017-09-15,Coca Cola,45,4050,Beverage
+2017-09-16,Coca Cola,41,3690,Beverage
+2017-09-17,Coca Cola,49,4410,Beverage
+2017-09-18,Coca Cola,42,3780,Beverage
+2017-09-19,Coca Cola,32,2880,Beverage
+2017-09-20,Coca Cola,28,2520,Beverage
+2017-09-21,Coca Cola,34,3060,Beverage
+2017-09-22,Coca Cola,46,4140,Beverage
+2017-09-23,Coca Cola,52,4680,Beverage
+2017-09-24,Coca Cola,47,4230,Beverage
+2017-09-25,Coca Cola,26,2340,Beverage
+2017-09-26,Coca Cola,38,3420,Beverage
+2017-09-27,Coca Cola,41,3690,Beverage
+2017-09-28,Coca Cola,37,3330,Beverage
+2017-09-29,Coca Cola,35,3150,Beverage
+2017-09-30,Coca Cola,48,4320,Beverage
+2017-10-01,Coca Cola,38,3420,Beverage
+2017-10-02,Coca Cola,32,2880,Beverage
+2017-10-03,Coca Cola,28,2520,Beverage
+2017-10-04,Coca Cola,34,3060,Beverage
+2017-10-05,Coca Cola,40,3600,Beverage
+2017-10-06,Coca Cola,34,3060,Beverage
+2017-10-07,Coca Cola,34,3060,Beverage
+2017-10-08,Coca Cola,47,4230,Beverage
+2017-10-09,Coca Cola,18,1620,Beverage
+2017-10-10,Coca Cola,35,3150,Beverage
+2017-10-11,Coca Cola,39,3510,Beverage
+2017-10-12,Coca Cola,29,2610,Beverage
+2017-10-13,Coca Cola,33,2970,Beverage
+2017-10-14,Coca Cola,42,3780,Beverage
+2017-10-15,Coca Cola,49,4410,Beverage
+2017-10-16,Coca Cola,31,2790,Beverage
+2017-10-17,Coca Cola,37,3330,Beverage
+2017-10-18,Coca Cola,40,3600,Beverage
+2017-10-19,Coca Cola,38,3420,Beverage
+2017-10-20,Coca Cola,41,3690,Beverage
+2017-10-21,Coca Cola,45,4050,Beverage
+2017-10-22,Coca Cola,31,2790,Beverage
+2017-10-23,Coca Cola,30,2700,Beverage
+2017-10-24,Coca Cola,43,3870,Beverage
+2017-10-25,Coca Cola,32,2880,Beverage
+2017-10-26,Coca Cola,35,3150,Beverage
+2017-10-27,Coca Cola,38,3420,Beverage
+2017-10-28,Coca Cola,43,3870,Beverage
+2017-10-29,Coca Cola,31,2790,Beverage
+2017-10-30,Coca Cola,27,2430,Beverage
+2017-10-31,Coca Cola,26,2340,Beverage
+2017-11-01,Coca Cola,50,4500,Beverage
+2017-11-02,Coca Cola,41,3690,Beverage
+2017-11-03,Coca Cola,43,3870,Beverage
+2017-11-04,Coca Cola,41,3690,Beverage
+2017-11-05,Coca Cola,51,4590,Beverage
+2017-11-06,Coca Cola,43,3870,Beverage
+2017-11-07,Coca Cola,37,3330,Beverage
+2017-11-08,Coca Cola,31,2790,Beverage
+2017-11-09,Coca Cola,37,3330,Beverage
+2017-11-10,Coca Cola,23,2070,Beverage
+2017-11-11,Coca Cola,39,3510,Beverage
+2017-11-12,Coca Cola,53,4770,Beverage
+2017-11-13,Coca Cola,35,3150,Beverage
+2017-11-14,Coca Cola,29,2610,Beverage
+2017-11-15,Coca Cola,37,3330,Beverage
+2017-11-16,Coca Cola,38,3420,Beverage
+2017-11-17,Coca Cola,35,3150,Beverage
+2017-11-18,Coca Cola,43,3870,Beverage
+2017-11-19,Coca Cola,43,3870,Beverage
+2017-11-20,Coca Cola,36,3240,Beverage
+2017-11-21,Coca Cola,40,3600,Beverage
+2017-11-22,Coca Cola,38,3420,Beverage
+2017-11-23,Coca Cola,40,3600,Beverage
+2017-11-24,Coca Cola,37,3330,Beverage
+2017-11-25,Coca Cola,41,3690,Beverage
+2017-11-26,Coca Cola,43,3870,Beverage
+2017-11-27,Coca Cola,23,2070,Beverage
+2017-11-28,Coca Cola,36,3240,Beverage
+2017-11-29,Coca Cola,42,3780,Beverage
+2017-11-30,Coca Cola,31,2790,Beverage
+2017-12-01,Coca Cola,30,2700,Beverage
+2017-12-02,Coca Cola,31,2790,Beverage
+2017-12-03,Coca Cola,34,3060,Beverage
+2017-12-04,Coca Cola,21,1890,Beverage
+2017-12-05,Coca Cola,15,1350,Beverage
+2017-12-06,Coca Cola,32,2880,Beverage
+2017-12-07,Coca Cola,34,3060,Beverage
+2017-12-08,Coca Cola,27,2430,Beverage
+2017-12-09,Coca Cola,36,3240,Beverage
+2017-12-10,Coca Cola,44,3960,Beverage
+2017-12-11,Coca Cola,21,1890,Beverage
+2017-12-12,Coca Cola,28,2520,Beverage
+2017-12-13,Coca Cola,30,2700,Beverage
+2017-12-14,Coca Cola,27,2430,Beverage
+2017-12-15,Coca Cola,30,2700,Beverage
+2017-12-16,Coca Cola,32,2880,Beverage
+2017-12-17,Coca Cola,39,3510,Beverage
+2017-12-18,Coca Cola,21,1890,Beverage
+2017-12-19,Coca Cola,20,1800,Beverage
+2017-12-20,Coca Cola,21,1890,Beverage
+2017-12-21,Coca Cola,23,2070,Beverage
+2017-12-22,Coca Cola,22,1980,Beverage
+2017-12-23,Coca Cola,37,3330,Beverage
+2017-12-24,Coca Cola,33,2970,Beverage
+2017-12-25,Coca Cola,26,2340,Beverage
+2017-12-26,Coca Cola,18,1620,Beverage
+2017-12-27,Coca Cola,26,2340,Beverage
+2017-12-28,Coca Cola,21,1890,Beverage
+2017-12-29,Coca Cola,38,3420,Beverage
+2017-12-30,Coca Cola,27,2430,Beverage
+2017-12-31,Coca Cola,29,2610,Beverage
+2016-01-01,Biscuits,15,450,Snacks
+2016-01-02,Biscuits,15,450,Snacks
+2016-01-03,Biscuits,21,630,Snacks
+2016-01-04,Biscuits,12,360,Snacks
+2016-01-05,Biscuits,12,360,Snacks
+2016-01-06,Biscuits,12,360,Snacks
+2016-01-07,Biscuits,16,480,Snacks
+2016-01-08,Biscuits,10,300,Snacks
+2016-01-09,Biscuits,23,690,Snacks
+2016-01-10,Biscuits,13,390,Snacks
+2016-01-11,Biscuits,11,330,Snacks
+2016-01-12,Biscuits,10,300,Snacks
+2016-01-13,Biscuits,12,360,Snacks
+2016-01-14,Biscuits,14,420,Snacks
+2016-01-15,Biscuits,12,360,Snacks
+2016-01-16,Biscuits,12,360,Snacks
+2016-01-17,Biscuits,19,570,Snacks
+2016-01-18,Biscuits,7,210,Snacks
+2016-01-19,Biscuits,17,510,Snacks
+2016-01-20,Biscuits,14,420,Snacks
+2016-01-21,Biscuits,13,390,Snacks
+2016-01-22,Biscuits,17,510,Snacks
+2016-01-23,Biscuits,10,300,Snacks
+2016-01-24,Biscuits,25,750,Snacks
+2016-01-25,Biscuits,11,330,Snacks
+2016-01-26,Biscuits,12,360,Snacks
+2016-01-27,Biscuits,12,360,Snacks
+2016-01-28,Biscuits,15,450,Snacks
+2016-01-29,Biscuits,19,570,Snacks
+2016-01-30,Biscuits,19,570,Snacks
+2016-01-31,Biscuits,17,510,Snacks
+2016-02-01,Biscuits,10,300,Snacks
+2016-02-02,Biscuits,14,420,Snacks
+2016-02-03,Biscuits,20,600,Snacks
+2016-02-04,Biscuits,20,600,Snacks
+2016-02-05,Biscuits,10,300,Snacks
+2016-02-06,Biscuits,21,630,Snacks
+2016-02-07,Biscuits,17,510,Snacks
+2016-02-08,Biscuits,15,450,Snacks
+2016-02-09,Biscuits,12,360,Snacks
+2016-02-10,Biscuits,25,750,Snacks
+2016-02-11,Biscuits,24,720,Snacks
+2016-02-12,Biscuits,13,390,Snacks
+2016-02-13,Biscuits,17,510,Snacks
+2016-02-14,Biscuits,21,630,Snacks
+2016-02-15,Biscuits,11,330,Snacks
+2016-02-16,Biscuits,8,240,Snacks
+2016-02-17,Biscuits,11,330,Snacks
+2016-02-18,Biscuits,15,450,Snacks
+2016-02-19,Biscuits,24,720,Snacks
+2016-02-20,Biscuits,26,780,Snacks
+2016-02-21,Biscuits,28,840,Snacks
+2016-02-22,Biscuits,13,390,Snacks
+2016-02-23,Biscuits,20,600,Snacks
+2016-02-24,Biscuits,14,420,Snacks
+2016-02-25,Biscuits,15,450,Snacks
+2016-02-26,Biscuits,26,780,Snacks
+2016-02-27,Biscuits,16,480,Snacks
+2016-02-28,Biscuits,14,420,Snacks
+2016-02-29,Biscuits,11,330,Snacks
+2016-03-01,Biscuits,16,480,Snacks
+2016-03-02,Biscuits,21,630,Snacks
+2016-03-03,Biscuits,15,450,Snacks
+2016-03-04,Biscuits,20,600,Snacks
+2016-03-05,Biscuits,20,600,Snacks
+2016-03-06,Biscuits,23,690,Snacks
+2016-03-07,Biscuits,16,480,Snacks
+2016-03-08,Biscuits,18,540,Snacks
+2016-03-09,Biscuits,17,510,Snacks
+2016-03-10,Biscuits,24,720,Snacks
+2016-03-11,Biscuits,20,600,Snacks
+2016-03-12,Biscuits,25,750,Snacks
+2016-03-13,Biscuits,18,540,Snacks
+2016-03-14,Biscuits,10,300,Snacks
+2016-03-15,Biscuits,18,540,Snacks
+2016-03-16,Biscuits,22,660,Snacks
+2016-03-17,Biscuits,24,720,Snacks
+2016-03-18,Biscuits,23,690,Snacks
+2016-03-19,Biscuits,27,810,Snacks
+2016-03-20,Biscuits,18,540,Snacks
+2016-03-21,Biscuits,13,390,Snacks
+2016-03-22,Biscuits,17,510,Snacks
+2016-03-23,Biscuits,20,600,Snacks
+2016-03-24,Biscuits,22,660,Snacks
+2016-03-25,Biscuits,28,840,Snacks
+2016-03-26,Biscuits,12,360,Snacks
+2016-03-27,Biscuits,20,600,Snacks
+2016-03-28,Biscuits,17,510,Snacks
+2016-03-29,Biscuits,16,480,Snacks
+2016-03-30,Biscuits,14,420,Snacks
+2016-03-31,Biscuits,20,600,Snacks
+2016-04-01,Biscuits,26,780,Snacks
+2016-04-02,Biscuits,26,780,Snacks
+2016-04-03,Biscuits,22,660,Snacks
+2016-04-04,Biscuits,18,540,Snacks
+2016-04-05,Biscuits,25,750,Snacks
+2016-04-06,Biscuits,17,510,Snacks
+2016-04-07,Biscuits,25,750,Snacks
+2016-04-08,Biscuits,28,840,Snacks
+2016-04-09,Biscuits,30,900,Snacks
+2016-04-10,Biscuits,21,630,Snacks
+2016-04-11,Biscuits,29,870,Snacks
+2016-04-12,Biscuits,20,600,Snacks
+2016-04-13,Biscuits,20,600,Snacks
+2016-04-14,Biscuits,21,630,Snacks
+2016-04-15,Biscuits,22,660,Snacks
+2016-04-16,Biscuits,27,810,Snacks
+2016-04-17,Biscuits,26,780,Snacks
+2016-04-18,Biscuits,19,570,Snacks
+2016-04-19,Biscuits,22,660,Snacks
+2016-04-20,Biscuits,29,870,Snacks
+2016-04-21,Biscuits,21,630,Snacks
+2016-04-22,Biscuits,23,690,Snacks
+2016-04-23,Biscuits,26,780,Snacks
+2016-04-24,Biscuits,26,780,Snacks
+2016-04-25,Biscuits,18,540,Snacks
+2016-04-26,Biscuits,22,660,Snacks
+2016-04-27,Biscuits,27,810,Snacks
+2016-04-28,Biscuits,20,600,Snacks
+2016-04-29,Biscuits,24,720,Snacks
+2016-04-30,Biscuits,26,780,Snacks
+2016-05-01,Biscuits,22,660,Snacks
+2016-05-02,Biscuits,25,750,Snacks
+2016-05-03,Biscuits,25,750,Snacks
+2016-05-04,Biscuits,20,600,Snacks
+2016-05-05,Biscuits,31,930,Snacks
+2016-05-06,Biscuits,32,960,Snacks
+2016-05-07,Biscuits,24,720,Snacks
+2016-05-08,Biscuits,23,690,Snacks
+2016-05-09,Biscuits,27,810,Snacks
+2016-05-10,Biscuits,29,870,Snacks
+2016-05-11,Biscuits,27,810,Snacks
+2016-05-12,Biscuits,23,690,Snacks
+2016-05-13,Biscuits,25,750,Snacks
+2016-05-14,Biscuits,40,1200,Snacks
+2016-05-15,Biscuits,27,810,Snacks
+2016-05-16,Biscuits,24,720,Snacks
+2016-05-17,Biscuits,17,510,Snacks
+2016-05-18,Biscuits,25,750,Snacks
+2016-05-19,Biscuits,19,570,Snacks
+2016-05-20,Biscuits,23,690,Snacks
+2016-05-21,Biscuits,21,630,Snacks
+2016-05-22,Biscuits,29,870,Snacks
+2016-05-23,Biscuits,19,570,Snacks
+2016-05-24,Biscuits,25,750,Snacks
+2016-05-25,Biscuits,28,840,Snacks
+2016-05-26,Biscuits,21,630,Snacks
+2016-05-27,Biscuits,22,660,Snacks
+2016-05-28,Biscuits,22,660,Snacks
+2016-05-29,Biscuits,35,1050,Snacks
+2016-05-30,Biscuits,22,660,Snacks
+2016-05-31,Biscuits,27,810,Snacks
+2016-06-01,Biscuits,27,810,Snacks
+2016-06-02,Biscuits,29,870,Snacks
+2016-06-03,Biscuits,25,750,Snacks
+2016-06-04,Biscuits,24,720,Snacks
+2016-06-05,Biscuits,34,1020,Snacks
+2016-06-06,Biscuits,27,810,Snacks
+2016-06-07,Biscuits,25,750,Snacks
+2016-06-08,Biscuits,30,900,Snacks
+2016-06-09,Biscuits,27,810,Snacks
+2016-06-10,Biscuits,28,840,Snacks
+2016-06-11,Biscuits,27,810,Snacks
+2016-06-12,Biscuits,32,960,Snacks
+2016-06-13,Biscuits,16,480,Snacks
+2016-06-14,Biscuits,21,630,Snacks
+2016-06-15,Biscuits,29,870,Snacks
+2016-06-16,Biscuits,23,690,Snacks
+2016-06-17,Biscuits,29,870,Snacks
+2016-06-18,Biscuits,30,900,Snacks
+2016-06-19,Biscuits,30,900,Snacks
+2016-06-20,Biscuits,21,630,Snacks
+2016-06-21,Biscuits,25,750,Snacks
+2016-06-22,Biscuits,20,600,Snacks
+2016-06-23,Biscuits,34,1020,Snacks
+2016-06-24,Biscuits,24,720,Snacks
+2016-06-25,Biscuits,39,1170,Snacks
+2016-06-26,Biscuits,38,1140,Snacks
+2016-06-27,Biscuits,28,840,Snacks
+2016-06-28,Biscuits,14,420,Snacks
+2016-06-29,Biscuits,29,870,Snacks
+2016-06-30,Biscuits,25,750,Snacks
+2016-07-01,Biscuits,29,870,Snacks
+2016-07-02,Biscuits,28,840,Snacks
+2016-07-03,Biscuits,19,570,Snacks
+2016-07-04,Biscuits,26,780,Snacks
+2016-07-05,Biscuits,27,810,Snacks
+2016-07-06,Biscuits,23,690,Snacks
+2016-07-07,Biscuits,32,960,Snacks
+2016-07-08,Biscuits,32,960,Snacks
+2016-07-09,Biscuits,30,900,Snacks
+2016-07-10,Biscuits,31,930,Snacks
+2016-07-11,Biscuits,19,570,Snacks
+2016-07-12,Biscuits,25,750,Snacks
+2016-07-13,Biscuits,19,570,Snacks
+2016-07-14,Biscuits,19,570,Snacks
+2016-07-15,Biscuits,35,1050,Snacks
+2016-07-16,Biscuits,26,780,Snacks
+2016-07-17,Biscuits,41,1230,Snacks
+2016-07-18,Biscuits,27,810,Snacks
+2016-07-19,Biscuits,21,630,Snacks
+2016-07-20,Biscuits,29,870,Snacks
+2016-07-21,Biscuits,27,810,Snacks
+2016-07-22,Biscuits,34,1020,Snacks
+2016-07-23,Biscuits,31,930,Snacks
+2016-07-24,Biscuits,40,1200,Snacks
+2016-07-25,Biscuits,15,450,Snacks
+2016-07-26,Biscuits,24,720,Snacks
+2016-07-27,Biscuits,33,990,Snacks
+2016-07-28,Biscuits,35,1050,Snacks
+2016-07-29,Biscuits,23,690,Snacks
+2016-07-30,Biscuits,25,750,Snacks
+2016-07-31,Biscuits,31,930,Snacks
+2016-08-01,Biscuits,28,840,Snacks
+2016-08-02,Biscuits,29,870,Snacks
+2016-08-03,Biscuits,17,510,Snacks
+2016-08-04,Biscuits,19,570,Snacks
+2016-08-05,Biscuits,31,930,Snacks
+2016-08-06,Biscuits,31,930,Snacks
+2016-08-07,Biscuits,35,1050,Snacks
+2016-08-08,Biscuits,15,450,Snacks
+2016-08-09,Biscuits,11,330,Snacks
+2016-08-10,Biscuits,15,450,Snacks
+2016-08-11,Biscuits,28,840,Snacks
+2016-08-12,Biscuits,22,660,Snacks
+2016-08-13,Biscuits,21,630,Snacks
+2016-08-14,Biscuits,29,870,Snacks
+2016-08-15,Biscuits,17,510,Snacks
+2016-08-16,Biscuits,21,630,Snacks
+2016-08-17,Biscuits,16,480,Snacks
+2016-08-18,Biscuits,30,900,Snacks
+2016-08-19,Biscuits,27,810,Snacks
+2016-08-20,Biscuits,27,810,Snacks
+2016-08-21,Biscuits,33,990,Snacks
+2016-08-22,Biscuits,17,510,Snacks
+2016-08-23,Biscuits,18,540,Snacks
+2016-08-24,Biscuits,31,930,Snacks
+2016-08-25,Biscuits,21,630,Snacks
+2016-08-26,Biscuits,28,840,Snacks
+2016-08-27,Biscuits,32,960,Snacks
+2016-08-28,Biscuits,25,750,Snacks
+2016-08-29,Biscuits,23,690,Snacks
+2016-08-30,Biscuits,21,630,Snacks
+2016-08-31,Biscuits,21,630,Snacks
+2016-09-01,Biscuits,13,390,Snacks
+2016-09-02,Biscuits,22,660,Snacks
+2016-09-03,Biscuits,35,1050,Snacks
+2016-09-04,Biscuits,23,690,Snacks
+2016-09-05,Biscuits,25,750,Snacks
+2016-09-06,Biscuits,22,660,Snacks
+2016-09-07,Biscuits,18,540,Snacks
+2016-09-08,Biscuits,16,480,Snacks
+2016-09-09,Biscuits,18,540,Snacks
+2016-09-10,Biscuits,24,720,Snacks
+2016-09-11,Biscuits,26,780,Snacks
+2016-09-12,Biscuits,15,450,Snacks
+2016-09-13,Biscuits,22,660,Snacks
+2016-09-14,Biscuits,18,540,Snacks
+2016-09-15,Biscuits,40,1200,Snacks
+2016-09-16,Biscuits,25,750,Snacks
+2016-09-17,Biscuits,27,810,Snacks
+2016-09-18,Biscuits,24,720,Snacks
+2016-09-19,Biscuits,21,630,Snacks
+2016-09-20,Biscuits,23,690,Snacks
+2016-09-21,Biscuits,19,570,Snacks
+2016-09-22,Biscuits,21,630,Snacks
+2016-09-23,Biscuits,32,960,Snacks
+2016-09-24,Biscuits,19,570,Snacks
+2016-09-25,Biscuits,31,930,Snacks
+2016-09-26,Biscuits,18,540,Snacks
+2016-09-27,Biscuits,17,510,Snacks
+2016-09-28,Biscuits,26,780,Snacks
+2016-09-29,Biscuits,24,720,Snacks
+2016-09-30,Biscuits,25,750,Snacks
+2016-10-01,Biscuits,25,750,Snacks
+2016-10-02,Biscuits,19,570,Snacks
+2016-10-03,Biscuits,19,570,Snacks
+2016-10-04,Biscuits,12,360,Snacks
+2016-10-05,Biscuits,24,720,Snacks
+2016-10-06,Biscuits,19,570,Snacks
+2016-10-07,Biscuits,16,480,Snacks
+2016-10-08,Biscuits,31,930,Snacks
+2016-10-09,Biscuits,32,960,Snacks
+2016-10-10,Biscuits,23,690,Snacks
+2016-10-11,Biscuits,19,570,Snacks
+2016-10-12,Biscuits,28,840,Snacks
+2016-10-13,Biscuits,25,750,Snacks
+2016-10-14,Biscuits,21,630,Snacks
+2016-10-15,Biscuits,23,690,Snacks
+2016-10-16,Biscuits,27,810,Snacks
+2016-10-17,Biscuits,10,300,Snacks
+2016-10-18,Biscuits,27,810,Snacks
+2016-10-19,Biscuits,17,510,Snacks
+2016-10-20,Biscuits,26,780,Snacks
+2016-10-21,Biscuits,24,720,Snacks
+2016-10-22,Biscuits,35,1050,Snacks
+2016-10-23,Biscuits,23,690,Snacks
+2016-10-24,Biscuits,13,390,Snacks
+2016-10-25,Biscuits,25,750,Snacks
+2016-10-26,Biscuits,13,390,Snacks
+2016-10-27,Biscuits,21,630,Snacks
+2016-10-28,Biscuits,31,930,Snacks
+2016-10-29,Biscuits,28,840,Snacks
+2016-10-30,Biscuits,17,510,Snacks
+2016-10-31,Biscuits,14,420,Snacks
+2016-11-01,Biscuits,15,450,Snacks
+2016-11-02,Biscuits,15,450,Snacks
+2016-11-03,Biscuits,22,660,Snacks
+2016-11-04,Biscuits,19,570,Snacks
+2016-11-05,Biscuits,23,690,Snacks
+2016-11-06,Biscuits,29,870,Snacks
+2016-11-07,Biscuits,24,720,Snacks
+2016-11-08,Biscuits,14,420,Snacks
+2016-11-09,Biscuits,19,570,Snacks
+2016-11-10,Biscuits,35,1050,Snacks
+2016-11-11,Biscuits,19,570,Snacks
+2016-11-12,Biscuits,26,780,Snacks
+2016-11-13,Biscuits,24,720,Snacks
+2016-11-14,Biscuits,14,420,Snacks
+2016-11-15,Biscuits,15,450,Snacks
+2016-11-16,Biscuits,23,690,Snacks
+2016-11-17,Biscuits,25,750,Snacks
+2016-11-18,Biscuits,21,630,Snacks
+2016-11-19,Biscuits,21,630,Snacks
+2016-11-20,Biscuits,30,900,Snacks
+2016-11-21,Biscuits,14,420,Snacks
+2016-11-22,Biscuits,17,510,Snacks
+2016-11-23,Biscuits,14,420,Snacks
+2016-11-24,Biscuits,23,690,Snacks
+2016-11-25,Biscuits,23,690,Snacks
+2016-11-26,Biscuits,26,780,Snacks
+2016-11-27,Biscuits,24,720,Snacks
+2016-11-28,Biscuits,17,510,Snacks
+2016-11-29,Biscuits,23,690,Snacks
+2016-11-30,Biscuits,29,870,Snacks
+2016-12-01,Biscuits,23,690,Snacks
+2016-12-02,Biscuits,18,540,Snacks
+2016-12-03,Biscuits,22,660,Snacks
+2016-12-04,Biscuits,27,810,Snacks
+2016-12-05,Biscuits,16,480,Snacks
+2016-12-06,Biscuits,16,480,Snacks
+2016-12-07,Biscuits,10,300,Snacks
+2016-12-08,Biscuits,20,600,Snacks
+2016-12-09,Biscuits,22,660,Snacks
+2016-12-10,Biscuits,14,420,Snacks
+2016-12-11,Biscuits,24,720,Snacks
+2016-12-12,Biscuits,15,450,Snacks
+2016-12-13,Biscuits,12,360,Snacks
+2016-12-14,Biscuits,14,420,Snacks
+2016-12-15,Biscuits,15,450,Snacks
+2016-12-16,Biscuits,25,750,Snacks
+2016-12-17,Biscuits,14,420,Snacks
+2016-12-18,Biscuits,25,750,Snacks
+2016-12-19,Biscuits,17,510,Snacks
+2016-12-20,Biscuits,15,450,Snacks
+2016-12-21,Biscuits,16,480,Snacks
+2016-12-22,Biscuits,17,510,Snacks
+2016-12-23,Biscuits,24,720,Snacks
+2016-12-24,Biscuits,14,420,Snacks
+2016-12-25,Biscuits,21,630,Snacks
+2016-12-26,Biscuits,11,330,Snacks
+2016-12-27,Biscuits,15,450,Snacks
+2016-12-28,Biscuits,17,510,Snacks
+2016-12-29,Biscuits,21,630,Snacks
+2016-12-30,Biscuits,20,600,Snacks
+2016-12-31,Biscuits,15,450,Snacks
+2017-01-01,Biscuits,21,630,Snacks
+2017-01-02,Biscuits,15,450,Snacks
+2017-01-03,Biscuits,12,360,Snacks
+2017-01-04,Biscuits,14,420,Snacks
+2017-01-05,Biscuits,10,300,Snacks
+2017-01-06,Biscuits,10,300,Snacks
+2017-01-07,Biscuits,21,630,Snacks
+2017-01-08,Biscuits,16,480,Snacks
+2017-01-09,Biscuits,5,150,Snacks
+2017-01-10,Biscuits,18,540,Snacks
+2017-01-11,Biscuits,16,480,Snacks
+2017-01-12,Biscuits,13,390,Snacks
+2017-01-13,Biscuits,16,480,Snacks
+2017-01-14,Biscuits,19,570,Snacks
+2017-01-15,Biscuits,18,540,Snacks
+2017-01-16,Biscuits,13,390,Snacks
+2017-01-17,Biscuits,19,570,Snacks
+2017-01-18,Biscuits,13,390,Snacks
+2017-01-19,Biscuits,10,300,Snacks
+2017-01-20,Biscuits,19,570,Snacks
+2017-01-21,Biscuits,17,510,Snacks
+2017-01-22,Biscuits,29,870,Snacks
+2017-01-23,Biscuits,18,540,Snacks
+2017-01-24,Biscuits,21,630,Snacks
+2017-01-25,Biscuits,15,450,Snacks
+2017-01-26,Biscuits,13,390,Snacks
+2017-01-27,Biscuits,13,390,Snacks
+2017-01-28,Biscuits,17,510,Snacks
+2017-01-29,Biscuits,20,600,Snacks
+2017-01-30,Biscuits,17,510,Snacks
+2017-01-31,Biscuits,10,300,Snacks
+2017-02-01,Biscuits,15,450,Snacks
+2017-02-02,Biscuits,17,510,Snacks
+2017-02-03,Biscuits,19,570,Snacks
+2017-02-04,Biscuits,18,540,Snacks
+2017-02-05,Biscuits,20,600,Snacks
+2017-02-06,Biscuits,13,390,Snacks
+2017-02-07,Biscuits,13,390,Snacks
+2017-02-08,Biscuits,13,390,Snacks
+2017-02-09,Biscuits,8,240,Snacks
+2017-02-10,Biscuits,20,600,Snacks
+2017-02-11,Biscuits,28,840,Snacks
+2017-02-12,Biscuits,22,660,Snacks
+2017-02-13,Biscuits,15,450,Snacks
+2017-02-14,Biscuits,13,390,Snacks
+2017-02-15,Biscuits,12,360,Snacks
+2017-02-16,Biscuits,15,450,Snacks
+2017-02-17,Biscuits,21,630,Snacks
+2017-02-18,Biscuits,15,450,Snacks
+2017-02-19,Biscuits,32,960,Snacks
+2017-02-20,Biscuits,13,390,Snacks
+2017-02-21,Biscuits,13,390,Snacks
+2017-02-22,Biscuits,16,480,Snacks
+2017-02-23,Biscuits,19,570,Snacks
+2017-02-24,Biscuits,9,270,Snacks
+2017-02-25,Biscuits,9,270,Snacks
+2017-02-26,Biscuits,22,660,Snacks
+2017-02-27,Biscuits,13,390,Snacks
+2017-02-28,Biscuits,21,630,Snacks
+2017-03-01,Biscuits,19,570,Snacks
+2017-03-02,Biscuits,23,690,Snacks
+2017-03-03,Biscuits,25,750,Snacks
+2017-03-04,Biscuits,15,450,Snacks
+2017-03-05,Biscuits,16,480,Snacks
+2017-03-06,Biscuits,12,360,Snacks
+2017-03-07,Biscuits,18,540,Snacks
+2017-03-08,Biscuits,18,540,Snacks
+2017-03-09,Biscuits,25,750,Snacks
+2017-03-10,Biscuits,24,720,Snacks
+2017-03-11,Biscuits,17,510,Snacks
+2017-03-12,Biscuits,22,660,Snacks
+2017-03-13,Biscuits,20,600,Snacks
+2017-03-14,Biscuits,16,480,Snacks
+2017-03-15,Biscuits,21,630,Snacks
+2017-03-16,Biscuits,19,570,Snacks
+2017-03-17,Biscuits,20,600,Snacks
+2017-03-18,Biscuits,27,810,Snacks
+2017-03-19,Biscuits,21,630,Snacks
+2017-03-20,Biscuits,17,510,Snacks
+2017-03-21,Biscuits,27,810,Snacks
+2017-03-22,Biscuits,17,510,Snacks
+2017-03-23,Biscuits,23,690,Snacks
+2017-03-24,Biscuits,18,540,Snacks
+2017-03-25,Biscuits,27,810,Snacks
+2017-03-26,Biscuits,23,690,Snacks
+2017-03-27,Biscuits,19,570,Snacks
+2017-03-28,Biscuits,18,540,Snacks
+2017-03-29,Biscuits,22,660,Snacks
+2017-03-30,Biscuits,17,510,Snacks
+2017-03-31,Biscuits,16,480,Snacks
+2017-04-01,Biscuits,37,1110,Snacks
+2017-04-02,Biscuits,28,840,Snacks
+2017-04-03,Biscuits,19,570,Snacks
+2017-04-04,Biscuits,18,540,Snacks
+2017-04-05,Biscuits,16,480,Snacks
+2017-04-06,Biscuits,28,840,Snacks
+2017-04-07,Biscuits,18,540,Snacks
+2017-04-08,Biscuits,28,840,Snacks
+2017-04-09,Biscuits,23,690,Snacks
+2017-04-10,Biscuits,19,570,Snacks
+2017-04-11,Biscuits,28,840,Snacks
+2017-04-12,Biscuits,23,690,Snacks
+2017-04-13,Biscuits,30,900,Snacks
+2017-04-14,Biscuits,19,570,Snacks
+2017-04-15,Biscuits,18,540,Snacks
+2017-04-16,Biscuits,23,690,Snacks
+2017-04-17,Biscuits,15,450,Snacks
+2017-04-18,Biscuits,30,900,Snacks
+2017-04-19,Biscuits,23,690,Snacks
+2017-04-20,Biscuits,29,870,Snacks
+2017-04-21,Biscuits,23,690,Snacks
+2017-04-22,Biscuits,31,930,Snacks
+2017-04-23,Biscuits,36,1080,Snacks
+2017-04-24,Biscuits,20,600,Snacks
+2017-04-25,Biscuits,17,510,Snacks
+2017-04-26,Biscuits,16,480,Snacks
+2017-04-27,Biscuits,27,810,Snacks
+2017-04-28,Biscuits,24,720,Snacks
+2017-04-29,Biscuits,26,780,Snacks
+2017-04-30,Biscuits,32,960,Snacks
+2017-05-01,Biscuits,13,390,Snacks
+2017-05-02,Biscuits,26,780,Snacks
+2017-05-03,Biscuits,24,720,Snacks
+2017-05-04,Biscuits,18,540,Snacks
+2017-05-05,Biscuits,23,690,Snacks
+2017-05-06,Biscuits,27,810,Snacks
+2017-05-07,Biscuits,33,990,Snacks
+2017-05-08,Biscuits,11,330,Snacks
+2017-05-09,Biscuits,18,540,Snacks
+2017-05-10,Biscuits,14,420,Snacks
+2017-05-11,Biscuits,33,990,Snacks
+2017-05-12,Biscuits,35,1050,Snacks
+2017-05-13,Biscuits,28,840,Snacks
+2017-05-14,Biscuits,17,510,Snacks
+2017-05-15,Biscuits,18,540,Snacks
+2017-05-16,Biscuits,19,570,Snacks
+2017-05-17,Biscuits,23,690,Snacks
+2017-05-18,Biscuits,27,810,Snacks
+2017-05-19,Biscuits,26,780,Snacks
+2017-05-20,Biscuits,33,990,Snacks
+2017-05-21,Biscuits,30,900,Snacks
+2017-05-22,Biscuits,22,660,Snacks
+2017-05-23,Biscuits,22,660,Snacks
+2017-05-24,Biscuits,28,840,Snacks
+2017-05-25,Biscuits,26,780,Snacks
+2017-05-26,Biscuits,33,990,Snacks
+2017-05-27,Biscuits,24,720,Snacks
+2017-05-28,Biscuits,26,780,Snacks
+2017-05-29,Biscuits,14,420,Snacks
+2017-05-30,Biscuits,26,780,Snacks
+2017-05-31,Biscuits,25,750,Snacks
+2017-06-01,Biscuits,22,660,Snacks
+2017-06-02,Biscuits,19,570,Snacks
+2017-06-03,Biscuits,34,1020,Snacks
+2017-06-04,Biscuits,36,1080,Snacks
+2017-06-05,Biscuits,24,720,Snacks
+2017-06-06,Biscuits,27,810,Snacks
+2017-06-07,Biscuits,20,600,Snacks
+2017-06-08,Biscuits,31,930,Snacks
+2017-06-09,Biscuits,25,750,Snacks
+2017-06-10,Biscuits,40,1200,Snacks
+2017-06-11,Biscuits,29,870,Snacks
+2017-06-12,Biscuits,30,900,Snacks
+2017-06-13,Biscuits,28,840,Snacks
+2017-06-14,Biscuits,17,510,Snacks
+2017-06-15,Biscuits,23,690,Snacks
+2017-06-16,Biscuits,27,810,Snacks
+2017-06-17,Biscuits,18,540,Snacks
+2017-06-18,Biscuits,36,1080,Snacks
+2017-06-19,Biscuits,22,660,Snacks
+2017-06-20,Biscuits,27,810,Snacks
+2017-06-21,Biscuits,22,660,Snacks
+2017-06-22,Biscuits,27,810,Snacks
+2017-06-23,Biscuits,27,810,Snacks
+2017-06-24,Biscuits,41,1230,Snacks
+2017-06-25,Biscuits,34,1020,Snacks
+2017-06-26,Biscuits,22,660,Snacks
+2017-06-27,Biscuits,27,810,Snacks
+2017-06-28,Biscuits,18,540,Snacks
+2017-06-29,Biscuits,32,960,Snacks
+2017-06-30,Biscuits,29,870,Snacks
+2017-07-01,Biscuits,37,1110,Snacks
+2017-07-02,Biscuits,39,1170,Snacks
+2017-07-03,Biscuits,18,540,Snacks
+2017-07-04,Biscuits,30,900,Snacks
+2017-07-05,Biscuits,30,900,Snacks
+2017-07-06,Biscuits,26,780,Snacks
+2017-07-07,Biscuits,35,1050,Snacks
+2017-07-08,Biscuits,35,1050,Snacks
+2017-07-09,Biscuits,39,1170,Snacks
+2017-07-10,Biscuits,17,510,Snacks
+2017-07-11,Biscuits,22,660,Snacks
+2017-07-12,Biscuits,27,810,Snacks
+2017-07-13,Biscuits,35,1050,Snacks
+2017-07-14,Biscuits,31,930,Snacks
+2017-07-15,Biscuits,38,1140,Snacks
+2017-07-16,Biscuits,26,780,Snacks
+2017-07-17,Biscuits,22,660,Snacks
+2017-07-18,Biscuits,21,630,Snacks
+2017-07-19,Biscuits,22,660,Snacks
+2017-07-20,Biscuits,23,690,Snacks
+2017-07-21,Biscuits,41,1230,Snacks
+2017-07-22,Biscuits,28,840,Snacks
+2017-07-23,Biscuits,40,1200,Snacks
+2017-07-24,Biscuits,19,570,Snacks
+2017-07-25,Biscuits,29,870,Snacks
+2017-07-26,Biscuits,26,780,Snacks
+2017-07-27,Biscuits,33,990,Snacks
+2017-07-28,Biscuits,40,1200,Snacks
+2017-07-29,Biscuits,30,900,Snacks
+2017-07-30,Biscuits,31,930,Snacks
+2017-07-31,Biscuits,27,810,Snacks
+2017-08-01,Biscuits,16,480,Snacks
+2017-08-02,Biscuits,20,600,Snacks
+2017-08-03,Biscuits,24,720,Snacks
+2017-08-04,Biscuits,25,750,Snacks
+2017-08-05,Biscuits,26,780,Snacks
+2017-08-06,Biscuits,23,690,Snacks
+2017-08-07,Biscuits,23,690,Snacks
+2017-08-08,Biscuits,24,720,Snacks
+2017-08-09,Biscuits,26,780,Snacks
+2017-08-10,Biscuits,21,630,Snacks
+2017-08-11,Biscuits,23,690,Snacks
+2017-08-12,Biscuits,39,1170,Snacks
+2017-08-13,Biscuits,34,1020,Snacks
+2017-08-14,Biscuits,23,690,Snacks
+2017-08-15,Biscuits,16,480,Snacks
+2017-08-16,Biscuits,16,480,Snacks
+2017-08-17,Biscuits,28,840,Snacks
+2017-08-18,Biscuits,31,930,Snacks
+2017-08-19,Biscuits,37,1110,Snacks
+2017-08-20,Biscuits,27,810,Snacks
+2017-08-21,Biscuits,16,480,Snacks
+2017-08-22,Biscuits,22,660,Snacks
+2017-08-23,Biscuits,23,690,Snacks
+2017-08-24,Biscuits,33,990,Snacks
+2017-08-25,Biscuits,23,690,Snacks
+2017-08-26,Biscuits,26,780,Snacks
+2017-08-27,Biscuits,43,1290,Snacks
+2017-08-28,Biscuits,17,510,Snacks
+2017-08-29,Biscuits,26,780,Snacks
+2017-08-30,Biscuits,22,660,Snacks
+2017-08-31,Biscuits,27,810,Snacks
+2017-09-01,Biscuits,20,600,Snacks
+2017-09-02,Biscuits,22,660,Snacks
+2017-09-03,Biscuits,20,600,Snacks
+2017-09-04,Biscuits,24,720,Snacks
+2017-09-05,Biscuits,20,600,Snacks
+2017-09-06,Biscuits,21,630,Snacks
+2017-09-07,Biscuits,20,600,Snacks
+2017-09-08,Biscuits,20,600,Snacks
+2017-09-09,Biscuits,20,600,Snacks
+2017-09-10,Biscuits,31,930,Snacks
+2017-09-11,Biscuits,15,450,Snacks
+2017-09-12,Biscuits,24,720,Snacks
+2017-09-13,Biscuits,23,690,Snacks
+2017-09-14,Biscuits,26,780,Snacks
+2017-09-15,Biscuits,19,570,Snacks
+2017-09-16,Biscuits,15,450,Snacks
+2017-09-17,Biscuits,22,660,Snacks
+2017-09-18,Biscuits,16,480,Snacks
+2017-09-19,Biscuits,26,780,Snacks
+2017-09-20,Biscuits,22,660,Snacks
+2017-09-21,Biscuits,29,870,Snacks
+2017-09-22,Biscuits,23,690,Snacks
+2017-09-23,Biscuits,27,810,Snacks
+2017-09-24,Biscuits,21,630,Snacks
+2017-09-25,Biscuits,19,570,Snacks
+2017-09-26,Biscuits,19,570,Snacks
+2017-09-27,Biscuits,27,810,Snacks
+2017-09-28,Biscuits,17,510,Snacks
+2017-09-29,Biscuits,19,570,Snacks
+2017-09-30,Biscuits,22,660,Snacks
+2017-10-01,Biscuits,22,660,Snacks
+2017-10-02,Biscuits,21,630,Snacks
+2017-10-03,Biscuits,17,510,Snacks
+2017-10-04,Biscuits,24,720,Snacks
+2017-10-05,Biscuits,25,750,Snacks
+2017-10-06,Biscuits,23,690,Snacks
+2017-10-07,Biscuits,19,570,Snacks
+2017-10-08,Biscuits,21,630,Snacks
+2017-10-09,Biscuits,21,630,Snacks
+2017-10-10,Biscuits,22,660,Snacks
+2017-10-11,Biscuits,26,780,Snacks
+2017-10-12,Biscuits,22,660,Snacks
+2017-10-13,Biscuits,24,720,Snacks
+2017-10-14,Biscuits,26,780,Snacks
+2017-10-15,Biscuits,30,900,Snacks
+2017-10-16,Biscuits,21,630,Snacks
+2017-10-17,Biscuits,14,420,Snacks
+2017-10-18,Biscuits,22,660,Snacks
+2017-10-19,Biscuits,28,840,Snacks
+2017-10-20,Biscuits,20,600,Snacks
+2017-10-21,Biscuits,23,690,Snacks
+2017-10-22,Biscuits,16,480,Snacks
+2017-10-23,Biscuits,17,510,Snacks
+2017-10-24,Biscuits,30,900,Snacks
+2017-10-25,Biscuits,21,630,Snacks
+2017-10-26,Biscuits,17,510,Snacks
+2017-10-27,Biscuits,24,720,Snacks
+2017-10-28,Biscuits,26,780,Snacks
+2017-10-29,Biscuits,31,930,Snacks
+2017-10-30,Biscuits,7,210,Snacks
+2017-10-31,Biscuits,20,600,Snacks
+2017-11-01,Biscuits,23,690,Snacks
+2017-11-02,Biscuits,22,660,Snacks
+2017-11-03,Biscuits,20,600,Snacks
+2017-11-04,Biscuits,17,510,Snacks
+2017-11-05,Biscuits,21,630,Snacks
+2017-11-06,Biscuits,20,600,Snacks
+2017-11-07,Biscuits,25,750,Snacks
+2017-11-08,Biscuits,16,480,Snacks
+2017-11-09,Biscuits,22,660,Snacks
+2017-11-10,Biscuits,31,930,Snacks
+2017-11-11,Biscuits,27,810,Snacks
+2017-11-12,Biscuits,36,1080,Snacks
+2017-11-13,Biscuits,16,480,Snacks
+2017-11-14,Biscuits,19,570,Snacks
+2017-11-15,Biscuits,27,810,Snacks
+2017-11-16,Biscuits,21,630,Snacks
+2017-11-17,Biscuits,24,720,Snacks
+2017-11-18,Biscuits,29,870,Snacks
+2017-11-19,Biscuits,30,900,Snacks
+2017-11-20,Biscuits,18,540,Snacks
+2017-11-21,Biscuits,30,900,Snacks
+2017-11-22,Biscuits,24,720,Snacks
+2017-11-23,Biscuits,23,690,Snacks
+2017-11-24,Biscuits,25,750,Snacks
+2017-11-25,Biscuits,29,870,Snacks
+2017-11-26,Biscuits,28,840,Snacks
+2017-11-27,Biscuits,21,630,Snacks
+2017-11-28,Biscuits,23,690,Snacks
+2017-11-29,Biscuits,18,540,Snacks
+2017-11-30,Biscuits,16,480,Snacks
+2017-12-01,Biscuits,23,690,Snacks
+2017-12-02,Biscuits,16,480,Snacks
+2017-12-03,Biscuits,15,450,Snacks
+2017-12-04,Biscuits,10,300,Snacks
+2017-12-05,Biscuits,15,450,Snacks
+2017-12-06,Biscuits,13,390,Snacks
+2017-12-07,Biscuits,14,420,Snacks
+2017-12-08,Biscuits,16,480,Snacks
+2017-12-09,Biscuits,22,660,Snacks
+2017-12-10,Biscuits,18,540,Snacks
+2017-12-11,Biscuits,10,300,Snacks
+2017-12-12,Biscuits,17,510,Snacks
+2017-12-13,Biscuits,11,330,Snacks
+2017-12-14,Biscuits,18,540,Snacks
+2017-12-15,Biscuits,15,450,Snacks
+2017-12-16,Biscuits,19,570,Snacks
+2017-12-17,Biscuits,14,420,Snacks
+2017-12-18,Biscuits,11,330,Snacks
+2017-12-19,Biscuits,17,510,Snacks
+2017-12-20,Biscuits,22,660,Snacks
+2017-12-21,Biscuits,16,480,Snacks
+2017-12-22,Biscuits,16,480,Snacks
+2017-12-23,Biscuits,17,510,Snacks
+2017-12-24,Biscuits,11,330,Snacks
+2017-12-25,Biscuits,11,330,Snacks
+2017-12-26,Biscuits,15,450,Snacks
+2017-12-27,Biscuits,16,480,Snacks
+2017-12-28,Biscuits,20,600,Snacks
+2017-12-29,Biscuits,25,750,Snacks
+2017-12-30,Biscuits,19,570,Snacks
+2017-12-31,Biscuits,15,450,Snacks
+2016-01-01,Chocolate,14,1680,Snacks
+2016-01-02,Chocolate,12,1440,Snacks
+2016-01-03,Chocolate,14,1680,Snacks
+2016-01-04,Chocolate,5,600,Snacks
+2016-01-05,Chocolate,13,1560,Snacks
+2016-01-06,Chocolate,8,960,Snacks
+2016-01-07,Chocolate,16,1920,Snacks
+2016-01-08,Chocolate,16,1920,Snacks
+2016-01-09,Chocolate,13,1560,Snacks
+2016-01-10,Chocolate,22,2640,Snacks
+2016-01-11,Chocolate,3,360,Snacks
+2016-01-12,Chocolate,9,1080,Snacks
+2016-01-13,Chocolate,9,1080,Snacks
+2016-01-14,Chocolate,12,1440,Snacks
+2016-01-15,Chocolate,13,1560,Snacks
+2016-01-16,Chocolate,18,2160,Snacks
+2016-01-17,Chocolate,19,2280,Snacks
+2016-01-18,Chocolate,8,960,Snacks
+2016-01-19,Chocolate,13,1560,Snacks
+2016-01-20,Chocolate,18,2160,Snacks
+2016-01-21,Chocolate,15,1800,Snacks
+2016-01-22,Chocolate,13,1560,Snacks
+2016-01-23,Chocolate,16,1920,Snacks
+2016-01-24,Chocolate,14,1680,Snacks
+2016-01-25,Chocolate,11,1320,Snacks
+2016-01-26,Chocolate,18,2160,Snacks
+2016-01-27,Chocolate,15,1800,Snacks
+2016-01-28,Chocolate,13,1560,Snacks
+2016-01-29,Chocolate,13,1560,Snacks
+2016-01-30,Chocolate,16,1920,Snacks
+2016-01-31,Chocolate,14,1680,Snacks
+2016-02-01,Chocolate,16,1920,Snacks
+2016-02-02,Chocolate,17,2040,Snacks
+2016-02-03,Chocolate,12,1440,Snacks
+2016-02-04,Chocolate,14,1680,Snacks
+2016-02-05,Chocolate,16,1920,Snacks
+2016-02-06,Chocolate,19,2280,Snacks
+2016-02-07,Chocolate,14,1680,Snacks
+2016-02-08,Chocolate,6,720,Snacks
+2016-02-09,Chocolate,18,2160,Snacks
+2016-02-10,Chocolate,15,1800,Snacks
+2016-02-11,Chocolate,18,2160,Snacks
+2016-02-12,Chocolate,12,1440,Snacks
+2016-02-13,Chocolate,15,1800,Snacks
+2016-02-14,Chocolate,12,1440,Snacks
+2016-02-15,Chocolate,11,1320,Snacks
+2016-02-16,Chocolate,13,1560,Snacks
+2016-02-17,Chocolate,15,1800,Snacks
+2016-02-18,Chocolate,17,2040,Snacks
+2016-02-19,Chocolate,13,1560,Snacks
+2016-02-20,Chocolate,21,2520,Snacks
+2016-02-21,Chocolate,18,2160,Snacks
+2016-02-22,Chocolate,9,1080,Snacks
+2016-02-23,Chocolate,14,1680,Snacks
+2016-02-24,Chocolate,11,1320,Snacks
+2016-02-25,Chocolate,10,1200,Snacks
+2016-02-26,Chocolate,13,1560,Snacks
+2016-02-27,Chocolate,16,1920,Snacks
+2016-02-28,Chocolate,20,2400,Snacks
+2016-02-29,Chocolate,12,1440,Snacks
+2016-03-01,Chocolate,19,2280,Snacks
+2016-03-02,Chocolate,19,2280,Snacks
+2016-03-03,Chocolate,19,2280,Snacks
+2016-03-04,Chocolate,13,1560,Snacks
+2016-03-05,Chocolate,22,2640,Snacks
+2016-03-06,Chocolate,22,2640,Snacks
+2016-03-07,Chocolate,13,1560,Snacks
+2016-03-08,Chocolate,13,1560,Snacks
+2016-03-09,Chocolate,20,2400,Snacks
+2016-03-10,Chocolate,17,2040,Snacks
+2016-03-11,Chocolate,12,1440,Snacks
+2016-03-12,Chocolate,15,1800,Snacks
+2016-03-13,Chocolate,26,3120,Snacks
+2016-03-14,Chocolate,15,1800,Snacks
+2016-03-15,Chocolate,7,840,Snacks
+2016-03-16,Chocolate,15,1800,Snacks
+2016-03-17,Chocolate,20,2400,Snacks
+2016-03-18,Chocolate,11,1320,Snacks
+2016-03-19,Chocolate,21,2520,Snacks
+2016-03-20,Chocolate,15,1800,Snacks
+2016-03-21,Chocolate,14,1680,Snacks
+2016-03-22,Chocolate,20,2400,Snacks
+2016-03-23,Chocolate,16,1920,Snacks
+2016-03-24,Chocolate,15,1800,Snacks
+2016-03-25,Chocolate,18,2160,Snacks
+2016-03-26,Chocolate,18,2160,Snacks
+2016-03-27,Chocolate,23,2760,Snacks
+2016-03-28,Chocolate,12,1440,Snacks
+2016-03-29,Chocolate,17,2040,Snacks
+2016-03-30,Chocolate,8,960,Snacks
+2016-03-31,Chocolate,20,2400,Snacks
+2016-04-01,Chocolate,15,1800,Snacks
+2016-04-02,Chocolate,21,2520,Snacks
+2016-04-03,Chocolate,17,2040,Snacks
+2016-04-04,Chocolate,12,1440,Snacks
+2016-04-05,Chocolate,17,2040,Snacks
+2016-04-06,Chocolate,26,3120,Snacks
+2016-04-07,Chocolate,15,1800,Snacks
+2016-04-08,Chocolate,18,2160,Snacks
+2016-04-09,Chocolate,12,1440,Snacks
+2016-04-10,Chocolate,30,3600,Snacks
+2016-04-11,Chocolate,14,1680,Snacks
+2016-04-12,Chocolate,14,1680,Snacks
+2016-04-13,Chocolate,23,2760,Snacks
+2016-04-14,Chocolate,15,1800,Snacks
+2016-04-15,Chocolate,24,2880,Snacks
+2016-04-16,Chocolate,18,2160,Snacks
+2016-04-17,Chocolate,24,2880,Snacks
+2016-04-18,Chocolate,14,1680,Snacks
+2016-04-19,Chocolate,17,2040,Snacks
+2016-04-20,Chocolate,16,1920,Snacks
+2016-04-21,Chocolate,21,2520,Snacks
+2016-04-22,Chocolate,20,2400,Snacks
+2016-04-23,Chocolate,36,4320,Snacks
+2016-04-24,Chocolate,27,3240,Snacks
+2016-04-25,Chocolate,20,2400,Snacks
+2016-04-26,Chocolate,15,1800,Snacks
+2016-04-27,Chocolate,20,2400,Snacks
+2016-04-28,Chocolate,20,2400,Snacks
+2016-04-29,Chocolate,20,2400,Snacks
+2016-04-30,Chocolate,20,2400,Snacks
+2016-05-01,Chocolate,18,2160,Snacks
+2016-05-02,Chocolate,17,2040,Snacks
+2016-05-03,Chocolate,21,2520,Snacks
+2016-05-04,Chocolate,11,1320,Snacks
+2016-05-05,Chocolate,16,1920,Snacks
+2016-05-06,Chocolate,21,2520,Snacks
+2016-05-07,Chocolate,15,1800,Snacks
+2016-05-08,Chocolate,17,2040,Snacks
+2016-05-09,Chocolate,14,1680,Snacks
+2016-05-10,Chocolate,21,2520,Snacks
+2016-05-11,Chocolate,24,2880,Snacks
+2016-05-12,Chocolate,26,3120,Snacks
+2016-05-13,Chocolate,24,2880,Snacks
+2016-05-14,Chocolate,26,3120,Snacks
+2016-05-15,Chocolate,24,2880,Snacks
+2016-05-16,Chocolate,16,1920,Snacks
+2016-05-17,Chocolate,16,1920,Snacks
+2016-05-18,Chocolate,20,2400,Snacks
+2016-05-19,Chocolate,23,2760,Snacks
+2016-05-20,Chocolate,23,2760,Snacks
+2016-05-21,Chocolate,22,2640,Snacks
+2016-05-22,Chocolate,23,2760,Snacks
+2016-05-23,Chocolate,18,2160,Snacks
+2016-05-24,Chocolate,13,1560,Snacks
+2016-05-25,Chocolate,28,3360,Snacks
+2016-05-26,Chocolate,22,2640,Snacks
+2016-05-27,Chocolate,21,2520,Snacks
+2016-05-28,Chocolate,10,1200,Snacks
+2016-05-29,Chocolate,28,3360,Snacks
+2016-05-30,Chocolate,15,1800,Snacks
+2016-05-31,Chocolate,26,3120,Snacks
+2016-06-01,Chocolate,26,3120,Snacks
+2016-06-02,Chocolate,26,3120,Snacks
+2016-06-03,Chocolate,22,2640,Snacks
+2016-06-04,Chocolate,23,2760,Snacks
+2016-06-05,Chocolate,29,3480,Snacks
+2016-06-06,Chocolate,16,1920,Snacks
+2016-06-07,Chocolate,20,2400,Snacks
+2016-06-08,Chocolate,18,2160,Snacks
+2016-06-09,Chocolate,19,2280,Snacks
+2016-06-10,Chocolate,29,3480,Snacks
+2016-06-11,Chocolate,26,3120,Snacks
+2016-06-12,Chocolate,29,3480,Snacks
+2016-06-13,Chocolate,20,2400,Snacks
+2016-06-14,Chocolate,7,840,Snacks
+2016-06-15,Chocolate,21,2520,Snacks
+2016-06-16,Chocolate,22,2640,Snacks
+2016-06-17,Chocolate,18,2160,Snacks
+2016-06-18,Chocolate,26,3120,Snacks
+2016-06-19,Chocolate,28,3360,Snacks
+2016-06-20,Chocolate,13,1560,Snacks
+2016-06-21,Chocolate,23,2760,Snacks
+2016-06-22,Chocolate,20,2400,Snacks
+2016-06-23,Chocolate,9,1080,Snacks
+2016-06-24,Chocolate,14,1680,Snacks
+2016-06-25,Chocolate,29,3480,Snacks
+2016-06-26,Chocolate,19,2280,Snacks
+2016-06-27,Chocolate,16,1920,Snacks
+2016-06-28,Chocolate,20,2400,Snacks
+2016-06-29,Chocolate,22,2640,Snacks
+2016-06-30,Chocolate,33,3960,Snacks
+2016-07-01,Chocolate,29,3480,Snacks
+2016-07-02,Chocolate,30,3600,Snacks
+2016-07-03,Chocolate,23,2760,Snacks
+2016-07-04,Chocolate,20,2400,Snacks
+2016-07-05,Chocolate,21,2520,Snacks
+2016-07-06,Chocolate,25,3000,Snacks
+2016-07-07,Chocolate,27,3240,Snacks
+2016-07-08,Chocolate,21,2520,Snacks
+2016-07-09,Chocolate,24,2880,Snacks
+2016-07-10,Chocolate,31,3720,Snacks
+2016-07-11,Chocolate,17,2040,Snacks
+2016-07-12,Chocolate,22,2640,Snacks
+2016-07-13,Chocolate,14,1680,Snacks
+2016-07-14,Chocolate,30,3600,Snacks
+2016-07-15,Chocolate,18,2160,Snacks
+2016-07-16,Chocolate,36,4320,Snacks
+2016-07-17,Chocolate,22,2640,Snacks
+2016-07-18,Chocolate,22,2640,Snacks
+2016-07-19,Chocolate,25,3000,Snacks
+2016-07-20,Chocolate,21,2520,Snacks
+2016-07-21,Chocolate,26,3120,Snacks
+2016-07-22,Chocolate,28,3360,Snacks
+2016-07-23,Chocolate,30,3600,Snacks
+2016-07-24,Chocolate,22,2640,Snacks
+2016-07-25,Chocolate,17,2040,Snacks
+2016-07-26,Chocolate,26,3120,Snacks
+2016-07-27,Chocolate,17,2040,Snacks
+2016-07-28,Chocolate,18,2160,Snacks
+2016-07-29,Chocolate,33,3960,Snacks
+2016-07-30,Chocolate,21,2520,Snacks
+2016-07-31,Chocolate,28,3360,Snacks
+2016-08-01,Chocolate,19,2280,Snacks
+2016-08-02,Chocolate,13,1560,Snacks
+2016-08-03,Chocolate,21,2520,Snacks
+2016-08-04,Chocolate,24,2880,Snacks
+2016-08-05,Chocolate,22,2640,Snacks
+2016-08-06,Chocolate,28,3360,Snacks
+2016-08-07,Chocolate,28,3360,Snacks
+2016-08-08,Chocolate,22,2640,Snacks
+2016-08-09,Chocolate,19,2280,Snacks
+2016-08-10,Chocolate,27,3240,Snacks
+2016-08-11,Chocolate,19,2280,Snacks
+2016-08-12,Chocolate,13,1560,Snacks
+2016-08-13,Chocolate,24,2880,Snacks
+2016-08-14,Chocolate,24,2880,Snacks
+2016-08-15,Chocolate,17,2040,Snacks
+2016-08-16,Chocolate,23,2760,Snacks
+2016-08-17,Chocolate,15,1800,Snacks
+2016-08-18,Chocolate,22,2640,Snacks
+2016-08-19,Chocolate,20,2400,Snacks
+2016-08-20,Chocolate,19,2280,Snacks
+2016-08-21,Chocolate,33,3960,Snacks
+2016-08-22,Chocolate,19,2280,Snacks
+2016-08-23,Chocolate,28,3360,Snacks
+2016-08-24,Chocolate,15,1800,Snacks
+2016-08-25,Chocolate,23,2760,Snacks
+2016-08-26,Chocolate,23,2760,Snacks
+2016-08-27,Chocolate,21,2520,Snacks
+2016-08-28,Chocolate,30,3600,Snacks
+2016-08-29,Chocolate,14,1680,Snacks
+2016-08-30,Chocolate,14,1680,Snacks
+2016-08-31,Chocolate,16,1920,Snacks
+2016-09-01,Chocolate,12,1440,Snacks
+2016-09-02,Chocolate,14,1680,Snacks
+2016-09-03,Chocolate,22,2640,Snacks
+2016-09-04,Chocolate,15,1800,Snacks
+2016-09-05,Chocolate,20,2400,Snacks
+2016-09-06,Chocolate,21,2520,Snacks
+2016-09-07,Chocolate,16,1920,Snacks
+2016-09-08,Chocolate,19,2280,Snacks
+2016-09-09,Chocolate,28,3360,Snacks
+2016-09-10,Chocolate,19,2280,Snacks
+2016-09-11,Chocolate,26,3120,Snacks
+2016-09-12,Chocolate,17,2040,Snacks
+2016-09-13,Chocolate,19,2280,Snacks
+2016-09-14,Chocolate,15,1800,Snacks
+2016-09-15,Chocolate,24,2880,Snacks
+2016-09-16,Chocolate,19,2280,Snacks
+2016-09-17,Chocolate,22,2640,Snacks
+2016-09-18,Chocolate,25,3000,Snacks
+2016-09-19,Chocolate,14,1680,Snacks
+2016-09-20,Chocolate,21,2520,Snacks
+2016-09-21,Chocolate,18,2160,Snacks
+2016-09-22,Chocolate,25,3000,Snacks
+2016-09-23,Chocolate,19,2280,Snacks
+2016-09-24,Chocolate,28,3360,Snacks
+2016-09-25,Chocolate,18,2160,Snacks
+2016-09-26,Chocolate,15,1800,Snacks
+2016-09-27,Chocolate,23,2760,Snacks
+2016-09-28,Chocolate,21,2520,Snacks
+2016-09-29,Chocolate,12,1440,Snacks
+2016-09-30,Chocolate,17,2040,Snacks
+2016-10-01,Chocolate,18,2160,Snacks
+2016-10-02,Chocolate,16,1920,Snacks
+2016-10-03,Chocolate,10,1200,Snacks
+2016-10-04,Chocolate,22,2640,Snacks
+2016-10-05,Chocolate,8,960,Snacks
+2016-10-06,Chocolate,20,2400,Snacks
+2016-10-07,Chocolate,21,2520,Snacks
+2016-10-08,Chocolate,24,2880,Snacks
+2016-10-09,Chocolate,27,3240,Snacks
+2016-10-10,Chocolate,12,1440,Snacks
+2016-10-11,Chocolate,16,1920,Snacks
+2016-10-12,Chocolate,17,2040,Snacks
+2016-10-13,Chocolate,18,2160,Snacks
+2016-10-14,Chocolate,13,1560,Snacks
+2016-10-15,Chocolate,15,1800,Snacks
+2016-10-16,Chocolate,21,2520,Snacks
+2016-10-17,Chocolate,19,2280,Snacks
+2016-10-18,Chocolate,16,1920,Snacks
+2016-10-19,Chocolate,20,2400,Snacks
+2016-10-20,Chocolate,13,1560,Snacks
+2016-10-21,Chocolate,22,2640,Snacks
+2016-10-22,Chocolate,15,1800,Snacks
+2016-10-23,Chocolate,26,3120,Snacks
+2016-10-24,Chocolate,15,1800,Snacks
+2016-10-25,Chocolate,19,2280,Snacks
+2016-10-26,Chocolate,16,1920,Snacks
+2016-10-27,Chocolate,22,2640,Snacks
+2016-10-28,Chocolate,26,3120,Snacks
+2016-10-29,Chocolate,25,3000,Snacks
+2016-10-30,Chocolate,16,1920,Snacks
+2016-10-31,Chocolate,17,2040,Snacks
+2016-11-01,Chocolate,17,2040,Snacks
+2016-11-02,Chocolate,24,2880,Snacks
+2016-11-03,Chocolate,25,3000,Snacks
+2016-11-04,Chocolate,21,2520,Snacks
+2016-11-05,Chocolate,18,2160,Snacks
+2016-11-06,Chocolate,23,2760,Snacks
+2016-11-07,Chocolate,20,2400,Snacks
+2016-11-08,Chocolate,12,1440,Snacks
+2016-11-09,Chocolate,13,1560,Snacks
+2016-11-10,Chocolate,17,2040,Snacks
+2016-11-11,Chocolate,24,2880,Snacks
+2016-11-12,Chocolate,19,2280,Snacks
+2016-11-13,Chocolate,21,2520,Snacks
+2016-11-14,Chocolate,9,1080,Snacks
+2016-11-15,Chocolate,18,2160,Snacks
+2016-11-16,Chocolate,17,2040,Snacks
+2016-11-17,Chocolate,14,1680,Snacks
+2016-11-18,Chocolate,21,2520,Snacks
+2016-11-19,Chocolate,17,2040,Snacks
+2016-11-20,Chocolate,19,2280,Snacks
+2016-11-21,Chocolate,11,1320,Snacks
+2016-11-22,Chocolate,19,2280,Snacks
+2016-11-23,Chocolate,17,2040,Snacks
+2016-11-24,Chocolate,28,3360,Snacks
+2016-11-25,Chocolate,19,2280,Snacks
+2016-11-26,Chocolate,20,2400,Snacks
+2016-11-27,Chocolate,19,2280,Snacks
+2016-11-28,Chocolate,16,1920,Snacks
+2016-11-29,Chocolate,21,2520,Snacks
+2016-11-30,Chocolate,20,2400,Snacks
+2016-12-01,Chocolate,19,2280,Snacks
+2016-12-02,Chocolate,17,2040,Snacks
+2016-12-03,Chocolate,15,1800,Snacks
+2016-12-04,Chocolate,22,2640,Snacks
+2016-12-05,Chocolate,14,1680,Snacks
+2016-12-06,Chocolate,13,1560,Snacks
+2016-12-07,Chocolate,14,1680,Snacks
+2016-12-08,Chocolate,13,1560,Snacks
+2016-12-09,Chocolate,11,1320,Snacks
+2016-12-10,Chocolate,15,1800,Snacks
+2016-12-11,Chocolate,22,2640,Snacks
+2016-12-12,Chocolate,9,1080,Snacks
+2016-12-13,Chocolate,4,480,Snacks
+2016-12-14,Chocolate,18,2160,Snacks
+2016-12-15,Chocolate,8,960,Snacks
+2016-12-16,Chocolate,12,1440,Snacks
+2016-12-17,Chocolate,17,2040,Snacks
+2016-12-18,Chocolate,16,1920,Snacks
+2016-12-19,Chocolate,9,1080,Snacks
+2016-12-20,Chocolate,15,1800,Snacks
+2016-12-21,Chocolate,8,960,Snacks
+2016-12-22,Chocolate,11,1320,Snacks
+2016-12-23,Chocolate,18,2160,Snacks
+2016-12-24,Chocolate,23,2760,Snacks
+2016-12-25,Chocolate,11,1320,Snacks
+2016-12-26,Chocolate,15,1800,Snacks
+2016-12-27,Chocolate,12,1440,Snacks
+2016-12-28,Chocolate,19,2280,Snacks
+2016-12-29,Chocolate,12,1440,Snacks
+2016-12-30,Chocolate,11,1320,Snacks
+2016-12-31,Chocolate,17,2040,Snacks
+2017-01-01,Chocolate,25,3000,Snacks
+2017-01-02,Chocolate,14,1680,Snacks
+2017-01-03,Chocolate,13,1560,Snacks
+2017-01-04,Chocolate,15,1800,Snacks
+2017-01-05,Chocolate,15,1800,Snacks
+2017-01-06,Chocolate,18,2160,Snacks
+2017-01-07,Chocolate,15,1800,Snacks
+2017-01-08,Chocolate,12,1440,Snacks
+2017-01-09,Chocolate,17,2040,Snacks
+2017-01-10,Chocolate,11,1320,Snacks
+2017-01-11,Chocolate,16,1920,Snacks
+2017-01-12,Chocolate,8,960,Snacks
+2017-01-13,Chocolate,10,1200,Snacks
+2017-01-14,Chocolate,15,1800,Snacks
+2017-01-15,Chocolate,15,1800,Snacks
+2017-01-16,Chocolate,7,840,Snacks
+2017-01-17,Chocolate,16,1920,Snacks
+2017-01-18,Chocolate,14,1680,Snacks
+2017-01-19,Chocolate,17,2040,Snacks
+2017-01-20,Chocolate,16,1920,Snacks
+2017-01-21,Chocolate,12,1440,Snacks
+2017-01-22,Chocolate,9,1080,Snacks
+2017-01-23,Chocolate,11,1320,Snacks
+2017-01-24,Chocolate,14,1680,Snacks
+2017-01-25,Chocolate,10,1200,Snacks
+2017-01-26,Chocolate,14,1680,Snacks
+2017-01-27,Chocolate,12,1440,Snacks
+2017-01-28,Chocolate,10,1200,Snacks
+2017-01-29,Chocolate,14,1680,Snacks
+2017-01-30,Chocolate,4,480,Snacks
+2017-01-31,Chocolate,8,960,Snacks
+2017-02-01,Chocolate,19,2280,Snacks
+2017-02-02,Chocolate,10,1200,Snacks
+2017-02-03,Chocolate,12,1440,Snacks
+2017-02-04,Chocolate,14,1680,Snacks
+2017-02-05,Chocolate,13,1560,Snacks
+2017-02-06,Chocolate,17,2040,Snacks
+2017-02-07,Chocolate,19,2280,Snacks
+2017-02-08,Chocolate,14,1680,Snacks
+2017-02-09,Chocolate,14,1680,Snacks
+2017-02-10,Chocolate,6,720,Snacks
+2017-02-11,Chocolate,20,2400,Snacks
+2017-02-12,Chocolate,21,2520,Snacks
+2017-02-13,Chocolate,9,1080,Snacks
+2017-02-14,Chocolate,7,840,Snacks
+2017-02-15,Chocolate,13,1560,Snacks
+2017-02-16,Chocolate,10,1200,Snacks
+2017-02-17,Chocolate,26,3120,Snacks
+2017-02-18,Chocolate,26,3120,Snacks
+2017-02-19,Chocolate,19,2280,Snacks
+2017-02-20,Chocolate,9,1080,Snacks
+2017-02-21,Chocolate,17,2040,Snacks
+2017-02-22,Chocolate,16,1920,Snacks
+2017-02-23,Chocolate,11,1320,Snacks
+2017-02-24,Chocolate,22,2640,Snacks
+2017-02-25,Chocolate,22,2640,Snacks
+2017-02-26,Chocolate,17,2040,Snacks
+2017-02-27,Chocolate,14,1680,Snacks
+2017-02-28,Chocolate,15,1800,Snacks
+2017-03-01,Chocolate,17,2040,Snacks
+2017-03-02,Chocolate,16,1920,Snacks
+2017-03-03,Chocolate,14,1680,Snacks
+2017-03-04,Chocolate,17,2040,Snacks
+2017-03-05,Chocolate,26,3120,Snacks
+2017-03-06,Chocolate,5,600,Snacks
+2017-03-07,Chocolate,9,1080,Snacks
+2017-03-08,Chocolate,16,1920,Snacks
+2017-03-09,Chocolate,19,2280,Snacks
+2017-03-10,Chocolate,28,3360,Snacks
+2017-03-11,Chocolate,20,2400,Snacks
+2017-03-12,Chocolate,16,1920,Snacks
+2017-03-13,Chocolate,9,1080,Snacks
+2017-03-14,Chocolate,10,1200,Snacks
+2017-03-15,Chocolate,15,1800,Snacks
+2017-03-16,Chocolate,16,1920,Snacks
+2017-03-17,Chocolate,16,1920,Snacks
+2017-03-18,Chocolate,20,2400,Snacks
+2017-03-19,Chocolate,14,1680,Snacks
+2017-03-20,Chocolate,13,1560,Snacks
+2017-03-21,Chocolate,18,2160,Snacks
+2017-03-22,Chocolate,19,2280,Snacks
+2017-03-23,Chocolate,16,1920,Snacks
+2017-03-24,Chocolate,16,1920,Snacks
+2017-03-25,Chocolate,19,2280,Snacks
+2017-03-26,Chocolate,22,2640,Snacks
+2017-03-27,Chocolate,15,1800,Snacks
+2017-03-28,Chocolate,12,1440,Snacks
+2017-03-29,Chocolate,10,1200,Snacks
+2017-03-30,Chocolate,25,3000,Snacks
+2017-03-31,Chocolate,24,2880,Snacks
+2017-04-01,Chocolate,26,3120,Snacks
+2017-04-02,Chocolate,32,3840,Snacks
+2017-04-03,Chocolate,18,2160,Snacks
+2017-04-04,Chocolate,21,2520,Snacks
+2017-04-05,Chocolate,17,2040,Snacks
+2017-04-06,Chocolate,19,2280,Snacks
+2017-04-07,Chocolate,15,1800,Snacks
+2017-04-08,Chocolate,25,3000,Snacks
+2017-04-09,Chocolate,24,2880,Snacks
+2017-04-10,Chocolate,9,1080,Snacks
+2017-04-11,Chocolate,19,2280,Snacks
+2017-04-12,Chocolate,22,2640,Snacks
+2017-04-13,Chocolate,26,3120,Snacks
+2017-04-14,Chocolate,20,2400,Snacks
+2017-04-15,Chocolate,26,3120,Snacks
+2017-04-16,Chocolate,29,3480,Snacks
+2017-04-17,Chocolate,11,1320,Snacks
+2017-04-18,Chocolate,20,2400,Snacks
+2017-04-19,Chocolate,23,2760,Snacks
+2017-04-20,Chocolate,19,2280,Snacks
+2017-04-21,Chocolate,20,2400,Snacks
+2017-04-22,Chocolate,22,2640,Snacks
+2017-04-23,Chocolate,28,3360,Snacks
+2017-04-24,Chocolate,15,1800,Snacks
+2017-04-25,Chocolate,19,2280,Snacks
+2017-04-26,Chocolate,24,2880,Snacks
+2017-04-27,Chocolate,21,2520,Snacks
+2017-04-28,Chocolate,20,2400,Snacks
+2017-04-29,Chocolate,21,2520,Snacks
+2017-04-30,Chocolate,22,2640,Snacks
+2017-05-01,Chocolate,12,1440,Snacks
+2017-05-02,Chocolate,17,2040,Snacks
+2017-05-03,Chocolate,19,2280,Snacks
+2017-05-04,Chocolate,22,2640,Snacks
+2017-05-05,Chocolate,21,2520,Snacks
+2017-05-06,Chocolate,16,1920,Snacks
+2017-05-07,Chocolate,25,3000,Snacks
+2017-05-08,Chocolate,21,2520,Snacks
+2017-05-09,Chocolate,18,2160,Snacks
+2017-05-10,Chocolate,18,2160,Snacks
+2017-05-11,Chocolate,21,2520,Snacks
+2017-05-12,Chocolate,24,2880,Snacks
+2017-05-13,Chocolate,21,2520,Snacks
+2017-05-14,Chocolate,30,3600,Snacks
+2017-05-15,Chocolate,17,2040,Snacks
+2017-05-16,Chocolate,21,2520,Snacks
+2017-05-17,Chocolate,18,2160,Snacks
+2017-05-18,Chocolate,21,2520,Snacks
+2017-05-19,Chocolate,21,2520,Snacks
+2017-05-20,Chocolate,32,3840,Snacks
+2017-05-21,Chocolate,28,3360,Snacks
+2017-05-22,Chocolate,22,2640,Snacks
+2017-05-23,Chocolate,20,2400,Snacks
+2017-05-24,Chocolate,25,3000,Snacks
+2017-05-25,Chocolate,14,1680,Snacks
+2017-05-26,Chocolate,19,2280,Snacks
+2017-05-27,Chocolate,23,2760,Snacks
+2017-05-28,Chocolate,23,2760,Snacks
+2017-05-29,Chocolate,17,2040,Snacks
+2017-05-30,Chocolate,20,2400,Snacks
+2017-05-31,Chocolate,27,3240,Snacks
+2017-06-01,Chocolate,27,3240,Snacks
+2017-06-02,Chocolate,19,2280,Snacks
+2017-06-03,Chocolate,27,3240,Snacks
+2017-06-04,Chocolate,36,4320,Snacks
+2017-06-05,Chocolate,21,2520,Snacks
+2017-06-06,Chocolate,20,2400,Snacks
+2017-06-07,Chocolate,21,2520,Snacks
+2017-06-08,Chocolate,24,2880,Snacks
+2017-06-09,Chocolate,24,2880,Snacks
+2017-06-10,Chocolate,27,3240,Snacks
+2017-06-11,Chocolate,25,3000,Snacks
+2017-06-12,Chocolate,25,3000,Snacks
+2017-06-13,Chocolate,32,3840,Snacks
+2017-06-14,Chocolate,21,2520,Snacks
+2017-06-15,Chocolate,22,2640,Snacks
+2017-06-16,Chocolate,33,3960,Snacks
+2017-06-17,Chocolate,23,2760,Snacks
+2017-06-18,Chocolate,20,2400,Snacks
+2017-06-19,Chocolate,19,2280,Snacks
+2017-06-20,Chocolate,24,2880,Snacks
+2017-06-21,Chocolate,17,2040,Snacks
+2017-06-22,Chocolate,20,2400,Snacks
+2017-06-23,Chocolate,24,2880,Snacks
+2017-06-24,Chocolate,20,2400,Snacks
+2017-06-25,Chocolate,24,2880,Snacks
+2017-06-26,Chocolate,16,1920,Snacks
+2017-06-27,Chocolate,16,1920,Snacks
+2017-06-28,Chocolate,14,1680,Snacks
+2017-06-29,Chocolate,23,2760,Snacks
+2017-06-30,Chocolate,22,2640,Snacks
+2017-07-01,Chocolate,26,3120,Snacks
+2017-07-02,Chocolate,26,3120,Snacks
+2017-07-03,Chocolate,18,2160,Snacks
+2017-07-04,Chocolate,23,2760,Snacks
+2017-07-05,Chocolate,22,2640,Snacks
+2017-07-06,Chocolate,26,3120,Snacks
+2017-07-07,Chocolate,21,2520,Snacks
+2017-07-08,Chocolate,25,3000,Snacks
+2017-07-09,Chocolate,23,2760,Snacks
+2017-07-10,Chocolate,18,2160,Snacks
+2017-07-11,Chocolate,12,1440,Snacks
+2017-07-12,Chocolate,22,2640,Snacks
+2017-07-13,Chocolate,23,2760,Snacks
+2017-07-14,Chocolate,20,2400,Snacks
+2017-07-15,Chocolate,37,4440,Snacks
+2017-07-16,Chocolate,25,3000,Snacks
+2017-07-17,Chocolate,21,2520,Snacks
+2017-07-18,Chocolate,19,2280,Snacks
+2017-07-19,Chocolate,16,1920,Snacks
+2017-07-20,Chocolate,29,3480,Snacks
+2017-07-21,Chocolate,17,2040,Snacks
+2017-07-22,Chocolate,26,3120,Snacks
+2017-07-23,Chocolate,21,2520,Snacks
+2017-07-24,Chocolate,23,2760,Snacks
+2017-07-25,Chocolate,25,3000,Snacks
+2017-07-26,Chocolate,22,2640,Snacks
+2017-07-27,Chocolate,25,3000,Snacks
+2017-07-28,Chocolate,28,3360,Snacks
+2017-07-29,Chocolate,27,3240,Snacks
+2017-07-30,Chocolate,22,2640,Snacks
+2017-07-31,Chocolate,11,1320,Snacks
+2017-08-01,Chocolate,18,2160,Snacks
+2017-08-02,Chocolate,13,1560,Snacks
+2017-08-03,Chocolate,22,2640,Snacks
+2017-08-04,Chocolate,21,2520,Snacks
+2017-08-05,Chocolate,18,2160,Snacks
+2017-08-06,Chocolate,21,2520,Snacks
+2017-08-07,Chocolate,15,1800,Snacks
+2017-08-08,Chocolate,16,1920,Snacks
+2017-08-09,Chocolate,20,2400,Snacks
+2017-08-10,Chocolate,19,2280,Snacks
+2017-08-11,Chocolate,25,3000,Snacks
+2017-08-12,Chocolate,25,3000,Snacks
+2017-08-13,Chocolate,25,3000,Snacks
+2017-08-14,Chocolate,22,2640,Snacks
+2017-08-15,Chocolate,16,1920,Snacks
+2017-08-16,Chocolate,21,2520,Snacks
+2017-08-17,Chocolate,21,2520,Snacks
+2017-08-18,Chocolate,27,3240,Snacks
+2017-08-19,Chocolate,19,2280,Snacks
+2017-08-20,Chocolate,26,3120,Snacks
+2017-08-21,Chocolate,15,1800,Snacks
+2017-08-22,Chocolate,21,2520,Snacks
+2017-08-23,Chocolate,25,3000,Snacks
+2017-08-24,Chocolate,24,2880,Snacks
+2017-08-25,Chocolate,18,2160,Snacks
+2017-08-26,Chocolate,19,2280,Snacks
+2017-08-27,Chocolate,28,3360,Snacks
+2017-08-28,Chocolate,19,2280,Snacks
+2017-08-29,Chocolate,16,1920,Snacks
+2017-08-30,Chocolate,18,2160,Snacks
+2017-08-31,Chocolate,24,2880,Snacks
+2017-09-01,Chocolate,26,3120,Snacks
+2017-09-02,Chocolate,25,3000,Snacks
+2017-09-03,Chocolate,23,2760,Snacks
+2017-09-04,Chocolate,17,2040,Snacks
+2017-09-05,Chocolate,7,840,Snacks
+2017-09-06,Chocolate,19,2280,Snacks
+2017-09-07,Chocolate,25,3000,Snacks
+2017-09-08,Chocolate,12,1440,Snacks
+2017-09-09,Chocolate,26,3120,Snacks
+2017-09-10,Chocolate,23,2760,Snacks
+2017-09-11,Chocolate,13,1560,Snacks
+2017-09-12,Chocolate,17,2040,Snacks
+2017-09-13,Chocolate,20,2400,Snacks
+2017-09-14,Chocolate,18,2160,Snacks
+2017-09-15,Chocolate,18,2160,Snacks
+2017-09-16,Chocolate,22,2640,Snacks
+2017-09-17,Chocolate,25,3000,Snacks
+2017-09-18,Chocolate,14,1680,Snacks
+2017-09-19,Chocolate,18,2160,Snacks
+2017-09-20,Chocolate,16,1920,Snacks
+2017-09-21,Chocolate,16,1920,Snacks
+2017-09-22,Chocolate,20,2400,Snacks
+2017-09-23,Chocolate,28,3360,Snacks
+2017-09-24,Chocolate,35,4200,Snacks
+2017-09-25,Chocolate,14,1680,Snacks
+2017-09-26,Chocolate,15,1800,Snacks
+2017-09-27,Chocolate,19,2280,Snacks
+2017-09-28,Chocolate,21,2520,Snacks
+2017-09-29,Chocolate,18,2160,Snacks
+2017-09-30,Chocolate,19,2280,Snacks
+2017-10-01,Chocolate,20,2400,Snacks
+2017-10-02,Chocolate,15,1800,Snacks
+2017-10-03,Chocolate,22,2640,Snacks
+2017-10-04,Chocolate,15,1800,Snacks
+2017-10-05,Chocolate,19,2280,Snacks
+2017-10-06,Chocolate,22,2640,Snacks
+2017-10-07,Chocolate,19,2280,Snacks
+2017-10-08,Chocolate,20,2400,Snacks
+2017-10-09,Chocolate,14,1680,Snacks
+2017-10-10,Chocolate,14,1680,Snacks
+2017-10-11,Chocolate,17,2040,Snacks
+2017-10-12,Chocolate,12,1440,Snacks
+2017-10-13,Chocolate,14,1680,Snacks
+2017-10-14,Chocolate,28,3360,Snacks
+2017-10-15,Chocolate,18,2160,Snacks
+2017-10-16,Chocolate,12,1440,Snacks
+2017-10-17,Chocolate,13,1560,Snacks
+2017-10-18,Chocolate,21,2520,Snacks
+2017-10-19,Chocolate,11,1320,Snacks
+2017-10-20,Chocolate,22,2640,Snacks
+2017-10-21,Chocolate,31,3720,Snacks
+2017-10-22,Chocolate,19,2280,Snacks
+2017-10-23,Chocolate,16,1920,Snacks
+2017-10-24,Chocolate,12,1440,Snacks
+2017-10-25,Chocolate,23,2760,Snacks
+2017-10-26,Chocolate,26,3120,Snacks
+2017-10-27,Chocolate,22,2640,Snacks
+2017-10-28,Chocolate,16,1920,Snacks
+2017-10-29,Chocolate,21,2520,Snacks
+2017-10-30,Chocolate,14,1680,Snacks
+2017-10-31,Chocolate,17,2040,Snacks
+2017-11-01,Chocolate,11,1320,Snacks
+2017-11-02,Chocolate,18,2160,Snacks
+2017-11-03,Chocolate,15,1800,Snacks
+2017-11-04,Chocolate,21,2520,Snacks
+2017-11-05,Chocolate,28,3360,Snacks
+2017-11-06,Chocolate,15,1800,Snacks
+2017-11-07,Chocolate,17,2040,Snacks
+2017-11-08,Chocolate,18,2160,Snacks
+2017-11-09,Chocolate,16,1920,Snacks
+2017-11-10,Chocolate,15,1800,Snacks
+2017-11-11,Chocolate,22,2640,Snacks
+2017-11-12,Chocolate,28,3360,Snacks
+2017-11-13,Chocolate,12,1440,Snacks
+2017-11-14,Chocolate,15,1800,Snacks
+2017-11-15,Chocolate,19,2280,Snacks
+2017-11-16,Chocolate,19,2280,Snacks
+2017-11-17,Chocolate,20,2400,Snacks
+2017-11-18,Chocolate,26,3120,Snacks
+2017-11-19,Chocolate,20,2400,Snacks
+2017-11-20,Chocolate,15,1800,Snacks
+2017-11-21,Chocolate,20,2400,Snacks
+2017-11-22,Chocolate,14,1680,Snacks
+2017-11-23,Chocolate,23,2760,Snacks
+2017-11-24,Chocolate,24,2880,Snacks
+2017-11-25,Chocolate,25,3000,Snacks
+2017-11-26,Chocolate,32,3840,Snacks
+2017-11-27,Chocolate,20,2400,Snacks
+2017-11-28,Chocolate,18,2160,Snacks
+2017-11-29,Chocolate,9,1080,Snacks
+2017-11-30,Chocolate,20,2400,Snacks
+2017-12-01,Chocolate,13,1560,Snacks
+2017-12-02,Chocolate,18,2160,Snacks
+2017-12-03,Chocolate,19,2280,Snacks
+2017-12-04,Chocolate,13,1560,Snacks
+2017-12-05,Chocolate,16,1920,Snacks
+2017-12-06,Chocolate,15,1800,Snacks
+2017-12-07,Chocolate,10,1200,Snacks
+2017-12-08,Chocolate,6,720,Snacks
+2017-12-09,Chocolate,14,1680,Snacks
+2017-12-10,Chocolate,18,2160,Snacks
+2017-12-11,Chocolate,11,1320,Snacks
+2017-12-12,Chocolate,13,1560,Snacks
+2017-12-13,Chocolate,16,1920,Snacks
+2017-12-14,Chocolate,9,1080,Snacks
+2017-12-15,Chocolate,23,2760,Snacks
+2017-12-16,Chocolate,23,2760,Snacks
+2017-12-17,Chocolate,16,1920,Snacks
+2017-12-18,Chocolate,10,1200,Snacks
+2017-12-19,Chocolate,9,1080,Snacks
+2017-12-20,Chocolate,11,1320,Snacks
+2017-12-21,Chocolate,14,1680,Snacks
+2017-12-22,Chocolate,6,720,Snacks
+2017-12-23,Chocolate,19,2280,Snacks
+2017-12-24,Chocolate,15,1800,Snacks
+2017-12-25,Chocolate,12,1440,Snacks
+2017-12-26,Chocolate,10,1200,Snacks
+2017-12-27,Chocolate,6,720,Snacks
+2017-12-28,Chocolate,15,1800,Snacks
+2017-12-29,Chocolate,17,2040,Snacks
+2017-12-30,Chocolate,22,2640,Snacks
+2017-12-31,Chocolate,17,2040,Snacks

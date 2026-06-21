@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+.npm/
+
+# Environment variables — NEVER commit these
+server/.env
+client/.env
+ml_service/.env
+server/ai-bussiness-advisor-firebase-adminsdk-*.json
+
+# Build outputs
+client/dist/
+client/build/
+
+# Uploads (user files)
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Python
+ml_service/__pycache__/
+ml_service/*.pyc
+ml_service/models/
+*.pkl
+*.joblib
+venv/
+.venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+nodemon-debug.log*
+
+# Editor
+.vscode/settings.json
+.idea/
+*.swp

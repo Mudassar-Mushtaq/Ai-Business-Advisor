@@ -1,0 +1,18 @@
+{
+  "name": "ai-business-advisor",
+  "version": "1.0.0",
+  "description": "AI-Powered Business Advisor — Full MERN Stack",
+  "scripts": {
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev:all": "concurrently \"npm run server\" \"npm run client\" \"npm run ml\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "ml": "cd ml_service && source venv/bin/activate && python3 app.py",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

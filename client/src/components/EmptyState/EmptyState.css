@@ -1,0 +1,28 @@
+.empty-state-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 32px 32px;
+  text-align: center;
+  gap: 10px;
+  color: var(--text-secondary);
+}
+
+.empty-state-svg {
+  margin-bottom: 6px;
+  animation: float-glow 5s ease-in-out infinite alternate;
+}
+
+.empty-state-wrap h3 {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.empty-state-wrap p {
+  max-width: 360px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}

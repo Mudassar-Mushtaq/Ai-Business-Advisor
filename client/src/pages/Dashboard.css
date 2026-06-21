@@ -1,0 +1,202 @@
+.chart-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.chart-card-header h3 { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--warning);
+  margin-bottom: 12px;
+}
+
+/* Dashboard alert preview (max 2 + See all) */
+.alerts-preview {
+  margin-bottom: 28px;
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  background: var(--grad-card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+.alerts-preview__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.alerts-preview__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.alerts-preview__title h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.alerts-preview__title p {
+  margin: 2px 0 0 0;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+.alerts-preview__badge {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(245,158,11,0.14);
+  color: var(--warning);
+  border: 1px solid rgba(245,158,11,0.28);
+  box-shadow: 0 0 0 4px rgba(245,158,11,0.05);
+}
+.alerts-preview__badge-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--danger);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--bg-card);
+  box-shadow: 0 0 12px rgba(239,68,68,0.6);
+}
+.alerts-preview__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.alerts-preview__cta-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: rgba(99,102,241,0.18);
+  color: var(--primary-light);
+  font-size: 0.7rem;
+  font-weight: 700;
+  border: 1px solid rgba(99,102,241,0.3);
+}
+.alerts-preview__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+@media (max-width: 768px) {
+  .alerts-preview { padding: 14px; }
+  .alerts-preview__grid { grid-template-columns: 1fr; gap: 10px; }
+}
+
+/* Reorder recommendations */
+.reorder-panel .data-table th { white-space: nowrap; }
+
+.reorder-table-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, rgba(99,102,241,0.20) 0%, rgba(14,165,233,0.20) 100%);
+  color: var(--primary-light);
+  border: 1px solid rgba(99,102,241,0.32);
+  cursor: pointer;
+  transition: all .15s ease;
+  white-space: nowrap;
+}
+.reorder-table-btn:hover {
+  background: linear-gradient(135deg, rgba(99,102,241,0.38) 0%, rgba(14,165,233,0.38) 100%);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(99,102,241,0.35);
+}
+
+.days-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 99px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.days-pill--critical { background: rgba(239,68,68,0.15);  color: var(--danger); }
+.days-pill--warning  { background: rgba(245,158,11,0.15); color: var(--warning); }
+.days-pill--info     { background: rgba(99,102,241,0.12); color: var(--primary-light); }
+
+/* Period select + refresh row — wraps full-width on mobile */
+.dashboard-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .chart-card-header { margin-bottom: 14px; flex-wrap: wrap; gap: 8px; }
+  .chart-card-header h3 { font-size: 0.95rem; }
+
+  .section-label { font-size: 0.72rem; margin-bottom: 10px; }
+
+  .dashboard-controls { width: 100%; gap: 8px; flex-wrap: wrap; }
+  .dashboard-controls .form-select {
+    flex: 1 1 100%;
+    width: 100% !important;
+    min-height: 44px;
+    font-size: 16px;
+  }
+  /* The action buttons (CSV, Report, Refresh) share one row, equally */
+  .dashboard-controls .btn {
+    flex: 1 1 0;
+    min-width: 0;
+    justify-content: center;
+    padding: 10px 8px;
+  }
+
+  .days-pill { font-size: 0.72rem; padding: 3px 8px; }
+
+  /* Dashboard goal strip + alerts preview tighten on mobile */
+  .dashboard-goals { margin-bottom: 22px; }
+  .dashboard-goals__head h3 { font-size: 0.78rem; }
+  .dashboard-goals__grid { grid-template-columns: 1fr; gap: 10px; }
+
+  .alerts-preview { padding: 14px; border-radius: 14px; margin-bottom: 22px; }
+  .alerts-preview__head { gap: 10px; }
+  .alerts-preview__title h3 { font-size: 0.95rem; }
+  .alerts-preview__title p  { font-size: 0.72rem; }
+  .alerts-preview__badge { width: 34px; height: 34px; border-radius: 10px; }
+
+  /* Reorder recommendation panel — once tables become cards, the
+     little explainer text needs a bit more room above it */
+  .reorder-panel { padding: 16px 14px; }
+  .reorder-table-btn { padding: 9px 14px; font-size: 0.78rem; min-height: 38px; }
+}
+
+@media (max-width: 480px) {
+  .alerts-preview__head { flex-direction: column; align-items: stretch; }
+  .alerts-preview__cta { justify-content: center; }
+}

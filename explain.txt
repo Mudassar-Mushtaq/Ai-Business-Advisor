@@ -1,0 +1,22 @@
+What you need to do to turn it on
+Add to server/.env:
+
+
+ENCRYPTION_KEY=<run: openssl rand -hex 32>
+GOOGLE_CLIENT_ID=<from Google Cloud Console>
+GOOGLE_CLIENT_SECRET=<same>
+GOOGLE_REDIRECT_URI=http://localhost:5001/api/connectors/google_sheets/callback
+CLIENT_URL=http://localhost:3000
+In Google Cloud Console:
+
+Create a project → enable Google Sheets API + Google Drive API
+OAuth consent screen → External → add yourself as a test user
+Credentials → OAuth 2.0 Client ID (Web app) → add the redirect URI above
+Copy client ID/secret into .env
+Then npm run dev in server, hit /connections in the app, click Connect, paste a sheet ID, Sync now. Sheet headers can be Date / Product / Quantity / Revenue / Category / Cost / Region (any case, spaces ok).
+
+Daraz adapter is the easy add later — same fetchDelta(connector) interface, just register it in syncRunner.js:8-10.
+
+
+
+

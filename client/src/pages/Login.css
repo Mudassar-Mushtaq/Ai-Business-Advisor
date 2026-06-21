@@ -1,0 +1,392 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  background: var(--bg-base);
+}
+
+/* Left */
+.login-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 48px;
+  background: linear-gradient(145deg, #0d1117 0%, #111827 100%);
+  border-right: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 80px;
+}
+.login-logo {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  background: var(--grad-primary);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(99,102,241,0.4);
+  animation: logo-pulse 4s ease-in-out infinite alternate;
+}
+@keyframes logo-pulse {
+  0%   { box-shadow: 0 8px 24px rgba(99,102,241,0.4); transform: scale(1); }
+  100% { box-shadow: 0 12px 36px rgba(99,102,241,0.7); transform: scale(1.04); }
+}
+.login-brand-name { font-size: 1.4rem; font-weight: 800; background: var(--grad-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -0.01em; }
+
+/* Layered content sits above the 3D scene + spotlight.
+   pointer-events: none lets the cursor reach the Spline canvas below
+   so the 3D robot can track the mouse. Only small interactive bits
+   (feature rows) re-enable events for their hover effect. */
+.login-left-content {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  pointer-events: none;
+}
+.login-left-content .login-feature {
+  pointer-events: auto;
+}
+
+/* 3D Spline background — anchored to the lower-right of the left panel */
+.login-spline {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: auto;
+  opacity: 0;
+  animation: spline-fade-in 1.2s ease-out 0.3s forwards;
+}
+.login-spline-canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+@keyframes spline-fade-in {
+  to { opacity: 1; }
+}
+
+/* Dark gradient veil — keeps text legible over the 3D scene */
+.login-left-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    linear-gradient(105deg,
+      rgba(13, 17, 23, 0.92) 0%,
+      rgba(13, 17, 23, 0.78) 28%,
+      rgba(17, 24, 39, 0.45) 55%,
+      rgba(17, 24, 39, 0.1)  100%);
+}
+
+/* Spotlight — animated reveal, sits between gradient bg and 3D scene */
+.login-spotlight {
+  position: absolute;
+  z-index: 1;
+  top: -40px;
+  left: 0;
+  height: 169%;
+  width: 138%;
+  pointer-events: none;
+  opacity: 0;
+  animation: spotlight-in 2s ease 0.2s forwards;
+}
+@keyframes spotlight-in {
+  0%   { opacity: 0; transform: translate(-72px, -15px); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+
+.login-hero { margin-bottom: 48px; position: relative; z-index: 2; }
+.login-headline { font-size: 2.8rem; font-weight: 800; line-height: 1.15; color: var(--text-primary); margin-bottom: 16px; animation: hero-rise .7s cubic-bezier(.4,.0,.2,1) both; }
+.gradient-text {
+  background: linear-gradient(90deg, #6366f1, #0ea5e9, #6366f1);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 6s linear infinite;
+}
+@keyframes hero-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.login-subtext { font-size: 1rem; color: var(--text-secondary); line-height: 1.7; max-width: 420px; }
+
+.login-features { display: flex; flex-direction: column; gap: 16px; position: relative; z-index: 2; }
+.login-feature { display: flex; align-items: flex-start; gap: 14px; animation: hero-rise .7s cubic-bezier(.4,.0,.2,1) both; }
+.login-feature:nth-child(1) { animation-delay: .15s; }
+.login-feature:nth-child(2) { animation-delay: .25s; }
+.login-feature:nth-child(3) { animation-delay: .35s; }
+.login-feature:nth-child(4) { animation-delay: .45s; }
+.login-feature:hover .login-feature-icon { transform: scale(1.08) rotate(-4deg); border-color: rgba(99,102,241,0.45); }
+.login-feature-icon { transition: transform .25s cubic-bezier(.4,.0,.2,1), border-color .25s; }
+.login-feature-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.2);
+  display: flex; align-items: center; justify-content: center; color: var(--primary-light); flex-shrink: 0;
+}
+.login-feature-label { font-weight: 600; font-size: 0.9rem; color: var(--text-primary); }
+.login-feature-desc  { font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px; }
+
+/* Animated orbs — kept subtle so they enhance, not compete with, the 3D scene */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 2;
+}
+.orb-1 { width: 350px; height: 350px; background: rgba(99,102,241,0.18); top: -100px; right: -100px; animation: drift 8s ease-in-out infinite alternate; }
+.orb-2 { width: 250px; height: 250px; background: rgba(14,165,233,0.14); bottom: 100px; left: -80px;  animation: drift 11s ease-in-out infinite alternate-reverse; }
+@keyframes drift { from { transform: translate(0,0); } to { transform: translate(30px, 20px); } }
+
+/* Right */
+.login-right {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 40px;
+  background: var(--bg-base);
+  overflow-y: auto;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card-header { text-align: center; margin-bottom: 28px; }
+.login-logo-sm {
+  width: 52px; height: 52px; border-radius: 14px; background: var(--grad-primary);
+  display: flex; align-items: center; justify-content: center; color: #fff;
+  margin: 0 auto 18px; box-shadow: 0 8px 24px rgba(99,102,241,0.35);
+}
+.login-card-header h2 { font-size: 1.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 6px; }
+.login-card-header p  { color: var(--text-secondary); font-size: 0.88rem; }
+
+/* Auth Form */
+.auth-form { display: flex; flex-direction: column; gap: 14px; margin-bottom: 6px; }
+
+.auth-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.auth-input-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 13px 44px 13px 44px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: all 0.25s;
+  outline: none;
+}
+.auth-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+}
+.auth-input::placeholder {
+  color: var(--text-muted);
+}
+
+.auth-eye-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+.auth-eye-btn:hover { color: var(--text-secondary); }
+
+/* Password match indicator */
+.password-match {
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding-left: 4px;
+  margin-top: -6px;
+}
+.password-match.match { color: var(--success); }
+.password-match.no-match { color: var(--danger); }
+
+/* Submit button */
+.auth-submit-btn {
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--grad-primary);
+  border: none;
+  border-radius: var(--radius-lg);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+.auth-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99,102,241,0.4);
+}
+.auth-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Error banner */
+.auth-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  margin-bottom: 16px;
+  background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.25);
+  border-radius: var(--radius);
+  color: var(--danger);
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+.auth-error svg { flex-shrink: 0; }
+
+/* Google button */
+.google-btn {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  width: 100%; padding: 13px 24px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); color: var(--text-primary);
+  font-family: inherit; font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; text-decoration: none;
+  transition: all 0.25s;
+}
+.google-btn:hover { background: var(--bg-card-hover); border-color: rgba(99,102,241,0.4); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+
+/* Divider */
+.login-divider { display: flex; align-items: center; gap: 12px; margin: 18px 0; }
+.login-divider::before,.login-divider::after { content:''; flex:1; height:1px; background:var(--border); }
+.login-divider span { font-size: 0.78rem; color: var(--text-muted); white-space: nowrap; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* Switch mode */
+.auth-switch {
+  text-align: center;
+  margin-top: 18px;
+  margin-bottom: 14px;
+}
+.auth-switch p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.auth-switch-btn {
+  background: none;
+  border: none;
+  color: var(--primary-light);
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.auth-switch-btn:hover { color: #818cf8; }
+
+/* Footer note */
+.login-footer-note {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.78rem; color: var(--text-muted);
+  text-align: center; justify-content: center; line-height: 1.5;
+}
+
+/* Make sure inputs/buttons sit above all background layers */
+.login-feature, .login-brand { position: relative; z-index: 4; }
+
+@media (max-width: 1100px) {
+  /* On smaller screens, hide the 3D scene to save bandwidth + keep UI clean */
+  .login-spline, .login-spotlight { display: none; }
+  .login-left-veil { background: linear-gradient(145deg, #0d1117 0%, #111827 100%); }
+}
+
+@media (max-width: 900px) {
+  .login-left { display: none; }
+  .login-right { width: 100%; padding: 32px 20px; }
+}
+
+/* ---------- Mobile login polish ---------- */
+@media (max-width: 768px) {
+  .login-page {
+    min-height: 100dvh;
+    background:
+      radial-gradient(circle at 0% 0%, rgba(99,102,241,0.18), transparent 45%),
+      radial-gradient(circle at 100% 100%, rgba(14,165,233,0.14), transparent 50%),
+      var(--bg-base);
+  }
+  .login-right {
+    padding: 28px 18px calc(28px + env(safe-area-inset-bottom));
+    align-items: flex-start;
+  }
+  .login-card {
+    margin-top: env(safe-area-inset-top);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 26px 20px 22px;
+    box-shadow: var(--shadow-lg);
+  }
+  .login-logo-sm {
+    width: 56px; height: 56px;
+    border-radius: 16px;
+    margin-bottom: 14px;
+  }
+  .login-card-header h2 { font-size: 1.4rem; }
+  .login-card-header p  { font-size: 0.85rem; }
+
+  .auth-form { gap: 12px; }
+  .auth-input {
+    padding: 14px 44px;
+    font-size: 16px;       /* prevents iOS zoom-on-focus */
+    border-radius: 14px;
+    min-height: 50px;
+  }
+  .auth-submit-btn {
+    padding: 15px 24px;
+    border-radius: 14px;
+    font-size: 1rem;
+    min-height: 52px;
+  }
+  .google-btn {
+    padding: 14px 20px;
+    border-radius: 14px;
+    font-size: 0.92rem;
+    min-height: 50px;
+  }
+  .auth-error { padding: 12px 14px; font-size: 0.85rem; }
+}
+
+@media (max-width: 380px) {
+  .login-right { padding: 22px 14px calc(22px + env(safe-area-inset-bottom)); }
+  .login-card { padding: 22px 16px 18px; border-radius: 18px; }
+  .login-card-header h2 { font-size: 1.3rem; }
+}

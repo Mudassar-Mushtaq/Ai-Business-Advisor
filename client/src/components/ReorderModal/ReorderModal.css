@@ -1,0 +1,241 @@
+/* Reorder confirmation modal */
+
+.reorder-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: rgba(2, 6, 23, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: reorder-fade .15s ease-out;
+}
+
+.reorder-modal {
+  width: 100%;
+  max-width: 560px;
+  max-height: 92vh;
+  overflow-y: auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(99,102,241,0.18);
+  animation: reorder-pop .18s cubic-bezier(.34,1.56,.64,1);
+}
+
+.reorder-modal__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 22px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.reorder-modal__heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.reorder-modal__head-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99,102,241,0.14);
+  color: var(--primary-light);
+  border: 1px solid rgba(99,102,241,0.3);
+  flex-shrink: 0;
+}
+.reorder-modal__heading h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.reorder-modal__heading p {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin: 2px 0 0 0;
+}
+.reorder-modal__close {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.reorder-modal__close:hover {
+  background: rgba(255,255,255,0.08);
+  color: var(--text-primary);
+  transform: rotate(90deg);
+}
+
+.reorder-modal__loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 22px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.reorder-modal__loading--inline {
+  padding: 8px 22px 0;
+  font-size: 0.75rem;
+}
+
+.reorder-modal__context {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px 22px 4px;
+}
+.reorder-modal__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+.reorder-modal__chip b { color: var(--text-primary); font-weight: 700; }
+.reorder-modal__chip--stock {
+  background: rgba(245,158,11,0.10);
+  border-color: rgba(245,158,11,0.28);
+  color: #fcd34d;
+}
+.reorder-modal__chip--stock b { color: #fef3c7; }
+.reorder-modal__chip--ai {
+  background: linear-gradient(135deg, rgba(99,102,241,0.18) 0%, rgba(14,165,233,0.18) 100%);
+  border-color: rgba(99,102,241,0.3);
+  color: #c7d2fe;
+}
+
+/* Form */
+.reorder-modal__form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 16px 22px 22px;
+}
+.reorder-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.reorder-field--full { grid-column: 1 / -1; }
+.reorder-field > span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.reorder-field input,
+.reorder-field textarea {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+  width: 100%;
+}
+.reorder-field input:focus,
+.reorder-field textarea:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.14);
+}
+.reorder-field textarea { resize: vertical; min-height: 60px; }
+.reorder-field__addon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding-left: 10px;
+  color: var(--text-muted);
+  transition: border-color .15s, box-shadow .15s;
+}
+.reorder-field__addon:focus-within {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.14);
+}
+.reorder-field__addon input {
+  background: transparent;
+  border: none;
+  padding: 10px 10px 10px 0;
+  flex: 1;
+  min-width: 0;
+}
+.reorder-field__addon input:focus { box-shadow: none; }
+.reorder-field__total {
+  background: rgba(99,102,241,0.10);
+  border: 1px solid rgba(99,102,241,0.25);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: var(--primary-light);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Footer */
+.reorder-modal__foot {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.reorder-modal__foot .btn { display: inline-flex; align-items: center; gap: 6px; }
+
+@keyframes reorder-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes reorder-pop {
+  from { transform: translateY(20px) scale(0.96); opacity: 0; }
+  to   { transform: translateY(0)    scale(1);    opacity: 1; }
+}
+
+/* Light theme */
+[data-theme='light'] .reorder-modal {
+  box-shadow: 0 24px 60px rgba(15,23,42,0.18), 0 0 0 1px rgba(99,102,241,0.18);
+}
+[data-theme='light'] .reorder-modal__close { background: rgba(15,23,42,0.04); }
+[data-theme='light'] .reorder-modal__chip { background: rgba(15,23,42,0.03); }
+[data-theme='light'] .reorder-modal__chip--stock { color: #92400e; }
+[data-theme='light'] .reorder-modal__chip--stock b { color: #78350f; }
+[data-theme='light'] .reorder-modal__chip--ai { color: #3730a3; }
+
+/* Mobile */
+@media (max-width: 560px) {
+  .reorder-modal__form { grid-template-columns: 1fr; }
+  .reorder-modal__head { padding: 16px 16px 10px; }
+  .reorder-modal__form { padding: 14px 16px 18px; }
+  .reorder-modal__context { padding: 10px 16px 0; }
+}
