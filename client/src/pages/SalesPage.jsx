@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BarChart2, Search, Download } from 'lucide-react';
-import { getSales, getSalesInsights, getTopProducts, getCategories } from '../api';
+import { getSales, getSalesInsights, getTopProducts, getCategories, getForecasts } from '../api';
 import { TopProductsChart, RevenueTrendChart } from '../components/Charts/Charts';
 import { getSalesTrend } from '../api';
 import CategorySelect from '../components/CategorySelect/CategorySelect';
@@ -17,6 +17,7 @@ export default function SalesPage() {
   const [loading, setLoading]     = useState(true);
   const [products, setProducts]   = useState([]);
   const [trend, setTrend]         = useState([]);
+  const [forecasts, setForecasts] = useState([]);
   const [insights, setInsights]   = useState(null);
   const [search, setSearch]       = useState('');
   const [category, setCategory]   = useState('');
@@ -27,11 +28,12 @@ export default function SalesPage() {
   const load = async (p = 1) => {
     setLoading(true);
     try {
-      const [salesData, prods, tr, ins] = await Promise.all([
+      const [salesData, prods, tr, ins, fc] = await Promise.all([
         getSales({ page: p, limit: 15, product: search, category, startDate, endDate }),
         getTopProducts(),
         getSalesTrend(90),
         getSalesInsights(),
+        getForecasts().catch(() => []),
       ]);
       setSales(salesData.data);
       setTotal(salesData.total);
@@ -39,6 +41,7 @@ export default function SalesPage() {
       setPages(salesData.pages);
       setProducts(prods.slice(0, 8));
       setTrend(tr);
+      setForecasts(fc || []);
       setInsights(ins);
     } catch { toast.error('Failed to load sales data.'); }
     setLoading(false);
@@ -89,10 +92,10 @@ export default function SalesPage() {
       <div className="grid-2" style={{ marginBottom: 24 }}>
         <div className="card">
           <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:16 }}>
-            <h3>Revenue Trend (90 days)</h3>
+            <h3>Revenue — Actual vs Forecast</h3>
           </div>
           {trend.length > 0
-            ? <RevenueTrendChart data={trend} />
+            ? <RevenueTrendChart data={trend} forecasts={forecasts} />
             : <div className="empty-state"><p>No trend data yet</p></div>
           }
         </div>

@@ -1,0 +1,113 @@
+/* ============================================================
+   AI Business Advisor — Premium Charts Styling
+   ============================================================ */
+
+/* Theme-aware responsive custom HTML Tooltip */
+.custom-chart-tooltip {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  box-shadow: var(--shadow-lg);
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  min-width: 140px;
+  transition: all 0.15s ease;
+  pointer-events: none;
+}
+
+.custom-chart-tooltip__title {
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+}
+
+.custom-chart-tooltip__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.custom-chart-tooltip__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.custom-chart-tooltip__label-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.custom-chart-tooltip__indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.custom-chart-tooltip__name {
+  color: var(--text-secondary);
+}
+
+.custom-chart-tooltip__value {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* Center text styles for Category breakdown donut chart */
+.pie-center-label {
+  fill: var(--text-secondary) !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.pie-center-value {
+  fill: var(--text-primary) !important;
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Recharts override rules */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: var(--border) !important;
+  stroke-opacity: 0.4 !important;
+  stroke-dasharray: 4 4;
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: var(--text-secondary) !important;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.recharts-legend-item-text {
+  color: var(--text-secondary) !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  font-family: 'Inter', system-ui, sans-serif;
+  vertical-align: middle;
+}
+
+.recharts-legend-item {
+  display: inline-flex !important;
+  align-items: center;
+  margin-right: 16px !important;
+}
+
+/* Reference line label style */
+.recharts-reference-line-label {
+  font-weight: 600 !important;
+  font-family: 'Inter', system-ui, sans-serif;
+}

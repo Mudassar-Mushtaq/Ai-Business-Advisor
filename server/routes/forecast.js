@@ -4,7 +4,7 @@ const requireAuth = require('../middleware/requireAuth');
 const asyncHandler = require('../middleware/asyncHandler');
 const Forecast = require('../models/Forecast');
 const cache = require('../config/cache');
-const { runForecastForUser } = require('../services/forecastRunner');
+const { runForecastForUser, runForecastForSingleProduct } = require('../services/forecastRunner');
 
 // POST /api/forecast/generate
 router.post('/generate', requireAuth, asyncHandler(async (req, res) => {
@@ -22,8 +22,14 @@ router.post('/generate', requireAuth, asyncHandler(async (req, res) => {
     return res.status(400).json({ error: reason });
   }
 
+  const limit = Number(process.env.FORECAST_MAX_PRODUCTS) || 100;
+  const isLimited = result.totalEligibleProducts > limit;
+  const message = isLimited
+    ? `Generated forecasts for the top ${result.productsForecasted} products (by historical revenue) out of ${result.totalEligibleProducts} eligible products using ${model === 'prophet' ? 'Prophet' : 'Random Forest'}. Other products will be forecasted on-demand.`
+    : `Generated forecasts for all ${result.productsForecasted} product(s) using ${model === 'prophet' ? 'Prophet' : 'Random Forest'}.`;
+
   res.json({
-    message: `Generated forecasts for ${result.productsForecasted} product(s) using ${model === 'prophet' ? 'Prophet' : 'Random Forest'}.`,
+    message,
     forecasts: result.forecasts,
     model: result.model,
   });
@@ -41,9 +47,25 @@ router.get('/', requireAuth, asyncHandler(async (req, res) => {
 // GET /api/forecast/product/:product — cached 10 min
 router.get('/product/:product', requireAuth, asyncHandler(async (req, res) => {
   const key = `forecast:${req.user._id}:product:${req.params.product}`;
-  const forecast = await cache.wrap(key, 600, () =>
-    Forecast.findOne({ userId: req.user._id, product: req.params.product }).lean()
-  );
+  let forecast = await cache.wrap(key, 600, async () => {
+    let doc = await Forecast.findOne({ userId: req.user._id, product: req.params.product }).lean();
+    if (!doc) {
+      // Try to generate on the fly
+      try {
+        const generated = await runForecastForSingleProduct(req.user._id, req.params.product, {
+          forecastDays: 30,
+          model: 'rf'
+        });
+        if (generated && !generated.skipped) {
+          doc = generated.toObject ? generated.toObject() : generated;
+        }
+      } catch (err) {
+        console.error(`On-demand forecast failed for product ${req.params.product}:`, err.message);
+      }
+    }
+    return doc;
+  });
+
   if (!forecast) return res.status(404).json({ error: 'No forecast found for this product.' });
   res.json(forecast);
 }));

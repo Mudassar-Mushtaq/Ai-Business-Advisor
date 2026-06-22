@@ -11,7 +11,7 @@ import {
 } from '../api';
 import KPICard from '../components/KPICard/KPICard';
 import GoalProgressCard from '../components/GoalProgressCard/GoalProgressCard';
-import { RevenueTrendChart, TopProductsChart, CategoryPieChart } from '../components/Charts/Charts';
+import { RevenueTrendChart, TopProductsChart, CategoryPieChart, MonthlyPerformanceChart } from '../components/Charts/Charts';
 import EmptyState from '../components/EmptyState/EmptyState';
 import AlertCard from '../components/AlertBanner/AlertCard';
 import ReorderModal from '../components/ReorderModal/ReorderModal';
@@ -241,7 +241,7 @@ export default function Dashboard() {
 
       {/* AI Alerts preview — shows up to 2; remainder linked to /alerts */}
       {unifiedAlerts.length > 0 && (
-        <section className="alerts-preview">
+        <section className="alerts-preview gradient-border glow-primary">
           <header className="alerts-preview__head">
             <div className="alerts-preview__title">
               <span className="alerts-preview__badge">
@@ -251,7 +251,7 @@ export default function Dashboard() {
                 )}
               </span>
               <div>
-                <h3>AI Alerts</h3>
+                <h3>AI Alerts <span className="pulse-dot" style={{ marginLeft: 6, verticalAlign: 'middle' }} /></h3>
                 <p>
                   {unifiedAlerts.length} active{criticalAlertCount > 0 ? ` · ${criticalAlertCount} critical` : ''}
                 </p>
@@ -336,13 +336,13 @@ export default function Dashboard() {
       <div className="grid-2 stagger" style={{ marginBottom: 28 }}>
         <div className="card">
           <div className="chart-card-header">
-            <h3>Revenue Trend</h3>
+            <h3>Revenue — Actual vs Forecast</h3>
             <span className="badge badge-info">Last {period} days</span>
           </div>
           {loading ? (
             <div className="skeleton" style={{ height: 220, width: '100%' }} />
           ) : trend.length > 0
-            ? <RevenueTrendChart data={trend} />
+            ? <RevenueTrendChart data={trend} forecasts={forecasts} />
             : <EmptyState illustration="chart" title="No data yet" message="Upload sales data to see trends." />
           }
         </div>
@@ -440,10 +440,17 @@ export default function Dashboard() {
 
       {/* Monthly Trend Table */}
       {insights?.monthlyTrend?.length > 0 && (
-        <div className="card">
+        <div className="card" style={{ marginBottom: 28 }}>
           <div className="chart-card-header">
-            <h3>Monthly Performance</h3>
+            <h3>Monthly Sales & Volume Trends</h3>
             <span className="badge badge-muted">{insights.monthlyTrend.length} months</span>
+          </div>
+          <div style={{ marginBottom: 24 }}>
+            <MonthlyPerformanceChart data={insights.monthlyTrend} />
+          </div>
+          <div className="divider" style={{ margin: '20px 0' }} />
+          <div className="chart-card-header" style={{ marginBottom: 12 }}>
+            <h4 style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>Performance Details</h4>
           </div>
           <div style={{ overflowX:'auto' }}>
             <table className="data-table">

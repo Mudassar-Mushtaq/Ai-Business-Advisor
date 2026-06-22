@@ -1,3 +1,8 @@
+import warnings
+import os
+os.environ['PYTHONWARNINGS'] = 'ignore'
+warnings.filterwarnings('ignore')
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from model import train_and_forecast
