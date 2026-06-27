@@ -111,9 +111,9 @@ function CustomTooltip({ active, payload, label, formatter, labelFormatter }) {
   return null;
 }
 
-// Actual vs Forecast Revenue Chart
+// Actual vs Forecast Revenue Chart — Premium Revenue Overview
 export function RevenueTrendChart({ data, forecasts = [] }) {
-  const { combinedData, boundaryDate } = useMemo(() => {
+  const { combinedData } = useMemo(() => {
     // 1. Build historical points
     const historical = (data || []).map(d => ({
       date: d._id,
@@ -130,60 +130,105 @@ export function RevenueTrendChart({ data, forecasts = [] }) {
     const lastHistValue = historical.length > 0 ? historical[historical.length - 1].actualRevenue : 0;
 
     // 4. Build forecast points (only dates after the last historical date)
-    const forecastPoints = fcDates
+    let forecastPoints = fcDates
       .filter(d => !lastHistDate || d > lastHistDate)
       .map(d => ({
         date: d,
         forecastRevenue: Math.round(fcMap[d] || 0),
       }));
 
+    // If no backend forecasts have been generated yet, compute a client-side linear trendline
+    // to give a clean, clear upward/downward projection indicating coming earnings.
+    if (forecastPoints.length === 0 && historical.length > 1) {
+      const n = historical.length;
+      let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
+      for (let i = 0; i < n; i++) {
+        sumX += i;
+        sumY += historical[i].actualRevenue;
+        sumXY += i * historical[i].actualRevenue;
+        sumX2 += i * i;
+      }
+      const denom = n * sumX2 - sumX * sumX;
+      const slope = denom !== 0 ? (n * sumXY - sumX * sumY) / denom : 0;
+      const intercept = (sumY - slope * sumX) / n;
+
+      const lastDateStr = historical[historical.length - 1].date;
+      const lastDate = new Date(lastDateStr);
+
+      // Project 15 days forward
+      for (let i = 1; i <= 15; i++) {
+        const nextDate = new Date(lastDate.getTime() + i * 24 * 60 * 60 * 1000);
+        const dateStr = nextDate.toISOString().split('T')[0];
+        const projectedVal = Math.max(0, slope * (n - 1 + i) + intercept);
+        forecastPoints.push({
+          date: dateStr,
+          forecastRevenue: Math.round(projectedVal),
+        });
+      }
+    }
+
     // 5. Create boundary bridge — last historical point also gets a forecast
-    //    value so the line is connected seamlessly
+    //    value so the line is connected seamlessly.
     if (lastHistDate && forecastPoints.length > 0) {
       historical[historical.length - 1].forecastRevenue = lastHistValue;
     }
 
     return {
       combinedData: [...historical, ...forecastPoints],
-      boundaryDate: lastHistDate,
     };
   }, [data, forecasts]);
 
   const hasForecast = combinedData.some(d => d.forecastRevenue != null && d.forecastRevenue > 0);
 
+  // Formatter for Y-Axis labels (e.g. $80k, $60k)
+  const formatYAxisTick = (v) => {
+    if (v === 0) return '$0k';
+    if (v >= 1000) return `$${(v / 1000).toFixed(0)}k`;
+    return `$${v}`;
+  };
+
   return (
-    <ResponsiveContainer width="100%" height={240}>
-      <AreaChart data={combinedData} margin={{ top: 15, right: 15, left: -10, bottom: 5 }}>
+    <ResponsiveContainer width="100%" height={280}>
+      <AreaChart data={combinedData} margin={{ top: 10, right: 20, left: -5, bottom: 5 }}>
         <defs>
-          <linearGradient id="colorActual" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%"  stopColor="var(--primary)" stopOpacity={0.25} />
-            <stop offset="95%" stopColor="var(--primary)" stopOpacity={0} />
+          {/* Deep blue gradient for actual revenue area */}
+          <linearGradient id="gradActualRevenue" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"  stopColor="#3b82f6" stopOpacity={0.25} />
+            <stop offset="100%" stopColor="#3b82f6" stopOpacity={0.0} />
           </linearGradient>
-          <linearGradient id="colorForecast" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%"  stopColor="var(--success)" stopOpacity={0.15} />
-            <stop offset="95%" stopColor="var(--success)" stopOpacity={0} />
+          {/* Teal/green gradient for forecast revenue area */}
+          <linearGradient id="gradForecastRevenue" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"  stopColor="#10b981" stopOpacity={0.20} />
+            <stop offset="100%" stopColor="#10b981" stopOpacity={0.0} />
           </linearGradient>
         </defs>
-        <CartesianGrid strokeDasharray="3 3" vertical={false} />
+        <CartesianGrid
+          strokeDasharray="4 4"
+          vertical={false}
+          stroke="var(--border)"
+          strokeOpacity={0.3}
+        />
         <XAxis
           dataKey="date"
           axisLine={false}
           tickLine={false}
-          dy={8}
+          dy={10}
           tickFormatter={fmtDate}
+          tick={{ fontSize: 11, fill: 'var(--text-secondary)' }}
         />
         <YAxis
           axisLine={false}
           tickLine={false}
-          dx={-8}
-          tickFormatter={v => fmt(v)}
+          dx={-6}
+          tickFormatter={formatYAxisTick}
+          tick={{ fontSize: 11, fill: 'var(--text-secondary)' }}
         />
         <Tooltip
           content={<CustomTooltip />}
           labelFormatter={fmtDate}
           formatter={(v, name) => {
             if (v == null) return [null, null];
-            const label = name === 'forecastRevenue' ? 'Forecast' : 'Actual Sales';
+            const label = name === 'forecastRevenue' ? 'Forecast' : 'Actual';
             return [fmt(v), label];
           }}
         />
@@ -191,41 +236,36 @@ export function RevenueTrendChart({ data, forecasts = [] }) {
           iconType="circle"
           iconSize={8}
           verticalAlign="top"
+          align="right"
           height={36}
-          formatter={(value) => value === 'forecastRevenue' ? 'Forecasted Revenue' : 'Actual Revenue'}
+          formatter={(value) =>
+            value === 'forecastRevenue' ? 'Forecast' : 'Actual'
+          }
+          wrapperStyle={{ fontSize: '0.8rem', fontWeight: 600 }}
         />
-        {boundaryDate && hasForecast && (
-          <ReferenceLine
-            x={boundaryDate}
-            stroke="var(--text-muted)"
-            strokeDasharray="4 4"
-            strokeOpacity={0.5}
-            label={{ value: 'Today', position: 'top', fill: 'var(--text-secondary)', fontSize: 10, offset: 8 }}
-          />
-        )}
         <Area
           type="monotone"
           dataKey="actualRevenue"
           name="actualRevenue"
-          stroke="var(--primary)"
-          strokeWidth={3}
-          fill="url(#colorActual)"
+          stroke="#3b82f6"
+          strokeWidth={2.5}
+          fill="url(#gradActualRevenue)"
           dot={false}
-          activeDot={{ r: 5, strokeWidth: 0, fill: 'var(--primary)' }}
-          connectNulls={false}
+          activeDot={{ r: 5, strokeWidth: 0, fill: '#3b82f6' }}
+          connectNulls={true}
         />
         {hasForecast && (
           <Area
             type="monotone"
             dataKey="forecastRevenue"
             name="forecastRevenue"
-            stroke="var(--success)"
-            strokeWidth={3}
-            strokeDasharray="6 3"
-            fill="url(#colorForecast)"
+            stroke="#10b981"
+            strokeWidth={2.5}
+            strokeDasharray="5 5"
+            fill="url(#gradForecastRevenue)"
             dot={false}
-            activeDot={{ r: 5, strokeWidth: 0, fill: 'var(--success)' }}
-            connectNulls={false}
+            activeDot={{ r: 5, strokeWidth: 0, fill: '#10b981' }}
+            connectNulls={true}
           />
         )}
       </AreaChart>

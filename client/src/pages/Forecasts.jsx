@@ -31,6 +31,8 @@ const MODEL_LABEL = {
   rf:       'Random Forest',
   prophet:  'Prophet',
   fallback: 'Statistical Fallback',
+  ema_trend: 'EMA + Trend',
+  ema:      'Weighted Average',
 };
 
 function ForecastCard({ forecast }) {
@@ -38,7 +40,9 @@ function ForecastCard({ forecast }) {
   const fmt = (n) => n >= 1000 ? `$${(n/1000).toFixed(1)}K` : `$${(n||0).toFixed(0)}`;
   const accuracy = forecast.modelAccuracy || forecast.confidence || 0;
   const color = accuracy >= 75 ? 'success' : accuracy >= 50 ? 'warning' : 'danger';
-  const modelKey = forecast.model || 'rf';
+  
+  const method = forecast.forecastMethod || 'ml';
+  const modelKey = method === 'ml' ? (forecast.model || 'rf') : method;
   const modelLabel = MODEL_LABEL[modelKey] || 'Random Forest';
 
   const banded = bandFor(forecast);
@@ -52,7 +56,12 @@ function ForecastCard({ forecast }) {
         <div className="forecast-product">
           <div className="forecast-product-icon">📦</div>
           <div>
-            <h4>{forecast.product}</h4>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+              <h4 style={{ margin: 0 }}>{forecast.product}</h4>
+              <span className={`method-badge method-badge--${method}`}>
+                {method === 'ml' ? 'ML Model' : method === 'ema_trend' ? 'EMA + Trend' : 'Weighted Avg'}
+              </span>
+            </div>
             <span className="forecast-period">
               <Calendar size={12} /> {forecast.period || '30d'} forecast
             </span>
@@ -86,7 +95,7 @@ function ForecastCard({ forecast }) {
         </div>
       </div>
 
-      {banded.length > 0 && (
+      {method === 'ml' && banded.length > 0 && (
         <>
           <button className="expand-btn" onClick={() => setExpanded(!expanded)}>
             {expanded ? <><ChevronUp size={15}/> Hide Forecast Band</> : <><ChevronDown size={15}/> Show P10/P50/P90 Band</>}

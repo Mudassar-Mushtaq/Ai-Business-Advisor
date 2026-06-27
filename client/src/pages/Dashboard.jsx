@@ -336,7 +336,10 @@ export default function Dashboard() {
       <div className="grid-2 stagger" style={{ marginBottom: 28 }}>
         <div className="card">
           <div className="chart-card-header">
-            <h3>Revenue — Actual vs Forecast</h3>
+            <div>
+              <h3>Revenue Overview</h3>
+              <p className="chart-card-subtitle">Revenue with AI forecast</p>
+            </div>
             <span className="badge badge-info">Last {period} days</span>
           </div>
           {loading ? (

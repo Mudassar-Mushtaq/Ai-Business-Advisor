@@ -13,38 +13,161 @@ const invalidateForUser = (uid) => Promise.all([
   cache.delPattern(`inventory:${uid}:*`),
 ]);
 
-// Statistical fallback when the ML service is unreachable.
-function statisticalFallback(rows, forecastDays) {
-  const avg = rows.reduce((s, r) => s + r.quantity, 0) / rows.length;
-  const avgRev = rows.reduce((s, r) => s + r.revenue, 0) / rows.length;
+// ── Outlier removal using IQR (Interquartile Range) ──────────────────
+// Clips extreme quantity/revenue values to Q1 - 1.5·IQR .. Q3 + 1.5·IQR.
+// This prevents random bulk-order spikes from inflating the forecast.
+function removeOutliers(rows) {
+  if (rows.length < 4) return rows;
+
+  const quantities = rows.map(r => r.quantity).sort((a, b) => a - b);
+  const revenues   = rows.map(r => r.revenue).sort((a, b) => a - b);
+
+  function iqrBounds(sorted) {
+    const n  = sorted.length;
+    const q1 = sorted[Math.floor(n * 0.25)];
+    const q3 = sorted[Math.floor(n * 0.75)];
+    const iqr = q3 - q1;
+    return { lo: q1 - 1.5 * iqr, hi: q3 + 1.5 * iqr };
+  }
+
+  const qBounds = iqrBounds(quantities);
+  const rBounds = iqrBounds(revenues);
+
+  return rows.map(r => ({
+    ...r,
+    quantity: Math.max(0, Math.min(r.quantity, qBounds.hi)),
+    revenue:  Math.max(0, Math.min(r.revenue,  rBounds.hi)),
+  }));
+}
+
+// ── Tier 1: Exponential Moving Average (5–14 rows) ──────────────────
+// Gives more weight to recent days. Used when data is too sparse for
+// lag features but enough to compute a weighted baseline.
+function emaFallback(rows, forecastDays) {
+  const cleaned = removeOutliers(rows);
+  const alpha = 2 / (Math.min(cleaned.length, 10) + 1); // smoothing factor
+
+  let emaQty = cleaned[0].quantity;
+  let emaRev = cleaned[0].revenue;
+  for (let i = 1; i < cleaned.length; i++) {
+    emaQty = alpha * cleaned[i].quantity + (1 - alpha) * emaQty;
+    emaRev = alpha * cleaned[i].revenue  + (1 - alpha) * emaRev;
+  }
+
   const daily = [];
   for (let i = 1; i <= forecastDays; i++) {
     const d = new Date();
     d.setDate(d.getDate() + i);
     daily.push({
       date: d.toISOString().split('T')[0],
-      quantity: Math.round(avg),
-      revenue: Math.round(avgRev),
+      quantity: Math.round(Math.max(0, emaQty)),
+      revenue:  Math.round(Math.max(0, emaRev)),
     });
   }
+
   return {
-    forecastedSales: Math.round(avg * forecastDays),
-    forecastedRevenue: Math.round(avgRev * forecastDays),
-    confidence: 60,
-    modelAccuracy: 60,
+    forecastedSales:   Math.round(Math.max(0, emaQty) * forecastDays),
+    forecastedRevenue: Math.round(Math.max(0, emaRev) * forecastDays),
+    confidence: 45,
+    modelAccuracy: 45,
     dailyBreakdown: daily,
+    model: 'fallback',
+    forecastMethod: 'ema',
   };
 }
 
-async function processProduct(userId, product, rows, forecastDays, period, model) {
-  let prediction;
-  try {
-    prediction = await callForecastService(product, rows, forecastDays, model);
-  } catch (mlErr) {
-    console.warn(`ML service unavailable for ${product}, using statistical fallback:`, mlErr.message);
-    prediction = statisticalFallback(rows, forecastDays);
-    prediction.model = 'fallback';
+// ── Tier 2: EMA + Trend Projection (15–34 rows) ─────────────────────
+// Computes EMA and overlays a linear trend slope so the forecast can
+// capture upward/downward momentum, not just a flat line.
+function emaTrendFallback(rows, forecastDays) {
+  const cleaned = removeOutliers(rows);
+  const n = cleaned.length;
+  const alpha = 2 / (Math.min(n, 14) + 1);
+
+  let emaQty = cleaned[0].quantity;
+  let emaRev = cleaned[0].revenue;
+  for (let i = 1; i < n; i++) {
+    emaQty = alpha * cleaned[i].quantity + (1 - alpha) * emaQty;
+    emaRev = alpha * cleaned[i].revenue  + (1 - alpha) * emaRev;
   }
+
+  // Linear trend from the last 14 days (or all available)
+  const window = Math.min(14, n);
+  const tail = cleaned.slice(-window);
+  let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
+  let sumYr = 0, sumXYr = 0;
+  for (let i = 0; i < tail.length; i++) {
+    sumX   += i;
+    sumY   += tail[i].quantity;
+    sumYr  += tail[i].revenue;
+    sumXY  += i * tail[i].quantity;
+    sumXYr += i * tail[i].revenue;
+    sumX2  += i * i;
+  }
+  const denom = window * sumX2 - sumX * sumX;
+  const slopeQty = denom !== 0 ? (window * sumXY  - sumX * sumY)  / denom : 0;
+  const slopeRev = denom !== 0 ? (window * sumXYr - sumX * sumYr) / denom : 0;
+
+  const daily = [];
+  for (let i = 1; i <= forecastDays; i++) {
+    const d = new Date();
+    d.setDate(d.getDate() + i);
+    // Project forward from EMA + trend slope, floored at 0
+    const qty = Math.max(0, emaQty + slopeQty * i);
+    const rev = Math.max(0, emaRev + slopeRev * i);
+    daily.push({
+      date: d.toISOString().split('T')[0],
+      quantity: Math.round(qty),
+      revenue:  Math.round(rev),
+    });
+  }
+
+  const totalQty = daily.reduce((s, d) => s + d.quantity, 0);
+  const totalRev = daily.reduce((s, d) => s + d.revenue, 0);
+
+  return {
+    forecastedSales:   totalQty,
+    forecastedRevenue: totalRev,
+    confidence: 55,
+    modelAccuracy: 55,
+    dailyBreakdown: daily,
+    model: 'fallback',
+    forecastMethod: 'ema_trend',
+  };
+}
+
+// ── Process a single product using the appropriate tier ──────────────
+async function processProduct(userId, product, rows, forecastDays, period, model) {
+  const cleanRowCount = rows.length;
+  let prediction;
+  let forecastMethod = 'ml';
+
+  if (cleanRowCount < 5) {
+    // Tier 0: Not enough data — skip entirely
+    return null;
+  } else if (cleanRowCount < 15) {
+    // Tier 1: EMA only (too few rows for lag features or trend)
+    prediction = emaFallback(rows, forecastDays);
+    forecastMethod = 'ema';
+  } else if (cleanRowCount < 35) {
+    // Tier 2: EMA + trend projection (enough for short trend, not for ML)
+    prediction = emaTrendFallback(rows, forecastDays);
+    forecastMethod = 'ema_trend';
+  } else {
+    // Tier 3: Full ML model (Random Forest / Prophet)
+    try {
+      prediction = await callForecastService(product, rows, forecastDays, model);
+      forecastMethod = 'ml';
+    } catch (mlErr) {
+      // If ML service fails (e.g. 422 from feature engineering edge case),
+      // fall back to Tier 2 instead of a dumb average
+      console.warn(`ML service unavailable for ${product}, using EMA+trend fallback:`, mlErr.message);
+      prediction = emaTrendFallback(rows, forecastDays);
+      forecastMethod = 'ema_trend';
+    }
+  }
+
+  if (!prediction) return null;
 
   return Forecast.findOneAndUpdate(
     { userId, product },
@@ -58,6 +181,7 @@ async function processProduct(userId, product, rows, forecastDays, period, model
       dailyBreakdown: prediction.dailyBreakdown || [],
       modelAccuracy: prediction.modelAccuracy || 75,
       model: prediction.model || model || 'rf',
+      forecastMethod,
       generatedAt: new Date(),
     },
     { upsert: true, new: true }
@@ -170,8 +294,8 @@ async function runForecastForUser(userId, opts = {}) {
   await invalidateForUser(userId);
 
   return {
-    forecasts: results,
-    productsForecasted: results.length,
+    forecasts: results.filter(Boolean),
+    productsForecasted: results.filter(Boolean).length,
     totalEligibleProducts: eligibleProducts.length,
     skipped: false,
     model,

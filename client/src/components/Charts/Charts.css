@@ -111,3 +111,13 @@
   font-weight: 600 !important;
   font-family: 'Inter', system-ui, sans-serif;
 }
+
+/* Chart Card Subtitle */
+.chart-card-subtitle {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin: 3px 0 0 0;
+  font-weight: 500;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+

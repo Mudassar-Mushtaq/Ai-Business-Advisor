@@ -180,3 +180,31 @@
 @media (max-width: 768px) {
   .model-toggle-btn { padding: 6px 9px; font-size: 0.72rem; }
 }
+
+/* Method Badge Styles */
+.method-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.method-badge--ml {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+}
+
+.method-badge--ema_trend {
+  background: rgba(14, 165, 233, 0.15);
+  color: var(--secondary);
+}
+
+.method-badge--ema {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--warning);
+}
+
