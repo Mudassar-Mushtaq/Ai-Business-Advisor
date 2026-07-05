@@ -4,6 +4,7 @@ const cache = require('../config/cache');
 const { callForecastService } = require('./forecastClient');
 const { runAlertPipeline } = require('./alertService');
 const { recomputeForUser: recomputeReorderLevels } = require('./reorderRecommender');
+const forecastTracker = require('./forecastTracker');
 
 const FORECAST_CONCURRENCY = Number(process.env.FORECAST_CONCURRENCY) || 1;
 
@@ -182,6 +183,7 @@ async function processProduct(userId, product, rows, forecastDays, period, model
       modelAccuracy: prediction.modelAccuracy || 75,
       model: prediction.model || model || 'rf',
       forecastMethod,
+      isStale: false,
       generatedAt: new Date(),
     },
     { upsert: true, new: true }
@@ -279,7 +281,21 @@ async function runForecastForUser(userId, opts = {}) {
   const results = await runWithConcurrency(
     productsToForecast,
     concurrency,
-    ([product, rows]) => processProduct(userId, product, rows, forecastDays, period, model),
+    async ([product, rows], i) => {
+      if (opts.onProgress) {
+        const cleanRowCount = rows.length;
+        let method = 'ema';
+        if (cleanRowCount < 15) {
+          method = 'ema';
+        } else if (cleanRowCount < 35) {
+          method = 'ema_trend';
+        } else {
+          method = model;
+        }
+        opts.onProgress(i + 1, productsToForecast.length, product, method);
+      }
+      return processProduct(userId, product, rows, forecastDays, period, model);
+    },
   );
 
   // Refresh auto-mode reorder thresholds before alerts run, so the alert
@@ -342,4 +358,101 @@ async function runForecastForSingleProduct(userId, product, opts = {}) {
   return result;
 }
 
-module.exports = { runForecastForUser, runForecastForSingleProduct };
+/**
+ * Trigger bulk forecast generation in the background.
+ * Validates data eligibility, initializes the tracker, and returns immediate status.
+ */
+async function triggerForecastGeneration(userId, opts = {}) {
+  const forecastDays = Math.max(1, Math.min(180, Number(opts.forecastDays) || 30));
+  const requestedModel = String(opts.model || 'rf').toLowerCase();
+  const model = ['rf', 'prophet'].includes(requestedModel) ? requestedModel : 'rf';
+
+  // Check if job is already running
+  const activeJob = forecastTracker.getJob(userId.toString());
+  if (activeJob && activeJob.status === 'generating') {
+    return { status: 'already_running' };
+  }
+
+  // Pre-validate that we have enough sales data
+  const salesData = await SalesData.find({ userId }).sort({ date: 1 }).lean();
+  if (salesData.length < 10) {
+    return { status: 'skipped', reason: 'Need at least 10 sales records to generate forecasts.' };
+  }
+
+  // Find eligible products
+  const byProduct = {};
+  salesData.forEach((row) => {
+    if (!byProduct[row.product]) byProduct[row.product] = [];
+    byProduct[row.product].push({
+      date: row.date.toISOString().split('T')[0],
+      quantity: row.quantity,
+      revenue: row.revenue,
+    });
+  });
+
+  Object.keys(byProduct).forEach((product) => {
+    const rows = byProduct[product];
+    if (rows.length === 0) return;
+    const lastDateStr = rows[rows.length - 1].date;
+    const lastDate = new Date(lastDateStr);
+    const cutoff = new Date(lastDate.getTime() - 730 * 24 * 60 * 60 * 1000);
+    const cutoffStr = cutoff.toISOString().split('T')[0];
+    byProduct[product] = rows.filter(r => r.date >= cutoffStr);
+  });
+
+  const eligibleProducts = Object.entries(byProduct)
+    .map(([product, rows]) => {
+      const totalRevenue = rows.reduce((s, r) => s + (r.revenue || 0), 0);
+      return { product, rows, totalRevenue };
+    })
+    .filter(p => p.rows.length >= 5);
+
+  if (!eligibleProducts.length) {
+    return { status: 'skipped', reason: 'No products have enough data (at least 5 sales records in last 730 days) for forecasting.' };
+  }
+
+  eligibleProducts.sort((a, b) => b.totalRevenue - a.totalRevenue);
+  const limit = Number(process.env.FORECAST_MAX_PRODUCTS) || 100;
+  const productsToForecast = eligibleProducts.slice(0, limit);
+
+  // Initialize the progress tracker
+  forecastTracker.startJob(userId.toString(), productsToForecast.length);
+
+  // Trigger forecast generation asynchronously in the background
+  runForecastForUser(userId, {
+    forecastDays,
+    trigger: opts.trigger || 'manual',
+    model,
+    onProgress: (index, total, product, method) => {
+      forecastTracker.updateProgress(userId.toString(), index, total, product, method);
+    }
+  })
+    .then((result) => {
+      if (result.skipped) {
+        const reason = result.reason === 'not_enough_data'
+          ? 'Need at least 10 sales records to generate forecasts.'
+          : 'No products have enough data for forecasting.';
+        forecastTracker.failJob(userId.toString(), reason);
+      } else {
+        const isLimited = result.totalEligibleProducts > limit;
+        const message = isLimited
+          ? `Generated forecasts for the top ${result.productsForecasted} products (by historical revenue) out of ${result.totalEligibleProducts} eligible products using ${model === 'prophet' ? 'Prophet' : 'Random Forest'}. Other products will be forecasted on-demand.`
+          : `Generated forecasts for all ${result.productsForecasted} product(s) using ${model === 'prophet' ? 'Prophet' : 'Random Forest'}.`;
+        
+        forecastTracker.completeJob(userId.toString(), {
+          message,
+          productsForecasted: result.productsForecasted,
+          totalEligibleProducts: result.totalEligibleProducts,
+          model: result.model
+        });
+      }
+    })
+    .catch((err) => {
+      console.error('Background forecast generation failed:', err);
+      forecastTracker.failJob(userId.toString(), err.message || 'Forecast generation failed.');
+    });
+
+  return { status: 'started' };
+}
+
+module.exports = { runForecastForUser, runForecastForSingleProduct, triggerForecastGeneration };

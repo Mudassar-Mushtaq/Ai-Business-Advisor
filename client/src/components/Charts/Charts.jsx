@@ -274,7 +274,7 @@ export function RevenueTrendChart({ data, forecasts = [] }) {
 }
 
 // Top Products Bar Chart
-export function TopProductsChart({ data }) {
+export function TopProductsChart({ data = [] }) {
   const truncatedData = useMemo(() => {
     return (data || []).map(item => ({
       ...item,
@@ -325,12 +325,12 @@ export function TopProductsChart({ data }) {
 }
 
 // Category Pie Chart
-export function CategoryPieChart({ data }) {
+export function CategoryPieChart({ data = [] }) {
   const totalRevenue = useMemo(() => {
     return (data || []).reduce((sum, d) => sum + (d.totalRevenue || 0), 0);
   }, [data]);
 
-  const total = useMemo(() => data.reduce((sum, entry) => sum + (entry.totalRevenue || 0), 0), [data]);
+  const total = useMemo(() => (data || []).reduce((sum, entry) => sum + (entry.totalRevenue || 0), 0), [data]);
 
   const renderLegend = (value, entry) => {
     const { payload } = entry;
@@ -343,7 +343,7 @@ export function CategoryPieChart({ data }) {
     <ResponsiveContainer width="100%" height={240}>
       <PieChart margin={{ top: 0, bottom: 0, left: 0, right: 0 }}>
         <Pie
-          data={data}
+          data={data || []}
           cx="50%"
           cy="50%"
           innerRadius={65}
@@ -353,7 +353,7 @@ export function CategoryPieChart({ data }) {
           paddingAngle={3}
           label={false} // Clean up label lines
         >
-          {data.map((_, i) => (
+          {(data || []).map((_, i) => (
             <Cell key={i} fill={COLORS[i % COLORS.length]} stroke="var(--bg-card)" strokeWidth={2} />
           ))}
         </Pie>

@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { TrendingUp, RefreshCw, Cpu, Target, Calendar, ChevronDown, ChevronUp, FileDown, FileText, Activity, BrainCircuit } from 'lucide-react';
-import { getForecasts, generateForecasts } from '../api';
+import { getForecasts, generateForecasts, getForecastStatus, resetForecastStatus } from '../api';
 import { ForecastChart } from '../components/Charts/Charts';
 import EmptyState from '../components/EmptyState/EmptyState';
 import AnalysisMode from '../components/AnalysisMode/AnalysisMode';
 import { withConfidenceBand } from '../utils/analytics';
 import { exportToCsv, printReport } from '../utils/exporter';
 import toast from 'react-hot-toast';
+import ForecastProgress from '../components/ForecastProgress/ForecastProgress';
+import StaleBanner from '../components/StaleBanner/StaleBanner';
 import './Forecasts.css';
 
 // Prophet returns p10/p50/p90 directly in dailyBreakdown (from yhat_lower /
@@ -51,7 +53,7 @@ function ForecastCard({ forecast }) {
   const totalP90 = banded.reduce((s, d) => s + (d.p90 || 0), 0);
 
   return (
-    <div className="forecast-card">
+    <div className={`forecast-card ${forecast.isStale ? 'is-stale-card' : ''}`}>
       <div className="forecast-card-header">
         <div className="forecast-product">
           <div className="forecast-product-icon">📦</div>
@@ -61,6 +63,11 @@ function ForecastCard({ forecast }) {
               <span className={`method-badge method-badge--${method}`}>
                 {method === 'ml' ? 'ML Model' : method === 'ema_trend' ? 'EMA + Trend' : 'Weighted Avg'}
               </span>
+              {forecast.isStale && (
+                <span className="method-badge" style={{ background: 'rgba(245, 158, 11, 0.15)', color: 'var(--warning)', border: '1px solid rgba(245,158,11,0.2)' }}>
+                  Stale
+                </span>
+              )}
             </div>
             <span className="forecast-period">
               <Calendar size={12} /> {forecast.period || '30d'} forecast
@@ -120,13 +127,44 @@ function ForecastCard({ forecast }) {
   );
 }
 
+const formatTime = (ms) => {
+  if (!ms || ms <= 0) return 'estimating...';
+  const totalSecs = Math.round(ms / 1000);
+  const mins = Math.floor(totalSecs / 60);
+  const secs = totalSecs % 60;
+  return mins > 0 ? `${mins}m ${secs}s` : `${secs}s`;
+};
+
+const formatRemainingTime = (ms, index) => {
+  if (index === 0) return 'estimating...';
+  if (!ms || ms <= 0) return '0s';
+  const totalSecs = Math.round(ms / 1000);
+  const mins = Math.floor(totalSecs / 60);
+  const secs = totalSecs % 60;
+  return mins > 0 ? `${mins}m ${secs}s` : `${secs}s`;
+};
+
 export default function Forecasts() {
   const [forecasts, setForecasts] = useState([]);
   const [loading, setLoading]     = useState(true);
   const [generating, setGenerating] = useState(false);
   const [model, setModel] = useState(() => localStorage.getItem('aiba:forecast-model') || 'rf');
+  const [job, setJob] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => { localStorage.setItem('aiba:forecast-model', model); }, [model]);
+
+  // Slideshow effect for active job status updates
+  useEffect(() => {
+    if (generating) {
+      const interval = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % 4);
+      }, 3000);
+      return () => clearInterval(interval);
+    } else {
+      setCurrentSlide(0);
+    }
+  }, [generating]);
 
   const load = async () => {
     setLoading(true);
@@ -139,22 +177,88 @@ export default function Forecasts() {
     setLoading(false);
   };
 
-  useEffect(() => { load(); }, []);
+  // Status Poller
+  const checkStatus = async () => {
+    try {
+      const statusData = await getForecastStatus();
+      setJob(statusData);
+
+      if (statusData && statusData.status === 'generating') {
+        setGenerating(true);
+        return true; // continue polling
+      } else if (statusData && statusData.status === 'complete') {
+        setGenerating(false);
+        const completionMsg = statusData.result?.message || 'Forecasts generated successfully!';
+        toast.success(completionMsg);
+        await load();
+        await resetForecastStatus();
+        setJob(null);
+        return false; // stop polling
+      } else if (statusData && statusData.status === 'failed') {
+        setGenerating(false);
+        toast.error(statusData.error || 'Forecast generation failed.');
+        await resetForecastStatus();
+        setJob(null);
+        return false; // stop polling
+      }
+    } catch (err) {
+      console.error('Error fetching job status:', err);
+    }
+    return false; // stop polling on idle/error
+  };
+
+  // On mount: load forecasts + check if a job is already running (page refresh recovery)
+  useEffect(() => {
+    load();
+    getForecastStatus().then((statusData) => {
+      if (statusData && statusData.status === 'generating') {
+        setJob(statusData);
+        setGenerating(true);
+      }
+    }).catch(() => {});
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Poll when generating is active
+  useEffect(() => {
+    if (!generating) return;
+
+    let active = true;
+    let timeoutId;
+
+    const poll = async () => {
+      if (!active) return;
+      const keepGoing = await checkStatus();
+      if (keepGoing && active) {
+        timeoutId = setTimeout(poll, 1000);
+      }
+    };
+
+    // Start polling after a short delay
+    timeoutId = setTimeout(poll, 1000);
+
+    return () => {
+      active = false;
+      clearTimeout(timeoutId);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [generating]);
 
   const handleGenerate = async () => {
     setGenerating(true);
-    const loadingMsg = model === 'prophet'
-      ? 'Fitting Prophet model… (this can take a moment)'
-      : 'Training Random Forest model…';
-    const id = toast.loading(loadingMsg);
+    const toastId = toast.loading('Initializing forecast generation...');
     try {
       const res = await generateForecasts(undefined, model);
-      toast.success(res.message || 'Forecasts generated!', { id });
-      await load();
+      toast.success(res.message || 'Forecast generation started.', { id: toastId });
+      
+      // Begin polling immediately
+      setTimeout(() => {
+        checkStatus();
+      }, 500);
     } catch (err) {
-      toast.error(err.response?.data?.error || 'Forecast generation failed.', { id });
+      toast.error(err.response?.data?.error || 'Failed to start forecast generation.', { id: toastId });
+      setGenerating(false);
     }
-    setGenerating(false);
   };
 
   // Listen for command palette "Generate Forecasts" event
@@ -164,6 +268,8 @@ export default function Forecasts() {
     return () => window.removeEventListener('aiba:generate-forecasts', fn);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const isStale = forecasts.some(f => f.isStale);
 
   const totalForecastedRevenue = forecasts.reduce((s,f) => s + (f.forecastedRevenue||0), 0);
   const totalForecastedSales   = forecasts.reduce((s,f) => s + (f.forecastedSales||0),   0);
@@ -273,6 +379,12 @@ export default function Forecasts() {
           </button>
         </div>
       </div>
+
+      <ForecastProgress job={job} />
+
+      {(isStale || generating) && (
+        <StaleBanner generating={generating} onGenerate={handleGenerate} />
+      )}
 
       {/* Analysis Mode panel — manual / automatic + connector status */}
       <AnalysisMode onAfterRun={load} />

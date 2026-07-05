@@ -105,6 +105,8 @@ export const generateForecasts = (forecastDays, model) => {
   return api.post('/api/forecast/generate', body).then((r) => r.data);
 };
 export const getForecasts = () => api.get('/api/forecast').then((r) => r.data);
+export const getForecastStatus = () => api.get('/api/forecast/status').then((r) => r.data);
+export const resetForecastStatus = () => api.post('/api/forecast/reset-status').then((r) => r.data);
 
 // Auto-analysis
 export const getAutoAnalysis = () => api.get('/api/auto-analysis').then((r) => r.data);

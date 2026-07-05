@@ -9,7 +9,8 @@ from model import train_and_forecast
 import traceback
 
 app = Flask(__name__)
-CORS(app, origins=['http://localhost:5001'])
+backend_url = os.environ.get('BACKEND_URL', 'http://localhost:5001')
+CORS(app, origins=[backend_url])
 
 
 # Lazy import — Prophet is heavy (cmdstanpy compile, ~200MB) so we only load

@@ -3,8 +3,22 @@ const router = express.Router();
 const requireAuth = require('../middleware/requireAuth');
 const asyncHandler = require('../middleware/asyncHandler');
 const Forecast = require('../models/Forecast');
+const SalesData = require('../models/SalesData');
 const cache = require('../config/cache');
-const { runForecastForUser, runForecastForSingleProduct } = require('../services/forecastRunner');
+const forecastTracker = require('../services/forecastTracker');
+const { runForecastForUser, runForecastForSingleProduct, triggerForecastGeneration } = require('../services/forecastRunner');
+
+// GET /api/forecast/status
+router.get('/status', requireAuth, (req, res) => {
+  const job = forecastTracker.getJob(req.user._id.toString());
+  res.json(job);
+});
+
+// POST /api/forecast/reset-status
+router.post('/reset-status', requireAuth, (req, res) => {
+  forecastTracker.clearJob(req.user._id.toString());
+  res.json({ status: 'idle' });
+});
 
 // POST /api/forecast/generate
 router.post('/generate', requireAuth, asyncHandler(async (req, res) => {
@@ -13,25 +27,18 @@ router.post('/generate', requireAuth, asyncHandler(async (req, res) => {
   const requestedModel = String(req.body?.model || 'rf').toLowerCase();
   const model = ['rf', 'prophet'].includes(requestedModel) ? requestedModel : 'rf';
 
-  const result = await runForecastForUser(userId, { forecastDays, trigger: 'manual', model });
+  const result = await triggerForecastGeneration(userId, { forecastDays, model, trigger: 'manual' });
 
-  if (result.skipped) {
-    const reason = result.reason === 'not_enough_data'
-      ? 'Need at least 10 sales records to generate forecasts.'
-      : 'No products have enough data for forecasting.';
-    return res.status(400).json({ error: reason });
+  if (result.status === 'already_running') {
+    return res.status(400).json({ error: 'A forecast generation is already in progress.' });
+  }
+  if (result.status === 'skipped') {
+    return res.status(400).json({ error: result.reason });
   }
 
-  const limit = Number(process.env.FORECAST_MAX_PRODUCTS) || 100;
-  const isLimited = result.totalEligibleProducts > limit;
-  const message = isLimited
-    ? `Generated forecasts for the top ${result.productsForecasted} products (by historical revenue) out of ${result.totalEligibleProducts} eligible products using ${model === 'prophet' ? 'Prophet' : 'Random Forest'}. Other products will be forecasted on-demand.`
-    : `Generated forecasts for all ${result.productsForecasted} product(s) using ${model === 'prophet' ? 'Prophet' : 'Random Forest'}.`;
-
   res.json({
-    message,
-    forecasts: result.forecasts,
-    model: result.model,
+    status: 'started',
+    message: 'Forecast generation started in the background.'
   });
 }));
 

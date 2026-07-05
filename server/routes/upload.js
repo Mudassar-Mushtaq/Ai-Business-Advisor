@@ -8,6 +8,8 @@ const requireAuth = require('../middleware/requireAuth');
 const SalesData = require('../models/SalesData');
 const InventoryItem = require('../models/InventoryItem');
 const UploadHistory = require('../models/UploadHistory');
+const Forecast = require('../models/Forecast');
+const { triggerForecastGeneration } = require('../services/forecastRunner');
 const cache = require('../config/cache');
 const { runAlertPipeline } = require('../services/alertService');
 
@@ -176,6 +178,34 @@ router.post('/', requireAuth, upload.single('file'), async (req, res) => {
   const userId = req.user._id;
 
   try {
+    // 1. Aggregate old uploaded quantities per product (runs on MongoDB, not in Node memory)
+    const oldProductAgg = await SalesData.aggregate([
+      { $match: { userId, source: 'upload' } },
+      { $group: { _id: '$product', totalQty: { $sum: '$quantity' } } },
+    ]);
+
+    const oldProductQuantities = {};
+    for (const doc of oldProductAgg) {
+      if (doc._id) oldProductQuantities[doc._id] = doc.totalQty || 0;
+    }
+
+    // 2. Revert the stock level adjustments for the old uploaded sales
+    const restoreOps = Object.entries(oldProductQuantities).map(([product, qty]) => ({
+      updateOne: {
+        filter: { userId, product },
+        update: {
+          $inc: { stock: qty }
+        }
+      }
+    }));
+    if (restoreOps.length > 0) {
+      await InventoryItem.bulkWrite(restoreOps, { ordered: false });
+    }
+
+    // 3. Wipe old uploaded sales data for this user
+    await SalesData.deleteMany({ userId, source: 'upload' });
+
+    // 4. Parse the new CSV or Excel file
     const productMap = {};
     let totalRows;
 
@@ -189,25 +219,51 @@ router.post('/', requireAuth, upload.single('file'), async (req, res) => {
       return res.status(400).json({ error: 'File is empty or has no valid rows.' });
     }
 
-    // Bulk upsert inventory in one DB call
+    // 5. Bulk upsert inventory (subtracts new sales quantities)
     await bulkUpsertInventory(userId, productMap);
 
-    // ── Fire-and-forget: alert pipeline + cache bust ──
-    // These run in the background so the client gets its response immediately.
+    // 6. Update Forecasts (stale for present products, delete for missing ones)
+    try {
+      const newProducts = Object.keys(productMap);
+      await Promise.all([
+        Forecast.updateMany(
+          { userId, product: { $in: newProducts } },
+          { $set: { isStale: true } }
+        ),
+        Forecast.deleteMany(
+          { userId, product: { $nin: newProducts } }
+        )
+      ]);
+    } catch (err) {
+      console.error('Failed to update forecasts during upload:', err.message);
+    }
+
+    // Bust cache synchronously before responding to ensure client gets fresh data
+    try {
+      await Promise.all([
+        cache.delPattern(`sales:${userId}:*`),
+        cache.delPattern(`inventory:${userId}:*`),
+        cache.delPattern(`forecast:${userId}:*`),
+      ]);
+    } catch (err) {
+      console.error('Cache bust error during upload:', err.message);
+    }
+
+    // Run alert pipeline and trigger forecast generation in the background
     setImmediate(async () => {
       try {
         await runAlertPipeline(userId);
       } catch (err) {
         console.error('Background alert pipeline error:', err.message);
       }
+
       try {
-        await Promise.all([
-          cache.delPattern(`sales:${userId}:*`),
-          cache.delPattern(`inventory:${userId}:*`),
-          cache.delPattern(`forecast:${userId}:*`),
-        ]);
+        // Retrieve the last model selected by the user, fallback to 'rf'
+        const lastForecast = await Forecast.findOne({ userId }).sort({ generatedAt: -1 }).lean();
+        const model = lastForecast?.model || 'rf';
+        await triggerForecastGeneration(userId, { model, forecastDays: 30, trigger: 'upload' });
       } catch (err) {
-        console.error('Background cache bust error:', err.message);
+        console.error('Background auto-trigger forecast generation failed:', err.message);
       }
     });
 

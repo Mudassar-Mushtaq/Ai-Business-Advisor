@@ -7,7 +7,7 @@ import {
 import {
   getSalesInsights, getSalesTrend, getTopProducts, getCategories,
   getNotifications, getInventory, getForecasts, getGoals, getLatestBrief,
-  markNotificationRead,
+  markNotificationRead, getForecastStatus, generateForecasts, resetForecastStatus
 } from '../api';
 import KPICard from '../components/KPICard/KPICard';
 import GoalProgressCard from '../components/GoalProgressCard/GoalProgressCard';
@@ -20,6 +20,8 @@ import { buildUnifiedAlerts } from '../utils/alerts';
 import { exportToCsv, printReport } from '../utils/exporter';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
+import ForecastProgress from '../components/ForecastProgress/ForecastProgress';
+import StaleBanner from '../components/StaleBanner/StaleBanner';
 import './Dashboard.css';
 import '../components/GoalProgressCard/GoalProgressCard.css';
 import './Briefs.css';
@@ -53,6 +55,77 @@ export default function Dashboard() {
   const [loading, setLoading]       = useState(true);
   const [period, setPeriod]         = useState(30);
   const [reorderTarget, setReorderTarget] = useState(null);
+  const [job, setJob] = useState(null);
+  const [generating, setGenerating] = useState(false);
+
+  const checkStatus = async () => {
+    try {
+      const statusData = await getForecastStatus();
+      setJob(statusData);
+
+      if (statusData && statusData.status === 'generating') {
+        setGenerating(true);
+        return true; // continue polling
+      } else if (statusData && statusData.status === 'complete') {
+        setGenerating(false);
+        const completionMsg = statusData.result?.message || 'Forecasts generated successfully!';
+        toast.success(completionMsg);
+        
+        // Reload dashboard forecasts & inventory reorders after generation completes
+        const fcData = await getForecasts().catch(() => []);
+        setForecasts(fcData);
+        await resetForecastStatus();
+        setJob(null);
+        return false; // stop polling
+      } else if (statusData && statusData.status === 'failed') {
+        setGenerating(false);
+        toast.error(statusData.error || 'Forecast generation failed.');
+        await resetForecastStatus();
+        setJob(null);
+        return false; // stop polling
+      }
+    } catch (err) {
+      console.error('Error fetching job status on dashboard:', err);
+    }
+    setGenerating(false);
+    return false; // stop polling on error
+  };
+
+  const handleGenerateForecasts = async () => {
+    setGenerating(true);
+    const toastId = toast.loading('Initializing forecast generation...');
+    try {
+      const res = await generateForecasts();
+      toast.success(res.message || 'Forecast generation started.', { id: toastId });
+      setTimeout(() => {
+        checkStatus();
+      }, 500);
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to start forecast generation.', { id: toastId });
+      setGenerating(false);
+    }
+  };
+
+  // Poll status on mount or when generating is active
+  useEffect(() => {
+    let active = true;
+    let timeoutId;
+
+    const poll = async () => {
+      if (!active) return;
+      const keepGoing = await checkStatus();
+      if (keepGoing && active) {
+        timeoutId = setTimeout(poll, 2000);
+      }
+    };
+
+    poll();
+
+    return () => {
+      active = false;
+      clearTimeout(timeoutId);
+    };
+  }, [generating]);
 
   const load = async () => {
     setLoading(true);
@@ -113,6 +186,8 @@ export default function Dashboard() {
     () => computeReorderRecommendations(inventory, forecasts).slice(0, 6),
     [inventory, forecasts]
   );
+
+  const isStale = useMemo(() => forecasts.some(f => f.isStale), [forecasts]);
 
   // Sparkline series for KPI cards (last N days)
   const sparkRevenue = useMemo(() => trend.map(d => d.totalRevenue || 0), [trend]);
@@ -201,6 +276,12 @@ export default function Dashboard() {
           </button>
         </div>
       </div>
+
+      <ForecastProgress job={job} />
+
+      {(isStale || generating) && (
+        <StaleBanner generating={generating} onGenerate={handleGenerateForecasts} />
+      )}
 
       {/* Latest weekly brief preview */}
       {latestBrief && (
@@ -334,10 +415,17 @@ export default function Dashboard() {
 
       {/* Charts Row 1 */}
       <div className="grid-2 stagger" style={{ marginBottom: 28 }}>
-        <div className="card">
+        <div className={`card ${isStale || generating ? 'is-stale-data' : ''}`}>
           <div className="chart-card-header">
             <div>
-              <h3>Revenue Overview</h3>
+              <h3>
+                Revenue Overview
+                {(isStale || generating) && (
+                  <span className={`updating-indicator-pill ${generating ? 'is-updating' : ''}`}>
+                    {generating ? 'Updating...' : 'Stale'}
+                  </span>
+                )}
+              </h3>
               <p className="chart-card-subtitle">Revenue with AI forecast</p>
             </div>
             <span className="badge badge-info">Last {period} days</span>
@@ -366,9 +454,17 @@ export default function Dashboard() {
 
       {/* Reorder recommendations */}
       {reorderItems.length > 0 && (
-        <div className="card reorder-panel" style={{ marginBottom: 28 }}>
+        <div className={`card reorder-panel ${isStale || generating ? 'is-stale-data' : ''}`} style={{ marginBottom: 28 }}>
           <div className="chart-card-header">
-            <h3><Boxes size={18} style={{ verticalAlign:'-3px', marginRight:6 }} /> Reorder Recommendations</h3>
+            <h3>
+              <Boxes size={18} style={{ verticalAlign:'-3px', marginRight:6 }} />
+              Reorder Recommendations
+              {(isStale || generating) && (
+                <span className={`updating-indicator-pill ${generating ? 'is-updating' : ''}`}>
+                  {generating ? 'Updating...' : 'Stale'}
+                </span>
+              )}
+            </h3>
             <span className="badge badge-warning">{reorderItems.length} need attention</span>
           </div>
           <div style={{ overflowX:'auto' }}>

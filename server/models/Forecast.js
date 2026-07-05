@@ -15,6 +15,7 @@ const ForecastSchema = new mongoose.Schema({
   modelAccuracy:  { type: Number, default: 0 },
   model:          { type: String, enum: ['rf', 'prophet', 'fallback'], default: 'rf' },
   forecastMethod: { type: String, enum: ['ml', 'ema_trend', 'ema'], default: 'ml' },
+  isStale:        { type: Boolean, default: false },
   generatedAt:    { type: Date, default: Date.now },
 }, { timestamps: true });
 

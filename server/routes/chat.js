@@ -6,7 +6,10 @@ const SalesData = require('../models/SalesData');
 const Forecast = require('../models/Forecast');
 const InventoryItem = require('../models/InventoryItem');
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+  baseURL: process.env.OPENAI_API_BASE || undefined
+});
 
 // Build a system prompt enriched with user's business context
 async function buildSystemPrompt(userId) {
@@ -60,7 +63,7 @@ router.post('/', requireAuth, async (req, res) => {
     const systemPrompt = await buildSystemPrompt(req.user._id);
 
     const response = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
+      model: process.env.CHAT_MODEL || 'gpt-4o-mini',
       messages: [
         { role: 'system', content: systemPrompt },
         ...messages.slice(-20), // Keep last 20 messages for context window

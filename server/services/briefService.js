@@ -17,7 +17,12 @@ const MAX_BULLETS = 5;
 let openaiClient = null;
 function getClient() {
   if (!process.env.OPENAI_API_KEY) return null;
-  if (!openaiClient) openaiClient = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  if (!openaiClient) {
+    openaiClient = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+      baseURL: process.env.OPENAI_API_BASE || undefined
+    });
+  }
   return openaiClient;
 }
 

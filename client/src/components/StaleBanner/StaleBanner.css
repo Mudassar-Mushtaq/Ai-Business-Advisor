@@ -1,0 +1,101 @@
+/* client/src/components/StaleBanner/StaleBanner.css */
+
+.stale-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: var(--radius-lg, 12px);
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.05);
+  gap: 16px;
+  flex-wrap: wrap;
+  transition: all 0.3s ease;
+}
+
+.stale-banner.is-generating {
+  background: rgba(99, 102, 241, 0.08);
+  border-color: rgba(99, 102, 241, 0.25);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.05);
+}
+
+.stale-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 250px;
+}
+
+.stale-banner-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--warning, #f59e0b);
+  flex-shrink: 0;
+}
+
+.stale-banner.is-generating .stale-banner-icon-wrap {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--primary-light, #6366f1);
+  animation: bannerSpin 3s infinite linear;
+}
+
+@keyframes bannerSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.stale-banner-text-group {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--text-secondary, #94a3b8);
+}
+
+.stale-banner-text-group strong {
+  color: var(--text-primary, #e2e8f0);
+}
+
+.stale-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--warning, #f59e0b);
+  color: #1e1b4b;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: inherit;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.stale-banner-btn:hover {
+  background: #d97706;
+  transform: translateY(-1px);
+}
+
+.stale-banner-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .stale-banner {
+    padding: 12px 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .stale-banner-btn {
+    align-self: flex-start;
+  }
+}
