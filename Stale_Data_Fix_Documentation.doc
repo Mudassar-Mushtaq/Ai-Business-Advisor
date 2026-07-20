@@ -1,0 +1,522 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>Stale Data Fix - Documentation</title>
+<!--[if gte mso 9]>
+<xml>
+<w:WordDocument>
+<w:View>Print</w:View>
+<w:Zoom>100</w:Zoom>
+<w:DoNotOptimizeForBrowser/>
+</w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+  body {
+    font-family: 'Calibri', 'Segoe UI', sans-serif;
+    font-size: 11pt;
+    color: #1a1a1a;
+    line-height: 1.6;
+    margin: 60px 72px;
+  }
+  h1 {
+    font-size: 22pt;
+    color: #1e3a5f;
+    border-bottom: 3px solid #1e3a5f;
+    padding-bottom: 8px;
+    margin-top: 30px;
+  }
+  h2 {
+    font-size: 16pt;
+    color: #2c5282;
+    margin-top: 28px;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 4px;
+  }
+  h3 {
+    font-size: 13pt;
+    color: #2d3748;
+    margin-top: 20px;
+  }
+  h4 {
+    font-size: 11pt;
+    color: #4a5568;
+    margin-top: 14px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 14px 0;
+    font-size: 10pt;
+  }
+  th {
+    background-color: #1e3a5f;
+    color: white;
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td {
+    padding: 7px 12px;
+    border: 1px solid #cbd5e0;
+  }
+  tr:nth-child(even) {
+    background-color: #f7fafc;
+  }
+  code {
+    font-family: 'Consolas', 'Courier New', monospace;
+    background: #edf2f7;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 9.5pt;
+    color: #c53030;
+  }
+  pre {
+    background: #1a202c;
+    color: #e2e8f0;
+    padding: 14px 18px;
+    border-radius: 6px;
+    font-family: 'Consolas', monospace;
+    font-size: 9pt;
+    line-height: 1.5;
+    overflow-x: auto;
+    white-space: pre-wrap;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 8.5pt;
+    font-weight: 700;
+  }
+  .badge-new { background: #c6f6d5; color: #22543d; }
+  .badge-modified { background: #bee3f8; color: #2a4365; }
+  .highlight-box {
+    background: #ebf8ff;
+    border-left: 4px solid #3182ce;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 10.5pt;
+  }
+  .warning-box {
+    background: #fffbeb;
+    border-left: 4px solid #d69e2e;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 10.5pt;
+  }
+  .success-box {
+    background: #f0fff4;
+    border-left: 4px solid #38a169;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 10.5pt;
+  }
+  .urdu-section {
+    background: #faf5ff;
+    border: 1px solid #d6bcfa;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .urdu-section h3 {
+    color: #553c9a;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+  ul { margin: 6px 0; }
+  li { margin: 4px 0; }
+  .flow-diagram {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    padding: 16px 20px;
+    font-family: 'Consolas', monospace;
+    font-size: 9pt;
+    white-space: pre;
+    line-height: 1.4;
+  }
+  .cover-page {
+    text-align: center;
+    padding-top: 180px;
+  }
+  .cover-page h1 {
+    font-size: 28pt;
+    border: none;
+    color: #1e3a5f;
+  }
+  .cover-page .subtitle {
+    font-size: 14pt;
+    color: #4a5568;
+    margin-top: 10px;
+  }
+  .cover-page .meta {
+    margin-top: 60px;
+    font-size: 11pt;
+    color: #718096;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER PAGE ============ -->
+<div class="cover-page">
+  <h1>Auto-Regenerate Forecasts<br>After CSV Upload</h1>
+  <p class="subtitle">Stale Data Fix — Technical Documentation</p>
+  <p class="meta">
+    <strong>Project:</strong> AI Business Advisor (FYP)<br>
+    <strong>Date:</strong> June 29, 2026<br>
+    <strong>Module:</strong> Forecast Pipeline &amp; Dashboard<br>
+    <strong>Total Files Changed:</strong> 12
+  </p>
+</div>
+
+<!-- ============ TABLE OF CONTENTS ============ -->
+<div class="page-break"></div>
+<h1>Table of Contents</h1>
+<ol style="font-size: 11pt; line-height: 2;">
+  <li>Problem Statement</li>
+  <li>Solution Overview</li>
+  <li>Backend Changes
+    <ul>
+      <li>Forecast Model</li>
+      <li>Forecast Runner Service</li>
+      <li>Forecast Routes</li>
+      <li>Upload Routes</li>
+    </ul>
+  </li>
+  <li>Frontend Changes
+    <ul>
+      <li>ForecastProgress Component (New)</li>
+      <li>StaleBanner Component (New)</li>
+      <li>Dashboard Page</li>
+      <li>Forecasts Page</li>
+    </ul>
+  </li>
+  <li>Complete Data Flow</li>
+  <li>Files Summary Table</li>
+  <li>Verification Results</li>
+  <li>Summary in Roman Urdu</li>
+</ol>
+
+<!-- ============ SECTION 1 ============ -->
+<div class="page-break"></div>
+<h1>1. Problem Statement</h1>
+
+<p>When a user uploaded a new CSV file with updated sales data, the <strong>Dashboard</strong> and <strong>Forecasts</strong> pages continued to display old forecast data from the previous dataset. The user had no indication that the displayed forecasts were outdated.</p>
+
+<div class="warning-box">
+  <strong>⚠️ User Impact:</strong> Users would make business decisions based on forecasts they believed were for their new data, but were actually from their previous CSV upload.
+</div>
+
+<h3>Example Scenario</h3>
+<table>
+  <tr><th>Step</th><th>User Action</th><th>Result</th><th>Status</th></tr>
+  <tr><td>1</td><td>Upload <code>sales_january.csv</code></td><td>Data saved to MongoDB</td><td>✅ OK</td></tr>
+  <tr><td>2</td><td>Generate Forecasts</td><td>January predictions created</td><td>✅ OK</td></tr>
+  <tr><td>3</td><td>Upload <code>sales_february.csv</code></td><td>New data saved</td><td>✅ OK</td></tr>
+  <tr><td>4</td><td>Navigate to Dashboard</td><td><strong>Still shows January forecasts!</strong></td><td>❌ BUG</td></tr>
+  <tr><td>5</td><td>Navigate to Forecasts page</td><td><strong>Old forecast cards with no warning</strong></td><td>❌ BUG</td></tr>
+</table>
+
+<h3>Root Causes Identified</h3>
+<ol>
+  <li><strong>No staleness tracking:</strong> Forecast documents in MongoDB had no way to indicate they were outdated relative to newer sales data.</li>
+  <li><strong>No auto-regeneration:</strong> After upload, forecasts were not automatically regenerated — user had to manually click "Generate Forecasts".</li>
+  <li><strong>Async cache busting:</strong> Redis cache was cleared using <code>setImmediate()</code> (fire-and-forget), causing a race condition where the client could navigate and still receive cached old data.</li>
+  <li><strong>No UI indication:</strong> Neither the Dashboard nor Forecasts page showed any warning when forecast data was outdated.</li>
+</ol>
+
+<!-- ============ SECTION 2 ============ -->
+<div class="page-break"></div>
+<h1>2. Solution Overview</h1>
+
+<p>The fix uses a <strong>3-layer approach</strong>:</p>
+
+<table>
+  <tr><th>Layer</th><th>What It Does</th><th>Where</th></tr>
+  <tr>
+    <td><strong>1. Mark Stale</strong></td>
+    <td>When new CSV is uploaded, all existing forecasts are marked <code>isStale: true</code></td>
+    <td>Server (upload route)</td>
+  </tr>
+  <tr>
+    <td><strong>2. Auto-Generate</strong></td>
+    <td>Forecast regeneration starts automatically in the background after upload</td>
+    <td>Server (forecastRunner)</td>
+  </tr>
+  <tr>
+    <td><strong>3. Live UI Feedback</strong></td>
+    <td>Progress cards, warning banners, and stale badges shown on Dashboard &amp; Forecasts pages</td>
+    <td>Client (React components)</td>
+  </tr>
+</table>
+
+<!-- ============ SECTION 3 ============ -->
+<div class="page-break"></div>
+<h1>3. Backend Changes</h1>
+
+<h2>3.1 Forecast Model</h2>
+<h4>File: <code>server/models/Forecast.js</code> <span class="badge badge-modified">MODIFIED</span></h4>
+
+<p>Added a new boolean field <code>isStale</code> to the Mongoose schema:</p>
+<pre>isStale: { type: Boolean, default: false }</pre>
+
+<div class="highlight-box">
+  <strong>Purpose:</strong> This field acts as a flag. When <code>true</code>, it tells the frontend that this forecast was generated from an older dataset and should be displayed with a warning.
+</div>
+
+<h2>3.2 Forecast Runner Service</h2>
+<h4>File: <code>server/services/forecastRunner.js</code> <span class="badge badge-modified">MODIFIED</span></h4>
+
+<p><strong>Changes made:</strong></p>
+<ol>
+  <li><strong>Imported <code>forecastTracker</code></strong> — for tracking background job progress</li>
+  <li><strong>Set <code>isStale: false</code> in <code>processProduct()</code></strong> — when a forecast is freshly generated, it is marked as not stale</li>
+  <li><strong>Created <code>triggerForecastGeneration(userId, opts)</code></strong> — a new exported helper function that:
+    <ul>
+      <li>Checks if a job is already running</li>
+      <li>Validates that enough sales data exists (minimum 10 records)</li>
+      <li>Finds eligible products (minimum 5 records per product)</li>
+      <li>Initializes the progress tracker</li>
+      <li>Starts background generation with progress callbacks</li>
+      <li>Returns immediate status: <code>started</code>, <code>already_running</code>, or <code>skipped</code></li>
+    </ul>
+  </li>
+</ol>
+
+<div class="highlight-box">
+  <strong>Why a helper function?</strong> Both the upload route (auto-trigger) and the forecast route (manual trigger) need the same validation and generation logic. Extracting it into a shared function avoids code duplication (~80 lines of duplicated code removed from forecast route).
+</div>
+
+<h2>3.3 Forecast Routes</h2>
+<h4>File: <code>server/routes/forecast.js</code> <span class="badge badge-modified">MODIFIED</span></h4>
+
+<p><strong>Changes made:</strong></p>
+<ol>
+  <li>Imported <code>triggerForecastGeneration</code> from forecastRunner</li>
+  <li>Simplified <code>POST /generate</code> endpoint — now calls the helper instead of duplicating logic</li>
+</ol>
+
+<p><strong>Before (98 lines):</strong></p>
+<pre>router.post('/generate', requireAuth, asyncHandler(async (req, res) => {
+  // ... 80+ lines of validation, eligibility, tracker init, background trigger
+}));</pre>
+
+<p><strong>After (20 lines):</strong></p>
+<pre>router.post('/generate', requireAuth, asyncHandler(async (req, res) => {
+  const result = await triggerForecastGeneration(userId, { forecastDays, model, trigger: 'manual' });
+  if (result.status === 'already_running') return res.status(400).json({ error: '...' });
+  if (result.status === 'skipped') return res.status(400).json({ error: result.reason });
+  res.json({ status: 'started', message: 'Forecast generation started.' });
+}));</pre>
+
+<h2>3.4 Upload Routes</h2>
+<h4>File: <code>server/routes/upload.js</code> <span class="badge badge-modified">MODIFIED</span></h4>
+
+<p>This is the <strong>most critical change</strong>. After a successful CSV upload, three new operations happen:</p>
+
+<table>
+  <tr><th>#</th><th>Operation</th><th>Code</th><th>Timing</th></tr>
+  <tr>
+    <td>1</td>
+    <td>Mark all forecasts as stale</td>
+    <td><code>Forecast.updateMany({ userId }, { isStale: true })</code></td>
+    <td>Synchronous (before response)</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Bust Redis cache</td>
+    <td><code>cache.delPattern('sales:...', 'inventory:...', 'forecast:...')</code></td>
+    <td>Synchronous (before response)</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Auto-trigger forecast generation</td>
+    <td><code>triggerForecastGeneration(userId, { model, trigger: 'upload' })</code></td>
+    <td>Background (setImmediate)</td>
+  </tr>
+</table>
+
+<div class="success-box">
+  <strong>Key improvement:</strong> Cache busting was moved from <code>setImmediate</code> (async/fire-and-forget) to <code>await</code> (synchronous). This eliminates the race condition where the client navigates to the Dashboard and receives cached stale data.
+</div>
+
+<!-- ============ SECTION 4 ============ -->
+<div class="page-break"></div>
+<h1>4. Frontend Changes</h1>
+
+<h2>4.1 ForecastProgress Component</h2>
+<h4>File: <code>client/src/components/ForecastProgress/ForecastProgress.jsx</code> <span class="badge badge-new">NEW</span></h4>
+<h4>File: <code>client/src/components/ForecastProgress/ForecastProgress.css</code> <span class="badge badge-new">NEW</span></h4>
+
+<p>A reusable React component that displays a live progress card when a forecast generation job is active. Features:</p>
+<ul>
+  <li><strong>Pulse icon animation</strong> — visual indicator that processing is active</li>
+  <li><strong>Elapsed time</strong> — how long the job has been running</li>
+  <li><strong>Estimated remaining time</strong> — calculated from average time per product</li>
+  <li><strong>Progress bar</strong> — gradient fill showing percentage complete</li>
+  <li><strong>Rotating slideshow</strong> (every 3 seconds) — alternates between:
+    <ul>
+      <li>Overall progress percentage</li>
+      <li>Current product being forecasted</li>
+      <li>Time estimate details</li>
+      <li>Active ML engines list</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>4.2 StaleBanner Component</h2>
+<h4>File: <code>client/src/components/StaleBanner/StaleBanner.jsx</code> <span class="badge badge-new">NEW</span></h4>
+<h4>File: <code>client/src/components/StaleBanner/StaleBanner.css</code> <span class="badge badge-new">NEW</span></h4>
+
+<p>A warning banner that appears in two states:</p>
+<table>
+  <tr><th>State</th><th>Message</th><th>Appearance</th><th>Action Button</th></tr>
+  <tr>
+    <td>Generating</td>
+    <td>"Forecast updates in progress. Previous estimations are shown below."</td>
+    <td>Purple/indigo theme</td>
+    <td>None (wait)</td>
+  </tr>
+  <tr>
+    <td>Stale (not generating)</td>
+    <td>"New data uploaded. Forecasts below are based on previous dataset."</td>
+    <td>Amber/warning theme</td>
+    <td>"Regenerate Now" button</td>
+  </tr>
+</table>
+
+<h2>4.3 Dashboard Page</h2>
+<h4>File: <code>client/src/pages/Dashboard.jsx</code> <span class="badge badge-modified">MODIFIED</span></h4>
+<h4>File: <code>client/src/pages/Dashboard.css</code> <span class="badge badge-modified">MODIFIED</span></h4>
+
+<p><strong>New functionality added:</strong></p>
+<ol>
+  <li><strong>Status polling:</strong> On page load, checks <code>/api/forecast/status</code>. If a job is running, polls every 2 seconds until complete.</li>
+  <li><strong>Progress card:</strong> <code>&lt;ForecastProgress&gt;</code> rendered at the top of the page when a job is active.</li>
+  <li><strong>Stale banner:</strong> <code>&lt;StaleBanner&gt;</code> shown when forecasts are stale or generation is in progress.</li>
+  <li><strong>Revenue Overview chart:</strong> Gets a "Stale" or "Updating..." pill badge and dimmed content when data is outdated.</li>
+  <li><strong>Reorder Recommendations table:</strong> Same stale treatment as Revenue chart.</li>
+  <li><strong>Auto-refresh:</strong> When generation completes, forecasts are automatically reloaded and all warnings disappear.</li>
+</ol>
+
+<h2>4.4 Forecasts Page</h2>
+<h4>File: <code>client/src/pages/Forecasts.jsx</code> <span class="badge badge-modified">MODIFIED</span></h4>
+<h4>File: <code>client/src/pages/Forecasts.css</code> <span class="badge badge-modified">MODIFIED</span></h4>
+
+<p><strong>Changes made:</strong></p>
+<ol>
+  <li>Replaced inline progress card (50+ lines) with reusable <code>&lt;ForecastProgress&gt;</code></li>
+  <li>Added <code>&lt;StaleBanner&gt;</code> below the page header</li>
+  <li>Each forecast card shows a "Stale" badge when <code>forecast.isStale === true</code></li>
+  <li>Stale cards get amber border and reduced opacity</li>
+</ol>
+
+<!-- ============ SECTION 5 ============ -->
+<div class="page-break"></div>
+<h1>5. Complete Data Flow</h1>
+
+<div class="flow-diagram">
+User uploads new CSV
+        │
+        ▼
+┌─────────────────────────────────────┐
+│  Upload Route (upload.js)           │
+│  1. Parse &amp; save sales rows        │
+│  2. Update inventory                │
+│  3. Mark forecasts isStale = true   │
+│  4. Bust Redis cache (synchronous)  │
+│  5. Send success response to client │
+│  6. Auto-trigger generation (bg)    │
+└─────────────────────────────────────┘
+        │
+        ▼
+┌─────────────────────────────────────┐
+│  Dashboard / Forecasts Page         │
+│  1. Loads page → fetches forecasts  │
+│  2. Detects isStale on forecasts    │
+│  3. Polls /api/forecast/status      │
+│  4. Shows ForecastProgress card     │
+│  5. Shows StaleBanner warning       │
+│  6. Dims forecast-dependent widgets │
+└─────────────────────────────────────┘
+        │
+        ▼ (generation completes)
+┌─────────────────────────────────────┐
+│  Automatic Cleanup                  │
+│  1. Forecasts reloaded (fresh data) │
+│  2. isStale = false on all new ones │
+│  3. Banners &amp; badges disappear     │
+│  4. Success toast notification      │
+└─────────────────────────────────────┘
+</div>
+
+<!-- ============ SECTION 6 ============ -->
+<h1>6. Files Summary Table</h1>
+
+<table>
+  <tr><th>#</th><th>File Path</th><th>Action</th><th>Purpose</th></tr>
+  <tr><td>1</td><td><code>server/models/Forecast.js</code></td><td><span class="badge badge-modified">MODIFIED</span></td><td>Added <code>isStale</code> boolean field</td></tr>
+  <tr><td>2</td><td><code>server/services/forecastRunner.js</code></td><td><span class="badge badge-modified">MODIFIED</span></td><td>Added <code>triggerForecastGeneration()</code>, set <code>isStale: false</code> on generate</td></tr>
+  <tr><td>3</td><td><code>server/routes/forecast.js</code></td><td><span class="badge badge-modified">MODIFIED</span></td><td>Simplified generate route using helper</td></tr>
+  <tr><td>4</td><td><code>server/routes/upload.js</code></td><td><span class="badge badge-modified">MODIFIED</span></td><td>Mark stale, sync cache bust, auto-trigger generation</td></tr>
+  <tr><td>5</td><td><code>client/src/components/ForecastProgress/ForecastProgress.jsx</code></td><td><span class="badge badge-new">NEW</span></td><td>Reusable progress card component</td></tr>
+  <tr><td>6</td><td><code>client/src/components/ForecastProgress/ForecastProgress.css</code></td><td><span class="badge badge-new">NEW</span></td><td>Progress card styling</td></tr>
+  <tr><td>7</td><td><code>client/src/components/StaleBanner/StaleBanner.jsx</code></td><td><span class="badge badge-new">NEW</span></td><td>Warning banner component</td></tr>
+  <tr><td>8</td><td><code>client/src/components/StaleBanner/StaleBanner.css</code></td><td><span class="badge badge-new">NEW</span></td><td>Banner styling</td></tr>
+  <tr><td>9</td><td><code>client/src/pages/Dashboard.jsx</code></td><td><span class="badge badge-modified">MODIFIED</span></td><td>Status polling, progress card, stale banners, dimming</td></tr>
+  <tr><td>10</td><td><code>client/src/pages/Dashboard.css</code></td><td><span class="badge badge-modified">MODIFIED</span></td><td>Stale indicator &amp; dimming styles</td></tr>
+  <tr><td>11</td><td><code>client/src/pages/Forecasts.jsx</code></td><td><span class="badge badge-modified">MODIFIED</span></td><td>Stale badges, shared progress component, banner</td></tr>
+  <tr><td>12</td><td><code>client/src/pages/Forecasts.css</code></td><td><span class="badge badge-modified">MODIFIED</span></td><td>Stale card styles</td></tr>
+</table>
+
+<!-- ============ SECTION 7 ============ -->
+<h1>7. Verification Results</h1>
+
+<table>
+  <tr><th>Check</th><th>Command</th><th>Result</th></tr>
+  <tr><td>Client Build</td><td><code>npm run build</code> (in client/)</td><td>✅ Passed — 0 errors, built in 9.38s</td></tr>
+  <tr><td>Server Syntax</td><td><code>node -c</code> on all 4 modified server files</td><td>✅ Passed — no syntax errors</td></tr>
+  <tr><td>New Dependencies</td><td>—</td><td>✅ None required</td></tr>
+</table>
+
+<!-- ============ SECTION 8 ============ -->
+<div class="page-break"></div>
+<h1>8. Summary (Roman Urdu)</h1>
+
+<div class="urdu-section">
+
+<h3>Masla kya tha?</h3>
+<p>Jab user naya CSV upload karta tha, toh Dashboard aur Forecasts page pe <strong>purana data dikhta rehta tha</strong>. User ko pata hi nahi chalta ke yeh forecast purane CSV ka hai ya naye ka. Yeh bohat confusing tha — user sochta tha ke forecast naye data ka hai, lekin asal mein woh pichle CSV ka hota tha.</p>
+
+<h3>Humne kya kiya?</h3>
+<p><strong>1. Forecast ko "Stale" mark karna:</strong> Jaise hi naya CSV upload hota hai, sabhi purane forecasts pe <code>isStale: true</code> laga diya jata hai. Iska matlab hai ke system ko pata hai ke yeh forecast ab outdated hai.</p>
+
+<p><strong>2. Auto-generate shuru karna:</strong> Upload ke foran baad, background mein automatically naye forecasts generate hona shuru ho jate hain. User ko manually "Generate" button dabane ki zaroorat nahi.</p>
+
+<p><strong>3. Live progress dikhana:</strong> Dashboard aur Forecasts page pe ek <strong>progress card</strong> dikhta hai jismein:</p>
+<ul>
+  <li>Kitna time laga (elapsed time)</li>
+  <li>Kitna time aur lagega (estimated remaining)</li>
+  <li>Progress bar (percentage)</li>
+  <li>Kon sa product abhi process ho raha hai</li>
+</ul>
+
+<p><strong>4. Warning banner:</strong> Jab tak naye forecasts ready nahi hote, ek amber/peela banner dikhta hai — "Forecast updates in progress. Showing previous estimates." Revenue chart aur Reorder table thoda dim ho jata hai taa ke user ko pata chale ke yeh purana data hai.</p>
+
+<p><strong>5. Cache fix:</strong> Pehle Redis cache asynchronously (background mein) bust hota tha, jis wajah se kabhi kabhi cached purana data dikh jata tha. Ab cache synchronously bust hota hai — matlab response bhejne se pehle cache saaf ho jata hai.</p>
+
+<h3>Kya fayda hua?</h3>
+<ul>
+  <li>User ko <strong>kabhi bhi purana data nahi dikhega</strong> bina warning ke</li>
+  <li>Naye CSV ke baad <strong>automatically</strong> forecast generate hota hai</li>
+  <li><strong>Live progress</strong> dikhta hai — user ko pata rehta hai ke kitna time lagega</li>
+  <li>Jab generation complete hoti hai, sab kuch <strong>automatically fresh</strong> ho jata hai</li>
+  <li>Code bhi <strong>clean</strong> ho gaya — forecast generation logic ek jagah hai, duplicate nahi</li>
+</ul>
+
+</div>
+
+</body>
+</html>

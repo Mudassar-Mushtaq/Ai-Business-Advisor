@@ -14,7 +14,7 @@ function init() {
   }
 
   try {
-    client = new Redis(process.env.REDIS_URL, {
+    const redisOptions = {
       maxRetriesPerRequest: 2,
       enableOfflineQueue: false,
       lazyConnect: false,
@@ -22,7 +22,14 @@ function init() {
         if (times > 3) return null;
         return Math.min(times * 200, 1000);
       },
-    });
+    };
+
+    // Azure Cache for Redis uses SSL (rediss://) — ioredis needs tls config
+    if (process.env.REDIS_URL && process.env.REDIS_URL.startsWith('rediss://')) {
+      redisOptions.tls = { rejectUnauthorized: false };
+    }
+
+    client = new Redis(process.env.REDIS_URL, redisOptions);
 
     client.on('connect', () => {
       ready = true;

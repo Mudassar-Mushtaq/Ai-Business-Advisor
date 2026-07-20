@@ -138,15 +138,6 @@ function SettingsPanel({ settings, setSettings, onSave, saving }) {
             <span>Email</span>
             <small>{settings.emailOverride || 'Account email'}</small>
           </button>
-          <button
-            type="button"
-            className={`channel-tile ${settings.channels.includes('slack') ? 'on' : ''}`}
-            onClick={() => toggleChannel('slack')}
-          >
-            <MessageSquare size={18} />
-            <span>Slack</span>
-            <small>{settings.slackConfigured ? 'Webhook set' : 'Not configured'}</small>
-          </button>
         </div>
       </div>
 
@@ -202,24 +193,7 @@ function SettingsPanel({ settings, setSettings, onSave, saving }) {
         </div>
       )}
 
-      {settings.channels.includes('slack') && (
-        <div className="brief-settings__section">
-          <label className="brief-settings__label">Slack incoming webhook URL</label>
-          <input
-            className="form-input"
-            value={settings.slackWebhook || ''}
-            onChange={(e) => setSettings({ ...settings, slackWebhook: e.target.value })}
-            placeholder="https://hooks.slack.com/services/..."
-            type="password"
-          />
-          <small className="form-hint">
-            Stored encrypted. {settings.slackConfigured && !settings.slackWebhook && 'A webhook is already saved.'}
-          </small>
-          <button className="btn btn-secondary btn-sm" onClick={() => test('slack')}>
-            <Send size={13} /> Send test message
-          </button>
-        </div>
-      )}
+
 
       <div className="brief-settings__foot">
         {settings.lastDeliveredAt && (

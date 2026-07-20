@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
+    const isCosmos = (process.env.MONGO_URI || '').includes('cosmos.azure.com');
     const conn = await mongoose.connect(process.env.MONGO_URI, {
       tls: true,
       tlsAllowInvalidCertificates: true,
@@ -9,7 +10,7 @@ const connectDB = async () => {
       socketTimeoutMS: 60000,
       maxPoolSize: 20,
       minPoolSize: 2,
-      retryWrites: true,
+      retryWrites: !isCosmos,  // Cosmos DB Serverless does not support retryWrites
       retryReads: true,
       heartbeatFrequencyMS: 10000,
     });
