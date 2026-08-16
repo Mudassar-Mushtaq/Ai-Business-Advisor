@@ -5,9 +5,11 @@ const FORECAST_WINDOW_DAYS = 30; // Forecast.forecastedSales is for this horizon
 
 // Pure formula: dailyDemand * leadTime * (1 + safety%)
 // Floor at 1 so we don't silently disable alerts for very slow movers.
-function computeReorderLevel({ forecasted30dQty, leadTimeDays = 7, safetyStockPct = 20 }) {
-  if (!Number.isFinite(forecasted30dQty) || forecasted30dQty <= 0) return null;
-  const dailyDemand = forecasted30dQty / FORECAST_WINDOW_DAYS;
+function computeReorderLevel({ forecastedQty, forecasted30dQty, periodDays = 30, leadTimeDays = 7, safetyStockPct = 20 }) {
+  const qty = forecastedQty != null ? forecastedQty : forecasted30dQty;
+  if (!Number.isFinite(qty) || qty <= 0) return null;
+  const horizon = Math.max(1, parseInt(periodDays) || 30);
+  const dailyDemand = qty / horizon;
   const raw = dailyDemand * leadTimeDays * (1 + safetyStockPct / 100);
   return Math.max(1, Math.ceil(raw));
 }
@@ -21,20 +23,23 @@ async function recomputeForUser(userId) {
       .select('_id product leadTimeDays safetyStockPct reorderLevel')
       .lean(),
     Forecast.find({ userId })
-      .select('product forecastedSales')
+      .select('product forecastedSales period')
       .lean(),
   ]);
 
   if (!items.length) return { updated: 0 };
 
   const forecastByProduct = new Map();
-  forecasts.forEach((f) => forecastByProduct.set(f.product, f.forecastedSales));
+  forecasts.forEach((f) => forecastByProduct.set(f.product, f));
 
   const ops = [];
   for (const item of items) {
-    const forecasted30dQty = forecastByProduct.get(item.product);
+    const fc = forecastByProduct.get(item.product);
+    const forecastedQty = fc?.forecastedSales || 0;
+    const periodDays = parseInt(fc?.period) || 30;
     const next = computeReorderLevel({
-      forecasted30dQty,
+      forecastedQty,
+      periodDays,
       leadTimeDays: item.leadTimeDays,
       safetyStockPct: item.safetyStockPct,
     });
@@ -65,7 +70,7 @@ async function buildRecommendations(userId) {
           { $match: { $expr: { $and: [{ $eq: ['$product', '$$product'] }, { $eq: ['$userId', '$$uid'] }] } } },
           { $sort: { generatedAt: -1 } },
           { $limit: 1 },
-          { $project: { _id: 0, forecastedSales: 1, confidence: 1, generatedAt: 1 } },
+          { $project: { _id: 0, forecastedSales: 1, period: 1, confidence: 1, generatedAt: 1 } },
         ],
         as: 'forecast',
       },
@@ -75,8 +80,10 @@ async function buildRecommendations(userId) {
 
   return docs.map((d) => {
     const forecasted30dQty = d.forecast?.forecastedSales || 0;
+    const periodDays = parseInt(d.forecast?.period) || 30;
     const recommended = computeReorderLevel({
       forecasted30dQty,
+      periodDays,
       leadTimeDays: d.leadTimeDays,
       safetyStockPct: d.safetyStockPct,
     });

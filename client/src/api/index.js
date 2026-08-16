@@ -53,8 +53,9 @@ export const getInventoryCategories = () =>
   api.get('/api/inventory/categories').then((r) => r.data);
 export const bulkInventoryAlertConfig = (data) =>
   api.post('/api/inventory/bulk-alert-config', data).then((r) => r.data);
-export const getNotifications = () => api.get('/api/inventory/notifications').then((r) => r.data);
+export const getNotifications = (params) => api.get('/api/inventory/notifications', { params }).then((r) => r.data);
 export const markNotificationRead = (id) => api.put(`/api/inventory/notifications/${id}/read`).then((r) => r.data);
+export const markAllNotificationsRead = () => api.put('/api/inventory/notifications/read-all').then((r) => r.data);
 
 // Reorders (Purchase Orders)
 export const getReorders = (params) => api.get('/api/reorders', { params }).then((r) => r.data);
@@ -142,5 +143,26 @@ export const generateBriefNow    = () => api.post('/api/brief/generate-now').the
 export const getBriefSettings    = () => api.get('/api/brief/settings').then((r) => r.data);
 export const updateBriefSettings = (data) => api.put('/api/brief/settings', data).then((r) => r.data);
 export const testBriefDelivery   = (channel) => api.post('/api/brief/settings/test', { channel }).then((r) => r.data);
+
+// Admin - Alerts
+export const adminGetAlerts    = (params) => api.get('/api/admin/alerts', { params }).then((r) => r.data);
+export const adminCreateAlert  = (data) => api.post('/api/admin/alerts', data).then((r) => r.data);
+export const adminUpdateAlert  = (id, data) => api.put(`/api/admin/alerts/${id}`, data).then((r) => r.data);
+export const adminDeleteAlert  = (id) => api.delete(`/api/admin/alerts/${id}`).then((r) => r.data);
+
+// Admin - Audit Logs
+export const getAuditLogs     = (params) => api.get('/api/admin/audit-logs', { params }).then((r) => r.data);
+export const getAuditLogStats = () => api.get('/api/admin/audit-logs/stats').then((r) => r.data);
+
+// Admin - Tenants
+export const getTenants        = (params) => api.get('/api/admin/tenants', { params }).then((r) => r.data);
+export const getTenantDetails  = (id) => api.get(`/api/admin/tenants/${id}`).then((r) => r.data);
+export const updateTenant       = (id, data) => api.put(`/api/admin/tenants/${id}`, data).then((r) => r.data);
+export const suspendTenant      = (id) => api.put(`/api/admin/tenants/${id}/suspend`).then((r) => r.data);
+export const updateTenantRole   = (id, role) => api.put(`/api/admin/tenants/${id}/role`, { role }).then((r) => r.data);
+export const deleteTenant       = (id) => api.delete(`/api/admin/tenants/${id}`).then((r) => r.data);
+
+// Admin - System Health
+export const getSystemHealth   = () => api.get('/api/admin/health').then((r) => r.data);
 
 export default api;

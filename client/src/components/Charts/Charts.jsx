@@ -113,7 +113,7 @@ function CustomTooltip({ active, payload, label, formatter, labelFormatter }) {
 
 // Actual vs Forecast Revenue Chart — Premium Revenue Overview
 export function RevenueTrendChart({ data, forecasts = [] }) {
-  const { combinedData } = useMemo(() => {
+  const { combinedData, lastHistDate } = useMemo(() => {
     // 1. Build historical points
     const historical = (data || []).map(d => ({
       date: d._id,
@@ -175,6 +175,7 @@ export function RevenueTrendChart({ data, forecasts = [] }) {
 
     return {
       combinedData: [...historical, ...forecastPoints],
+      lastHistDate,
     };
   }, [data, forecasts]);
 
@@ -189,16 +190,16 @@ export function RevenueTrendChart({ data, forecasts = [] }) {
 
   return (
     <ResponsiveContainer width="100%" height={280}>
-      <AreaChart data={combinedData} margin={{ top: 10, right: 20, left: -5, bottom: 5 }}>
+      <AreaChart data={combinedData} margin={{ top: 15, right: 20, left: -5, bottom: 5 }}>
         <defs>
           {/* Deep blue gradient for actual revenue area */}
           <linearGradient id="gradActualRevenue" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%"  stopColor="#3b82f6" stopOpacity={0.25} />
-            <stop offset="100%" stopColor="#3b82f6" stopOpacity={0.0} />
+            <stop offset="0%"  stopColor="#6366f1" stopOpacity={0.30} />
+            <stop offset="100%" stopColor="#6366f1" stopOpacity={0.0} />
           </linearGradient>
-          {/* Teal/green gradient for forecast revenue area */}
+          {/* Emerald green gradient for forecast revenue area */}
           <linearGradient id="gradForecastRevenue" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%"  stopColor="#10b981" stopOpacity={0.20} />
+            <stop offset="0%"  stopColor="#10b981" stopOpacity={0.25} />
             <stop offset="100%" stopColor="#10b981" stopOpacity={0.0} />
           </linearGradient>
         </defs>
@@ -213,6 +214,7 @@ export function RevenueTrendChart({ data, forecasts = [] }) {
           axisLine={false}
           tickLine={false}
           dy={10}
+          minTickGap={28}
           tickFormatter={fmtDate}
           tick={{ fontSize: 11, fill: 'var(--text-secondary)' }}
         />
@@ -228,7 +230,7 @@ export function RevenueTrendChart({ data, forecasts = [] }) {
           labelFormatter={fmtDate}
           formatter={(v, name) => {
             if (v == null) return [null, null];
-            const label = name === 'forecastRevenue' ? 'Forecast' : 'Actual';
+            const label = name === 'forecastRevenue' ? 'AI Forecasted Revenue' : 'Actual Sales Revenue';
             return [fmt(v), label];
           }}
         />
@@ -239,19 +241,34 @@ export function RevenueTrendChart({ data, forecasts = [] }) {
           align="right"
           height={36}
           formatter={(value) =>
-            value === 'forecastRevenue' ? 'Forecast' : 'Actual'
+            value === 'forecastRevenue' ? 'AI Forecast' : 'Actual Sales'
           }
           wrapperStyle={{ fontSize: '0.8rem', fontWeight: 600 }}
         />
+        {lastHistDate && hasForecast && (
+          <ReferenceLine
+            x={lastHistDate}
+            stroke="var(--primary)"
+            strokeDasharray="3 3"
+            strokeWidth={1.5}
+            label={{
+              value: 'Forecast ▶',
+              fill: 'var(--primary-light)',
+              fontSize: 10,
+              position: 'top',
+              fontWeight: 700,
+            }}
+          />
+        )}
         <Area
           type="monotone"
           dataKey="actualRevenue"
           name="actualRevenue"
-          stroke="#3b82f6"
+          stroke="#6366f1"
           strokeWidth={2.5}
           fill="url(#gradActualRevenue)"
           dot={false}
-          activeDot={{ r: 5, strokeWidth: 0, fill: '#3b82f6' }}
+          activeDot={{ r: 5, strokeWidth: 0, fill: '#6366f1' }}
           connectNulls={true}
         />
         {hasForecast && (

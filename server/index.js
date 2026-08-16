@@ -20,6 +20,7 @@ const autoAnalysisRoutes = require('./routes/autoAnalysis');
 const goalsRoutes = require('./routes/goals');
 const briefRoutes = require('./routes/brief');
 const reorderRoutes = require('./routes/reorders');
+const adminRoutes = require('./routes/admin');
 const connectorScheduler = require('./services/connectors/scheduler');
 const forecastScheduler = require('./services/forecastScheduler');
 const briefScheduler = require('./services/briefScheduler');
@@ -66,6 +67,7 @@ app.use('/api/auto-analysis', autoAnalysisRoutes);
 app.use('/api/goals', goalsRoutes);
 app.use('/api/brief', briefRoutes);
 app.use('/api/reorders', reorderRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Health check
 app.get('/health', (req, res) => {

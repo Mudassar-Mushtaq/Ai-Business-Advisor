@@ -45,8 +45,8 @@ export function computeReorderRecommendations(inventory, forecasts, leadTimeDays
   if (!inventory || inventory.length === 0) return [];
   const dailyByProduct = {};
   (forecasts || []).forEach(f => {
-    const days = 30;
-    const daily = (f.forecastedSales || 0) / days;
+    const days = parseInt(f.period) || (f.dailyBreakdown?.length) || 30;
+    const daily = (f.forecastedSales || 0) / Math.max(1, days);
     if (daily > 0) dailyByProduct[f.product?.toLowerCase()] = daily;
   });
 

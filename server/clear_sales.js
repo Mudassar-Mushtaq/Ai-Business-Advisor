@@ -5,7 +5,9 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 (async () => {
+  console.log('Connecting to MongoDB Atlas...');
   await mongoose.connect(process.env.MONGO_URI);
+  console.log('Connected! Deleting sales, inventory, and forecast documents...');
   const SalesData = require('./models/SalesData');
   const InventoryItem = require('./models/InventoryItem');
   const Forecast = require('./models/Forecast');

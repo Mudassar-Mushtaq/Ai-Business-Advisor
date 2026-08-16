@@ -5,8 +5,8 @@ const router = express.Router();
 
 // Helper: pick safe user fields for client
 const safeUser = (user) => {
-  const { _id, name, email, avatar, authMethod, createdAt } = user;
-  return { _id, name, email, avatar, authMethod, createdAt };
+  const { _id, name, email, avatar, authMethod, role, isActive, createdAt } = user;
+  return { _id, name, email, avatar, authMethod, role: role || 'user', isActive: isActive !== false, createdAt };
 };
 
 // ═══════════════════════════════════════

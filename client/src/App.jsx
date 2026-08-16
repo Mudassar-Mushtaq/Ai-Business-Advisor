@@ -17,6 +17,12 @@ import Goals from './pages/Goals';
 import Briefs from './pages/Briefs';
 import Alerts from './pages/Alerts';
 import Reorders from './pages/Reorders';
+import AdminSidebar from './components/AdminSidebar/AdminSidebar';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminAlerts from './pages/admin/AdminAlerts';
+import AdminAuditLogs from './pages/admin/AdminAuditLogs';
+import AdminTenants from './pages/admin/AdminTenants';
+import AdminSystemHealth from './pages/admin/AdminSystemHealth';
 
 function ProtectedLayout({ children }) {
   const { user, loading } = useAuth();
@@ -82,6 +88,36 @@ function ProtectedLayout({ children }) {
   );
 }
 
+function AdminProtectedLayout({ children }) {
+  const { user, loading } = useAuth();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [paletteOpen, setPaletteOpen] = useState(false);
+
+  if (loading) return (
+    <div style={{ display:'flex', alignItems:'center', justifyContent:'center', height:'100vh', flexDirection:'column', gap:16 }}>
+      <div className="spinner spinner-lg" />
+      <p style={{ color:'var(--text-secondary)' }}>Loading Admin Portal...</p>
+    </div>
+  );
+
+  if (!user) return <Navigate to="/login" replace />;
+  if (user.role !== 'admin') return <Navigate to="/dashboard" replace />;
+
+  return (
+    <div className="app-layout">
+      <AdminSidebar mobileOpen={mobileOpen} onMobileClose={() => setMobileOpen(false)} />
+      <div className="main-content">
+        <Topbar
+          onMenuClick={() => setMobileOpen(true)}
+          onSearchClick={() => setPaletteOpen(true)}
+        />
+        {children}
+      </div>
+      <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
+    </div>
+  );
+}
+
 function AppRoutes() {
   const { user, loading } = useAuth();
 
@@ -125,6 +161,24 @@ function AppRoutes() {
       <Route path="/reorders" element={
         <ProtectedLayout><Reorders /></ProtectedLayout>
       }/>
+
+      {/* Admin Feature Routes */}
+      <Route path="/admin" element={
+        <AdminProtectedLayout><AdminDashboard /></AdminProtectedLayout>
+      }/>
+      <Route path="/admin/alerts" element={
+        <AdminProtectedLayout><AdminAlerts /></AdminProtectedLayout>
+      }/>
+      <Route path="/admin/audit-logs" element={
+        <AdminProtectedLayout><AdminAuditLogs /></AdminProtectedLayout>
+      }/>
+      <Route path="/admin/tenants" element={
+        <AdminProtectedLayout><AdminTenants /></AdminProtectedLayout>
+      }/>
+      <Route path="/admin/health" element={
+        <AdminProtectedLayout><AdminSystemHealth /></AdminProtectedLayout>
+      }/>
+
       <Route path="*" element={<Navigate to="/dashboard" />} />
     </Routes>
   );

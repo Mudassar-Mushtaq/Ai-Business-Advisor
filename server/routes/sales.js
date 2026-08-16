@@ -42,8 +42,14 @@ router.get('/trend', requireAuth, asyncHandler(async (req, res) => {
   const key = `sales:${req.user._id}:trend:${days}`;
 
   const trend = await cache.wrap(key, 300, async () => {
-    const since = new Date();
-    since.setDate(since.getDate() - days);
+    const latestDoc = await SalesData.findOne({ userId: req.user._id })
+      .sort({ date: -1 })
+      .select('date')
+      .lean();
+
+    const anchorDate = latestDoc ? new Date(latestDoc.date) : new Date();
+    const since = new Date(anchorDate.getTime() - (days - 1) * 24 * 60 * 60 * 1000);
+    since.setHours(0, 0, 0, 0);
 
     return SalesData.aggregate([
       { $match: { userId: req.user._id, date: { $gte: since } } },
@@ -61,6 +67,7 @@ router.get('/trend', requireAuth, asyncHandler(async (req, res) => {
 
   res.json(trend);
 }));
+
 
 // GET /api/sales/products — cached 5 min
 router.get('/products', requireAuth, asyncHandler(async (req, res) => {

@@ -83,11 +83,16 @@ export default function Dashboard() {
         await resetForecastStatus();
         setJob(null);
         return false; // stop polling
+      } else {
+        setGenerating(false);
+        setJob(null);
+        return false;
       }
     } catch (err) {
       console.error('Error fetching job status on dashboard:', err);
     }
     setGenerating(false);
+    setJob(null);
     return false; // stop polling on error
   };
 
@@ -145,7 +150,7 @@ export default function Dashboard() {
       setTrend(tr);
       setProducts(prods.slice(0, 8));
       setCategories(cats.slice(0, 6));
-      setAlerts((notifs || []).filter(n => !n.read).slice(0, 5));
+      setAlerts((notifs || []).filter(n => !n.read));
       setInventory(inv || []);
       setForecasts(fc || []);
       setGoals(gs || []);
@@ -156,14 +161,31 @@ export default function Dashboard() {
     setLoading(false);
   };
 
+  const reloadNotifications = async () => {
+    try {
+      const notifs = await getNotifications();
+      setAlerts((notifs || []).filter(n => !n.read));
+    } catch { /* ignore */ }
+  };
+
   useEffect(() => { load(); /* eslint-disable-next-line */ }, [period]);
+
+  useEffect(() => {
+    window.addEventListener('aiba:notifications-updated', reloadNotifications);
+    return () => window.removeEventListener('aiba:notifications-updated', reloadNotifications);
+  }, []);
 
   const fmt = (n) => n >= 1000000 ? `$${(n/1000000).toFixed(2)}M` : n >= 1000 ? `$${(n/1000).toFixed(1)}K` : `$${(n||0).toFixed(0)}`;
   const fmtNumber = (n) => Math.round(n).toLocaleString();
   const s = insights?.summary || {};
 
   // 2.1 Anomaly detection on revenue
-  const anomalies = useMemo(() => detectRevenueAnomalies(trend), [trend]);
+  const [dismissedAnomalies, setDismissedAnomalies] = useState(new Set());
+  const rawAnomalies = useMemo(() => detectRevenueAnomalies(trend), [trend]);
+  const anomalies = useMemo(
+    () => rawAnomalies.filter(a => !dismissedAnomalies.has(`anom-${a.date}-${a.direction}`)),
+    [rawAnomalies, dismissedAnomalies]
+  );
 
   // Unified alert feed (notifications + derived anomalies), sorted by severity + recency
   const unifiedAlerts = useMemo(
@@ -175,10 +197,18 @@ export default function Dashboard() {
   const criticalAlertCount = unifiedAlerts.filter(a => a.severity === 'critical').length;
 
   const dismissAlert = async (alert) => {
-    if (alert.source !== 'notification') return;
-    setAlerts(prev => prev.filter(a => a._id !== alert.id));
-    try { await markNotificationRead(alert.id); }
-    catch { toast.error('Could not mark as read.'); }
+    if (alert.source === 'anomaly') {
+      setDismissedAnomalies(prev => new Set(prev).add(alert.id));
+      window.dispatchEvent(new Event('aiba:notifications-updated'));
+      return;
+    }
+    setAlerts(prev => prev.filter(a => (a._id || a.id) !== alert.id));
+    try {
+      await markNotificationRead(alert.id);
+      window.dispatchEvent(new Event('aiba:notifications-updated'));
+    } catch {
+      toast.error('Could not mark as read.');
+    }
   };
 
   // 2.3 Reorder recommendations (combines inventory + forecasts)
@@ -426,9 +456,16 @@ export default function Dashboard() {
                   </span>
                 )}
               </h3>
-              <p className="chart-card-subtitle">Revenue with AI forecast</p>
+              <p className="chart-card-subtitle">
+                Historical Actual: <strong style={{ color: 'var(--text-primary)' }}>{fmt(trend.reduce((s, d) => s + (d.totalRevenue || 0), 0))}</strong> ({period}d window)
+              </p>
             </div>
-            <span className="badge badge-info">Last {period} days</span>
+            <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+              <span className="badge badge-info">{period}d Actuals</span>
+              {forecasts.length > 0 && (
+                <span className="badge badge-success">{forecasts[0]?.period || '30d'} Forecast</span>
+              )}
+            </div>
           </div>
           {loading ? (
             <div className="skeleton" style={{ height: 220, width: '100%' }} />

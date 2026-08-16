@@ -55,10 +55,12 @@ function emaFallback(rows, forecastDays) {
     emaRev = alpha * cleaned[i].revenue  + (1 - alpha) * emaRev;
   }
 
+  const lastRowDateStr = rows.length > 0 ? rows[rows.length - 1].date : null;
+  const baseDate = lastRowDateStr ? new Date(lastRowDateStr) : new Date();
+
   const daily = [];
   for (let i = 1; i <= forecastDays; i++) {
-    const d = new Date();
-    d.setDate(d.getDate() + i);
+    const d = new Date(baseDate.getTime() + i * 24 * 60 * 60 * 1000);
     daily.push({
       date: d.toISOString().split('T')[0],
       quantity: Math.round(Math.max(0, emaQty)),
@@ -109,10 +111,12 @@ function emaTrendFallback(rows, forecastDays) {
   const slopeQty = denom !== 0 ? (window * sumXY  - sumX * sumY)  / denom : 0;
   const slopeRev = denom !== 0 ? (window * sumXYr - sumX * sumYr) / denom : 0;
 
+  const lastRowDateStr = rows.length > 0 ? rows[rows.length - 1].date : null;
+  const baseDate = lastRowDateStr ? new Date(lastRowDateStr) : new Date();
+
   const daily = [];
   for (let i = 1; i <= forecastDays; i++) {
-    const d = new Date();
-    d.setDate(d.getDate() + i);
+    const d = new Date(baseDate.getTime() + i * 24 * 60 * 60 * 1000);
     // Project forward from EMA + trend slope, floored at 0
     const qty = Math.max(0, emaQty + slopeQty * i);
     const rev = Math.max(0, emaRev + slopeRev * i);
@@ -274,9 +278,8 @@ async function runForecastForUser(userId, opts = {}) {
   const topProducts = eligibleProducts.slice(0, limit);
   const productsToForecast = topProducts.map(p => [p.product, p.rows]);
 
-  // Flask runs single-process with GIL — concurrent RF/Prophet fits just queue
-  // up and cause timeouts. Run sequentially for reliability.
-  const concurrency = 1;
+  // Enable multi-product concurrency (defaults to 3 parallel product fits)
+  const concurrency = Number(process.env.FORECAST_CONCURRENCY) || 3;
 
   const results = await runWithConcurrency(
     productsToForecast,
@@ -370,7 +373,12 @@ async function triggerForecastGeneration(userId, opts = {}) {
   // Check if job is already running
   const activeJob = forecastTracker.getJob(userId.toString());
   if (activeJob && activeJob.status === 'generating') {
-    return { status: 'already_running' };
+    if (activeJob.elapsedTime > 90000) {
+      // Job has been stuck for > 90s — clear it and allow re-trigger
+      forecastTracker.clearJob(userId.toString());
+    } else {
+      return { status: 'already_running' };
+    }
   }
 
   // Pre-validate that we have enough sales data

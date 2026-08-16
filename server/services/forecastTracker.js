@@ -66,7 +66,12 @@ class ForecastTracker {
 
     if (job.status === 'generating') {
       job.elapsedTime = Date.now() - job.startTime;
-      if (job.index > 0) {
+      // Auto-fail stuck jobs after 2 minutes (120,000 ms)
+      if (job.elapsedTime > 120000) {
+        job.status = 'failed';
+        job.error = 'Forecast generation timed out after 2 minutes. Please try again.';
+        job.estimatedRemainingTime = 0;
+      } else if (job.index > 0) {
         const avgTimePerProduct = job.elapsedTime / job.index;
         const remainingProducts = job.total - job.index;
         job.estimatedRemainingTime = Math.max(0, Math.round(remainingProducts * avgTimePerProduct));

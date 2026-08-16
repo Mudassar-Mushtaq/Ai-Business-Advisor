@@ -20,6 +20,8 @@ const UserSchema = new mongoose.Schema({
   authMethod:  { type: String, enum: ['google', 'email'], default: 'email' },
   avatar:      { type: String, default: '' },
 
+  role:        { type: String, enum: ['user', 'admin'], default: 'user' },
+  isActive:    { type: Boolean, default: true },
   briefSettings: { type: BriefSettingsSchema, default: () => ({}) },
 }, {
   timestamps: true,

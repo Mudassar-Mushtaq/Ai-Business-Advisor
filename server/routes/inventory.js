@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const router = express.Router();
 const requireAuth = require('../middleware/requireAuth');
 const asyncHandler = require('../middleware/asyncHandler');
@@ -218,20 +219,35 @@ router.get('/alerts', requireAuth, asyncHandler(async (req, res) => {
 
 // GET /api/inventory/notifications — fetch stored alert docs
 router.get('/notifications', requireAuth, asyncHandler(async (req, res) => {
+  const limit = parseInt(req.query.limit) || 100;
   const alerts = await Alert.find({ userId: req.user._id })
-    .sort({ createdAt: -1 }).limit(30).lean();
+    .sort({ createdAt: -1 }).limit(limit).lean();
   res.json(alerts);
+}));
+
+// PUT /api/inventory/notifications/read-all — mark all notifications read
+router.put('/notifications/read-all', requireAuth, asyncHandler(async (req, res) => {
+  await Alert.updateMany(
+    { userId: req.user._id, read: false },
+    { read: true }
+  );
+  res.json({ message: 'All notifications marked as read.' });
 }));
 
 // PUT /api/inventory/notifications/:id/read
 router.put('/notifications/:id/read', requireAuth, asyncHandler(async (req, res) => {
+  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    return res.json({ message: 'Client-derived alert marked read.' });
+  }
   const updated = await Alert.findOneAndUpdate(
     { _id: req.params.id, userId: req.user._id },
     { read: true },
     { new: true }
   );
-  if (!updated) throw new AppError('Notification not found', 404, 'not_found');
-  res.json({ message: 'Marked as read.' });
+  if (!updated) {
+    return res.json({ message: 'Notification not found or already read.' });
+  }
+  res.json({ message: 'Marked as read.', alert: updated });
 }));
 
 module.exports = router;

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import {
   LayoutDashboard, Upload, TrendingUp, Package,
   BarChart2, LogOut, Bot, ChevronLeft, ChevronRight,
-  Zap, X, Plug, Target, Sparkles, BellRing, ShoppingCart
+  Zap, X, Plug, Target, Sparkles, BellRing, ShoppingCart, Shield
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { getNotifications } from '../../api';
@@ -47,7 +47,12 @@ export default function Sidebar({ mobileOpen = false, onMobileClose = () => {} }
     };
     fetchUnread();
     const interval = setInterval(fetchUnread, 60_000);
-    return () => { cancelled = true; clearInterval(interval); };
+    window.addEventListener('aiba:notifications-updated', fetchUnread);
+    return () => {
+      cancelled = true;
+      clearInterval(interval);
+      window.removeEventListener('aiba:notifications-updated', fetchUnread);
+    };
   }, [user]);
 
   const badgeFor = (key) => key === 'alerts' ? unreadAlerts : 0;
@@ -92,6 +97,19 @@ export default function Sidebar({ mobileOpen = false, onMobileClose = () => {} }
               </NavLink>
             );
           })}
+          {user?.role === 'admin' && (
+            <NavLink
+              to="/admin"
+              onClick={onMobileClose}
+              className={({ isActive }) => `nav-item admin-link ${isActive ? 'active' : ''}`}
+              style={{ marginTop: 8, borderTop: '1px solid var(--border)', paddingTop: 8, color: '#a855f7' }}
+            >
+              <span className="nav-item__icon-wrap">
+                <Shield size={20} />
+              </span>
+              {!collapsed && <span style={{ fontWeight: 600 }}>Admin Panel</span>}
+            </NavLink>
+          )}
         </nav>
 
         {/* AI Chatbot Toggle */}

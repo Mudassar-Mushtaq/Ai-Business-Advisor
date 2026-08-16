@@ -149,10 +149,12 @@ export default function Forecasts() {
   const [loading, setLoading]     = useState(true);
   const [generating, setGenerating] = useState(false);
   const [model, setModel] = useState(() => localStorage.getItem('aiba:forecast-model') || 'rf');
+  const [forecastDays, setForecastDays] = useState(() => Number(localStorage.getItem('aiba:forecast-days')) || 30);
   const [job, setJob] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => { localStorage.setItem('aiba:forecast-model', model); }, [model]);
+  useEffect(() => { localStorage.setItem('aiba:forecast-days', forecastDays); }, [forecastDays]);
 
   // Slideshow effect for active job status updates
   useEffect(() => {
@@ -200,9 +202,16 @@ export default function Forecasts() {
         await resetForecastStatus();
         setJob(null);
         return false; // stop polling
+      } else {
+        // Idle or completed elsewhere
+        setGenerating(false);
+        setJob(null);
+        return false;
       }
     } catch (err) {
       console.error('Error fetching job status:', err);
+      setGenerating(false);
+      setJob(null);
     }
     return false; // stop polling on idle/error
   };
@@ -246,9 +255,9 @@ export default function Forecasts() {
 
   const handleGenerate = async () => {
     setGenerating(true);
-    const toastId = toast.loading('Initializing forecast generation...');
+    const toastId = toast.loading(`Initializing ${forecastDays}-day forecast generation...`);
     try {
-      const res = await generateForecasts(undefined, model);
+      const res = await generateForecasts(forecastDays, model);
       toast.success(res.message || 'Forecast generation started.', { id: toastId });
       
       // Begin polling immediately
@@ -267,9 +276,10 @@ export default function Forecasts() {
     window.addEventListener('aiba:generate-forecasts', fn);
     return () => window.removeEventListener('aiba:generate-forecasts', fn);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [forecastDays, model]);
 
   const isStale = forecasts.some(f => f.isStale);
+  const activePeriod = forecasts[0]?.period || `${forecastDays}d`;
 
   const totalForecastedRevenue = forecasts.reduce((s,f) => s + (f.forecastedRevenue||0), 0);
   const totalForecastedSales   = forecasts.reduce((s,f) => s + (f.forecastedSales||0),   0);
@@ -283,7 +293,7 @@ export default function Forecasts() {
     if (forecasts.length === 0) return toast.error('No forecasts to export yet.');
     const rows = forecasts.map(f => ({
       product: f.product,
-      period: f.period || '30d',
+      period: f.period || `${forecastDays}d`,
       forecasted_units: Math.round(f.forecastedSales || 0),
       forecasted_revenue: Math.round(f.forecastedRevenue || 0),
       accuracy_pct: (f.modelAccuracy || f.confidence || 0).toFixed(1),
@@ -297,7 +307,7 @@ export default function Forecasts() {
     if (forecasts.length === 0) return toast.error('No forecasts to report yet.');
     printReport({
       title: 'Forecast Report',
-      subtitle: `30-day demand forecast across ${forecasts.length} product${forecasts.length>1?'s':''}`,
+      subtitle: `${activePeriod} demand forecast across ${forecasts.length} product${forecasts.length>1?'s':''}`,
       sections: [
         { type: 'kpis', heading: 'Summary', items: [
           { label: 'Forecasted Revenue', value: fmt(totalForecastedRevenue) },
@@ -323,7 +333,7 @@ export default function Forecasts() {
             range: `${lo.toLocaleString()} – ${hi.toLocaleString()}`,
           };
         }) },
-        { type: 'note', text: 'Forecasts are point estimates with a 80% confidence interval (P10/P90) computed from tree variance. Use for planning, not commitments.' },
+        { type: 'note', text: 'Forecasts are point estimates with an 80% confidence interval (P10/P90) computed from tree variance. Use for planning, not commitments.' },
       ],
     });
   };
@@ -340,6 +350,21 @@ export default function Forecasts() {
           </p>
         </div>
         <div style={{ display:'flex', gap:8, flexWrap:'wrap', alignItems:'center' }}>
+          <div className="model-toggle" role="tablist" aria-label="Forecast horizon">
+            {[30, 60, 90].map((d) => (
+              <button
+                key={d}
+                role="tab"
+                aria-selected={forecastDays === d}
+                className={`model-toggle-btn ${forecastDays === d ? 'is-active' : ''}`}
+                onClick={() => setForecastDays(d)}
+                disabled={generating}
+                title={`${d} Days Horizon`}
+              >
+                <Calendar size={13}/> {d}d Horizon
+              </button>
+            ))}
+          </div>
           <div className="model-toggle" role="tablist" aria-label="Forecasting model">
             <button
               role="tab"
@@ -375,7 +400,7 @@ export default function Forecasts() {
           <button className="btn btn-primary" onClick={handleGenerate} disabled={generating}>
             {generating
               ? <><div className="spinner" /> Generating…</>
-              : <><Activity size={16}/> Generate Forecasts</>}
+              : <><Activity size={16}/> Generate Forecast ({forecastDays}d)</>}
           </button>
         </div>
       </div>
@@ -396,14 +421,14 @@ export default function Forecasts() {
             <TrendingUp size={22} style={{ color:'var(--primary-light)' }} />
             <div>
               <div className="fs-value">{fmt(totalForecastedRevenue)}</div>
-              <div className="fs-label">Total Forecasted Revenue (30d)</div>
+              <div className="fs-label">Total Forecasted Revenue ({activePeriod})</div>
             </div>
           </div>
           <div className="forecast-summary-card">
             <Target size={22} style={{ color:'var(--success)' }} />
             <div>
               <div className="fs-value">{Math.round(totalForecastedSales).toLocaleString()}</div>
-              <div className="fs-label">Total Forecasted Units (30d)</div>
+              <div className="fs-label">Total Forecasted Units ({activePeriod})</div>
             </div>
           </div>
           <div className="forecast-summary-card">

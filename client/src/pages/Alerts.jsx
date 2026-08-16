@@ -2,11 +2,11 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   BellRing, AlertOctagon, AlertTriangle, Info, CheckCircle2,
-  RefreshCw, ChevronLeft, Filter, Search, Inbox,
+  RefreshCw, ChevronLeft, Filter, Search, Inbox, Check,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import {
-  getNotifications, markNotificationRead, getSalesTrend,
+  getNotifications, markNotificationRead, markAllNotificationsRead, getSalesTrend,
 } from '../api';
 import AlertCard from '../components/AlertBanner/AlertCard';
 import EmptyState from '../components/EmptyState/EmptyState';
@@ -76,11 +76,16 @@ export default function Alerts() {
     if (alert.source !== 'notification') {
       // anomalies are client-derived — just hide locally
       setAnomalies(prev => prev.filter(a => `anom-${a.date}-${a.direction}` !== alert.id));
+      window.dispatchEvent(new Event('aiba:notifications-updated'));
       return;
     }
     setNotifications(prev => prev.map(n => n._id === alert.id ? { ...n, read: true } : n));
-    try { await markNotificationRead(alert.id); }
-    catch { toast.error('Could not mark as read.'); }
+    try {
+      await markNotificationRead(alert.id);
+      window.dispatchEvent(new Event('aiba:notifications-updated'));
+    } catch {
+      toast.error('Could not mark as read.');
+    }
   };
 
   const markAllRead = async () => {
@@ -89,8 +94,9 @@ export default function Alerts() {
     setBusy(true);
     setNotifications(prev => prev.map(n => ({ ...n, read: true })));
     try {
-      await Promise.all(targets.map(n => markNotificationRead(n._id).catch(() => null)));
-      toast.success(`Marked ${targets.length} alert${targets.length>1?'s':''} as read.`);
+      await markAllNotificationsRead();
+      toast.success(`Marked all notifications as read.`);
+      window.dispatchEvent(new Event('aiba:notifications-updated'));
     } catch {
       toast.error('Could not mark all as read.');
     }
@@ -167,13 +173,19 @@ export default function Alerts() {
               onChange={e => setQuery(e.target.value)}
             />
           </label>
-          <label className="alerts-toggle">
+          <label className={`alerts-toggle-switch ${showRead ? 'alerts-toggle-switch--active' : ''}`} title="Toggle read alerts visibility">
             <input
               type="checkbox"
               checked={showRead}
               onChange={e => setShowRead(e.target.checked)}
+              aria-label="Show read alerts"
             />
-            <span>Show read</span>
+            <span className="alerts-toggle-switch__slider">
+              <span className="alerts-toggle-switch__thumb">
+                {showRead && <Check size={10} strokeWidth={3} />}
+              </span>
+            </span>
+            <span className="alerts-toggle-switch__label">Show read</span>
           </label>
         </div>
       </div>

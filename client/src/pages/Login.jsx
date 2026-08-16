@@ -120,8 +120,7 @@ export default function Login() {
     try {
       await signInWithPopup(auth, googleProvider);
       toast.success('Signed in with Google! 🎉');
-      setSubmitted(true);
-      // useEffect above navigates once AuthContext populates `user`.
+      // useEffect navigates to /dashboard once AuthContext populates `user`
     } catch (err) {
       console.error('Google sign-in error:', err.code, err.message);
       if (err.code !== 'auth/popup-closed-by-user') {
