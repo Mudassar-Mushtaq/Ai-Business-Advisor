@@ -9,7 +9,7 @@
     "server": "cd server && npm run dev",
     "client": "cd client && npm run dev",
     "ml": "cd ml_service && source venv/bin/activate && python3 app.py",
-    "build": "cd client && npm run build",
+    "build": "cd client && npm install && npm run build",
     "start": "cd server && npm start"
   },
   "dependencies": {
