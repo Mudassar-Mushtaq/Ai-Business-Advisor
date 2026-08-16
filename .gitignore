@@ -39,3 +39,10 @@ nodemon-debug.log*
 .vscode/settings.json
 .idea/
 *.swp
+
+# Documentation (Internal docs / notes)
+Doocumentations/
+Documentation/
+documentations/
+documentation/
+
