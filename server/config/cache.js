@@ -29,20 +29,22 @@ function init() {
       redisOptions.tls = { rejectUnauthorized: false };
     }
 
+    console.log('🔄 Initializing Redis connection...');
     client = new Redis(process.env.REDIS_URL, redisOptions);
 
     client.on('connect', () => {
       ready = true;
-      console.log('✅ Redis connected');
+      console.log('✅ Redis connected successfully!');
     });
 
     client.on('error', (err) => {
-      if (ready) console.warn('⚠️  Redis error:', err.message);
+      console.warn('⚠️  Redis error:', err.message);
       ready = false;
     });
 
     client.on('end', () => {
       ready = false;
+      console.log('ℹ️  Redis connection closed.');
     });
   } catch (err) {
     console.warn('⚠️  Redis init failed, continuing without cache:', err.message);
