@@ -47,7 +47,9 @@ router.get('/trend', requireAuth, asyncHandler(async (req, res) => {
       .select('date')
       .lean();
 
-    const anchorDate = latestDoc ? new Date(latestDoc.date) : new Date();
+    if (!latestDoc) return [];
+
+    const anchorDate = new Date(latestDoc.date);
     const since = new Date(anchorDate.getTime() - (days - 1) * 24 * 60 * 60 * 1000);
     since.setHours(0, 0, 0, 0);
 
@@ -72,6 +74,10 @@ router.get('/trend', requireAuth, asyncHandler(async (req, res) => {
 // GET /api/sales/products — cached 5 min
 router.get('/products', requireAuth, asyncHandler(async (req, res) => {
   const key = `sales:${req.user._id}:products`;
+  
+  const hasData = await SalesData.exists({ userId: req.user._id });
+  if (!hasData) return res.json([]);
+
   const products = await cache.wrap(key, 300, () =>
     SalesData.aggregate([
       { $match: { userId: req.user._id } },
@@ -94,6 +100,10 @@ router.get('/products', requireAuth, asyncHandler(async (req, res) => {
 // GET /api/sales/categories — cached 5 min
 router.get('/categories', requireAuth, asyncHandler(async (req, res) => {
   const key = `sales:${req.user._id}:categories`;
+  
+  const hasData = await SalesData.exists({ userId: req.user._id });
+  if (!hasData) return res.json([]);
+
   const cats = await cache.wrap(key, 300, () =>
     SalesData.aggregate([
       { $match: { userId: req.user._id } },

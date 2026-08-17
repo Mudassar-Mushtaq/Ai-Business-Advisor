@@ -4,6 +4,24 @@ const SalesData = require('../models/SalesData');
  * Comprehensive sales insights via MongoDB aggregation pipelines
  */
 async function getSalesInsights(userId) {
+  const hasData = await SalesData.exists({ userId });
+  if (!hasData) {
+    return {
+      summary: {
+        totalRevenue: 0,
+        totalQuantity: 0,
+        totalOrders: 0,
+        avgOrderValue: 0,
+        grossProfit: 0,
+        profitMargin: 0,
+        momGrowth: 0,
+      },
+      topProducts: [],
+      monthlyTrend: [],
+      categoryBreakdown: [],
+    };
+  }
+
   const [summary, topProducts, monthlyTrend, categoryBreakdown, recentGrowth] = await Promise.all([
     // Overall summary
     SalesData.aggregate([
