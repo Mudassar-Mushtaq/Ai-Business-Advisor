@@ -46,7 +46,13 @@ app.use(helmet());
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 500, // limit each IP to 500 requests per windowMs (dashboard fires ~9 parallel calls per load)
-  message: { error: 'Too many requests, please try again later.' }
+  message: { error: 'Too many requests, please try again later.' },
+  // Azure load balancer sends IP:port — strip the port to avoid validation errors
+  keyGenerator: (req) => {
+    const ip = req.ip || req.socket.remoteAddress || '127.0.0.1';
+    return ip.replace(/:\d+$/, '');
+  },
+  validate: false, // disable built-in validations that fail behind Azure reverse proxy
 });
 
 // Apply rate limiter to all API requests
