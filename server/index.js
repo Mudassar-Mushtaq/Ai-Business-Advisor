@@ -27,6 +27,9 @@ const briefScheduler = require('./services/briefScheduler');
 
 const app = express();
 
+// Trust proxy settings for Azure App Service (reverse proxy) to prevent express-rate-limit validation errors
+app.set('trust proxy', 1);
+
 // Connect to MongoDB
 connectDB();
 
