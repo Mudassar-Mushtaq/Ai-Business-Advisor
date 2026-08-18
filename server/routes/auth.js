@@ -53,6 +53,11 @@ router.post('/firebase-sync', async (req, res) => {
         user.authMethod = authMethod;
         needsUpdate = true;
       }
+      if (user.email === 'mudassarmushtaq546@gmail.com' && user.role !== 'admin') {
+        user.role = 'admin';
+        needsUpdate = true;
+        console.log(`👑 Existing user mudassarmushtaq546@gmail.com promoted to admin!`);
+      }
 
       if (needsUpdate) {
         await user.save();
@@ -83,6 +88,12 @@ router.post('/firebase-sync', async (req, res) => {
       authMethod,
       avatar: avatar || '',
     });
+
+    if (user.email === 'mudassarmushtaq546@gmail.com' && user.role !== 'admin') {
+      user.role = 'admin';
+      await user.save();
+      console.log(`👑 New user mudassarmushtaq546@gmail.com promoted to admin!`);
+    }
 
     console.log(`✨ New user created: ${user.email} (${authMethod})`);
     return res.status(201).json({ user: safeUser(user) });

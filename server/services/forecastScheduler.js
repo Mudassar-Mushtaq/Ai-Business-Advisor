@@ -113,12 +113,12 @@ async function runAutoForUser(config, { trigger = 'auto' } = {}) {
   }
 }
 
-// Tick every minute. For each enabled auto-mode config that's due, run a forecast.
+// Tick every 5 minutes. For each enabled auto-mode config that's due, run a forecast.
 function start() {
   if (started) return;
   started = true;
 
-  cron.schedule('* * * * *', async () => {
+  cron.schedule('*/5 * * * *', async () => {
     try {
       const due = await AutoAnalysisConfig.find({
         mode: 'auto',
@@ -145,7 +145,7 @@ function start() {
     }
   });
 
-  console.log('🤖 Auto-forecast scheduler started (1-min tick)');
+  console.log('🤖 Auto-forecast scheduler started (5-min tick)');
 }
 
 module.exports = { start, runAutoForUser, computeNextRun };

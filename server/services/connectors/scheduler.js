@@ -4,13 +4,13 @@ const { runSync } = require('./syncRunner');
 
 let started = false;
 
-// Tick every minute. For each connected connector, sync if it's been longer
+// Tick every 5 minutes. For each connected connector, sync if it's been longer
 // than its `intervalMinutes` since the last successful sync.
 function start() {
   if (started) return;
   started = true;
 
-  cron.schedule('* * * * *', async () => {
+  cron.schedule('*/5 * * * *', async () => {
     try {
       const connectors = await Connector.find({ status: { $in: ['connected', 'error'] } });
       const now = Date.now();
@@ -36,7 +36,7 @@ function start() {
     }
   });
 
-  console.log('🔄 Connector scheduler started (1-min tick)');
+  console.log('🔄 Connector scheduler started (5-min tick)');
 }
 
 module.exports = { start };
